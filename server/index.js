@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const http = require('http').createServer(app);
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const controllers = require('./controllers/controllers.js');
@@ -13,4 +14,4 @@ app.use(express.static('./client/dist/'));
 
 app.get('/search', (req, res) => controllers.fetchCardsByName(req, res));
 
-app.listen(PORT, () => console.log(`Go to http://localhost:${PORT}`));
+http.listen(PORT, () => console.log(`Go to http://localhost:${PORT}`));
