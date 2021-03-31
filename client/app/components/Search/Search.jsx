@@ -15,7 +15,7 @@ const Search = ({ addCardToDraft }) => {
   };
 
   return (
-    <div >
+    <div id='search-area'>
       <input id='search-bar' placeholder="search..." onChange={({ target }) => setSearchTerm(target.value)} ></input>
       <button onClick={() => handleSearch()} >search</button>
       <SearchList

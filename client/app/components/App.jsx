@@ -5,19 +5,22 @@ import './App.css';
 
 
 const App = () => {
-  const [draftedCards, setDraftedCards] = useState([]);
+  const [draftedCards, setDraftedCards] = useState(new Set());
 
   const addCardToDraft = (card) => {
-    const prevState = draftedCards;
-    const newKey = prevState.length;
-      setDraftedCards([...prevState, { [newKey]: card }]);
+    const prevState = new Set(draftedCards);
+    const newKey = prevState.size;
+    if (newKey < 35 && !prevState.has(card)) {
+      prevState.add(card);
+      setDraftedCards(prevState);
+    }
   }
 
   return (
     <>
       <h1>Rotisserie MTG</h1>
       <Search addCardToDraft={addCardToDraft} />
-      <DraftList draftedCards={draftedCards} />
+      <DraftList draftedCards={[...draftedCards]} />
     </>
   );
 };

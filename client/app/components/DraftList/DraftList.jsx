@@ -6,10 +6,9 @@ const DraftList = ({ draftedCards }) => {
 
   if (draftedCards.length === 0) {
     return (
-      <div className='empty-list' ></div>
+      <div id='draft-list' ></div>
     );
   }
-
 
   return (
     <div id='draft-list'>
@@ -17,8 +16,8 @@ const DraftList = ({ draftedCards }) => {
         return (
           <DraftListItem
             key={index}
-            cardName={card[index].name}
-            cardImage={card[index].small}
+            cardName={card.name}
+            cardImage={card.small}
             index={index}
           />
         );
