@@ -1,0 +1,9 @@
+#draft-list {
+  position: relative;
+  min-height: 300px;
+  max-height: auto;
+}
+
+.drafted-card {
+  position: absolute;
+}

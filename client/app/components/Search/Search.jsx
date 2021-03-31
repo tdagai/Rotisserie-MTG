@@ -3,7 +3,7 @@ import axios from 'axios';
 import SearchList from './SearchList.jsx'
 import './Search.css';
 
-const Search = () => {
+const Search = ({ addCardToDraft }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [cardsSearched, setCardsSearched] = useState('');
 
@@ -18,7 +18,10 @@ const Search = () => {
     <div >
       <input id='search-bar' placeholder="search..." onChange={({ target }) => setSearchTerm(target.value)} ></input>
       <button onClick={() => handleSearch()} >search</button>
-      <SearchList cardsSearched={cardsSearched} />
+      <SearchList
+        cardsSearched={cardsSearched}
+        addCardToDraft={addCardToDraft}
+      />
     </div>
   );
 };

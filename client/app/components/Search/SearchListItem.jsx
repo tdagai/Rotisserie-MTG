@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import './SearchListItem.css';
 
-const SearchListItem = ({ cardName, cardImage }) => {
+const SearchListItem = ({ card, addCardToDraft }) => {
   const [hoverState, setHoverState] = useState(false);
 
   return (
     <>
       <div
-      className='search-item'
-      onMouseEnter={() => setHoverState(true)}
-      onMouseLeave={() => setHoverState(false)}
-      >{cardName}</div>
+        className='search-item'
+        onMouseEnter={() => setHoverState(true)}
+        onMouseLeave={() => setHoverState(false)}
+        onClick={() => addCardToDraft(card)}
+      >
+        {card.name}
+      </div>
       <div className={hoverState ? 'floating-image-container' : 'invisible'} >
-        <img src={cardImage} alt={cardName} />
+        <img src={card.small} alt={card.name} />
       </div>
     </>
   );
