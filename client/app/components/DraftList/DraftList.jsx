@@ -11,12 +11,9 @@ const DraftList = ({ draftedCards }) => {
   }
 
 
-  console.log('draftedCards:', draftedCards);
-
   return (
     <div id='draft-list'>
       {draftedCards.map((card, index) => {
-        console.log('card:', card);
         return (
           <DraftListItem
             key={index}
