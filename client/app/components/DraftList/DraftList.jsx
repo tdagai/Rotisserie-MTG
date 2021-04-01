@@ -2,7 +2,7 @@ import React from 'react';
 import DraftListItem from './DraftListItem.jsx';
 import './DraftListItem.css';
 
-const DraftList = ({ draftedCards }) => {
+const DraftList = ({ draftedCards = [] }) => {
 
   if (draftedCards.length === 0) {
     return (
