@@ -1,3 +1,8 @@
 html, #app {
   height: 100vh;
 }
+
+#draft-lists-container {
+  display: flex;
+  flex-direction: row;
+}
