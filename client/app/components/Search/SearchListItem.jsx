@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SearchListItem.css';
 
-const SearchListItem = ({ card, addCardToDraft }) => {
+const SearchListItem = ({ card, addCardToDraft, setDisplaySearch }) => {
   const [hoverState, setHoverState] = useState(false);
 
   return (
@@ -10,7 +10,7 @@ const SearchListItem = ({ card, addCardToDraft }) => {
         className='search-item'
         onMouseEnter={() => setHoverState(true)}
         onMouseLeave={() => setHoverState(false)}
-        onClick={() => addCardToDraft(card)}
+  onClick={() => { addCardToDraft(card); /*setDisplaySearch(false)*/ }}
       >
         {card.name}
       </div>

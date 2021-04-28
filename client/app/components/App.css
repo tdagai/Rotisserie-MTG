@@ -1,8 +1,24 @@
-html, #app {
-  height: 100vh;
+html {
+  background-color: #FAFAFA;
+  font-family: 'Roboto', sans-serif;
+}
+
+#app {
+  height: 98.5vh;
+  padding-left: 8px;
+  padding-top: 8px;
+}
+
+body {
+  background-color: #FAFAFA;
+  margin: 0;
 }
 
 #draft-lists-container {
   display: flex;
   flex-direction: row;
+}
+
+#app-title {
+  margin: 10px 0;
 }

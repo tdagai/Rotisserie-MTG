@@ -8,37 +8,37 @@ let socketID = '';
 const socket = io('http://localhost:3000');
 socket.on('connect', () => {
   socketID = socket.id;
-})
+});
 
 const App = () => {
   const [allUsers, setAllUsers] = useState({});
-  console.log('socketID:', socketID);
+  const [allCardsDrafted, setAllCardsDrafted] = useState([]);
 
-
-  socket.on('new connection', (users) => {
+  socket.on('new connection', ({ users, allDrafted }) => {
     setAllUsers(users);
+    setAllCardsDrafted(allDrafted);
   });
 
-  socket.on('new card drafted', (users) => {
+  socket.on('new card drafted', ({ users, allDrafted }) => {
     setAllUsers(users);
+    setAllCardsDrafted(allDrafted);
   });
 
   const addCardToDraft = (card) => {
-    // const prevState = new Set(allDraftedCards);
-    // const newKey = prevState.size;
-    // if (newKey < 35 && !prevState.has(card)) {
-      // prevState.add(card);
-    const prevState = allUsers;
-    prevState[socketID].push(card);
-    setAllUsers(prevState);
-    socket.emit('new draft list', { socketID, card });
-    // }
+    const prevUsers = allUsers;
+    const prevDrafted = allCardsDrafted;
+    if (/*!prevDrafted.includes(card.name) && */prevDrafted.length < 35/* && allCardsDrafted.length < 35*/) {
+      prevDrafted.push(card.name);
+      prevUsers[socketID].push(card);
+      setAllUsers(prevUsers);
+      socket.emit('new draft list', { socketID, card });
+    }
   }
 
 
   return (
     <>
-      <h1>Rotisserie MTG</h1>
+      <h1 id='app-title'>Rotisserie MTG</h1>
       <Search addCardToDraft={addCardToDraft} />
       <div id='draft-lists-container'>
         {Object.keys(allUsers).map((userID) => (

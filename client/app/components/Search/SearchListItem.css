@@ -1,9 +1,15 @@
 .search-item {
   width: 300px;
   height: 1.5rem;
-  border: 1px solid #000;
-  border-bottom: none;
-  padding: 1px 3px;
+  padding: 1px 5px;
+  padding-right: 0;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.search-item:hover {
+  background-color: #dddddd;
 }
 
 .invisible {
@@ -15,4 +21,10 @@
   top: 10px;
   left: 110%;
   z-index: 2;
+}
+
+.floating-image-container img {
+  border: 1px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
 }

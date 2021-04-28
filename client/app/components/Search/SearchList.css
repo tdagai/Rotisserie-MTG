@@ -1,8 +1,10 @@
 #search-list {
   position: relative;
-  /* max-height: 13rem; */
-  width: 308px;
-  border-bottom: 1px solid #000;
+  margin-top: 2px;
+  width: 306px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
 }

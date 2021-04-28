@@ -17,7 +17,8 @@ const DraftList = ({ draftedCards = [] }) => {
           <DraftListItem
             key={index}
             cardName={card.name}
-            cardImage={card.small}
+            cardImageSmall={card.small}
+            cardImageNormal={card.normal}
             index={index}
           />
         );
