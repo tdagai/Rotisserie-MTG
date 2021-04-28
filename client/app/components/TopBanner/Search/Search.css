@@ -10,10 +10,11 @@
 }
 
 #search-error {
+  position: absolute;
   background-color: hsl(0, 100%, 95%);
   color: hsl(6, 75%, 49%);
   border: 1px solid #000;
-  width: 300px;
+  width: 302px;
   padding: 1px 3px;
   padding-right: 0;
   font-size: 1rem;

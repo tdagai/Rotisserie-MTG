@@ -15,4 +15,5 @@ body {
 #draft-lists-container {
   display: flex;
   flex-direction: row;
+  margin-left: 10px;
 }
