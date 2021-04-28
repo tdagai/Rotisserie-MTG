@@ -33,7 +33,12 @@ const Search = ({ addCardToDraft }) => {
             setErrored(false);
           }} >
         </input>
-        <button onClick={(e) => { e.preventDefault(); handleSearch();}} >search</button>
+        <button
+          id='search-button'
+          onClick={(e) => { e.preventDefault(); handleSearch(); }}
+        >
+          <i className="fas fa-search" />
+        </button>
       </form>
       {errored
         ? <div id='search-error' >{`No cards found for the term ${searchTerm}`}</div>

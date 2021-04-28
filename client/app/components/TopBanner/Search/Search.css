@@ -1,12 +1,13 @@
 #search-bar {
   width: 300px;
+  height: 1.75em;
   outline: none;
-  margin-right: 1px;
+  font-size: 0.9rem;
 }
 
 #search-area {
   margin: auto;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 #search-error {
@@ -18,4 +19,14 @@
   padding: 1px 3px;
   padding-right: 0;
   font-size: 1rem;
+}
+
+#search-button {
+  position: absolute;
+  right: 15px;
+  border: none;
+  background-color: transparent;
+  margin-top: 6px;
+  font-size: 1rem;
+  cursor: pointer;
 }
