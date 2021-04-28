@@ -1,10 +1,8 @@
 #search-list {
-  position: relative;
-  margin-top: 2px;
+  position: absolute;
   width: 306px;
   border: 1px solid #000;
   border-radius: 2px;
-  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
 }

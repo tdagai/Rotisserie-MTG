@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Search from './Search/Search.jsx';
+// import Search from './TopBanner/Search/Search.jsx';
+import TopBanner from './TopBanner/TopBanner.jsx';
 import DraftList from './DraftList/DraftList.jsx';
 import io from 'socket.io-client';
 import './App.css';
@@ -38,8 +39,10 @@ const App = () => {
 
   return (
     <>
-      <h1 id='app-title'>Rotisserie MTG</h1>
-      <Search addCardToDraft={addCardToDraft} />
+
+      {/* <h1 id='app-title'>Rotisserie MTG</h1> */}
+      {/* <Search addCardToDraft={addCardToDraft} /> */}
+      <TopBanner addCardToDraft={addCardToDraft} />
       <div id='draft-lists-container'>
         {Object.keys(allUsers).map((userID) => (
           <DraftList key={userID} draftedCards={allUsers[userID]} />

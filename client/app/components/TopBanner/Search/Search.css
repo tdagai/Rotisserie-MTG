@@ -5,7 +5,8 @@
 }
 
 #search-area {
-  min-height: 240px;
+  margin: auto;
+  margin-right: 10px;
 }
 
 #search-error {

@@ -18,8 +18,7 @@
 
 .floating-image-container {
   position: absolute;
-  top: 10px;
-  left: 110%;
+  right: 110%;
   z-index: 2;
 }
 
