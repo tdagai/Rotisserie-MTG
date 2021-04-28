@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import Search from './TopBanner/Search/Search.jsx';
 import TopBanner from './TopBanner/TopBanner.jsx';
 import DraftList from './DraftList/DraftList.jsx';
 import io from 'socket.io-client';
@@ -14,6 +13,7 @@ socket.on('connect', () => {
 const App = () => {
   const [allUsers, setAllUsers] = useState({});
   const [allCardsDrafted, setAllCardsDrafted] = useState([]);
+  const [currentlyDisplayedCard, setCurrentlyDisplayedCard] = useState('');
 
   socket.on('new connection', ({ users, allDrafted }) => {
     setAllUsers(users);
@@ -36,19 +36,37 @@ const App = () => {
     }
   }
 
+  const displayCardInfo = (cardImageNormal) => {
+    setCurrentlyDisplayedCard(cardImageNormal);
+  }
 
   return (
-    <>
-
-      {/* <h1 id='app-title'>Rotisserie MTG</h1> */}
-      {/* <Search addCardToDraft={addCardToDraft} /> */}
+    <div>
       <TopBanner addCardToDraft={addCardToDraft} />
-      <div id='draft-lists-container'>
-        {Object.keys(allUsers).map((userID) => (
-          <DraftList key={userID} draftedCards={allUsers[userID]} />
-        ))}
+      <div id='app-container'>
+        <div id='app-grid-top-row'>
+          <div id='app-grid-top-row-left-col'>
+            {Object.keys(allUsers).map((userID) => (
+              <DraftList
+                key={userID}
+                draftedCards={allUsers[userID]}
+                displayCardInfo={displayCardInfo}
+              />
+            ))}
+          </div>
+          <div id='app-grid-top-row-right-col'>
+            <div id='display-card-info-image-container'>
+              {
+                currentlyDisplayedCard
+                ? <img src={currentlyDisplayedCard} alt='displayed card' ></img>
+                : <div id='no-card-to-display'></div>
+              }
+            </div>
+          </div>
+        </div>
+        <div id='app-grid-bottom-row'></div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -12,8 +12,37 @@ body {
   margin: 0;
 }
 
-#draft-lists-container {
+#app-container {
+  display: grid;
+  grid-template-rows: 75% 25%;
+  top: 58px;
+  height: calc(100vh - 58px);
+}
+
+#app-grid-top-row {
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: 55% 45%;
+}
+
+#app-grid-top-row-left-col {
   display: flex;
-  flex-direction: row;
-  margin-left: 10px;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #000;
+}
+
+#display-card-info-image-container {
+  width: 288px;
+  height: 400px;
+}
+
+#display-card-info-image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+#app-grid-bottom-row {
+  grid-row-start: 2;
+  border-top: 1px solid #000;
 }

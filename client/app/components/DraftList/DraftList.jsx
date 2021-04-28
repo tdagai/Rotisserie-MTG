@@ -2,7 +2,7 @@ import React from 'react';
 import DraftListItem from './DraftListItem.jsx';
 import './DraftListItem.css';
 
-const DraftList = ({ draftedCards = [] }) => {
+const DraftList = ({ draftedCards = [], displayCardInfo }) => {
 
   if (draftedCards.length === 0) {
     return (
@@ -20,6 +20,7 @@ const DraftList = ({ draftedCards = [] }) => {
             cardImageSmall={card.small}
             cardImageNormal={card.normal}
             index={index}
+            displayCardInfo={displayCardInfo}
           />
         );
       })}
