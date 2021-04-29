@@ -10,7 +10,7 @@ const SearchListItem = ({ card, addCardToDraft, setDisplaySearch }) => {
         className='search-item'
         onMouseEnter={() => setHoverState(true)}
         onMouseLeave={() => setHoverState(false)}
-  onClick={() => { addCardToDraft(card); /*setDisplaySearch(false)*/ }}
+        onMouseDown={(e) => { e.preventDefault(); addCardToDraft(card); /*setDisplaySearch(false)*/ }}
       >
         {card.name}
       </div>

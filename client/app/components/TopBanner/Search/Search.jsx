@@ -37,7 +37,17 @@ const Search = ({ addCardToDraft }) => {
           onChange={({ target }) => {
             setSearchTerm(target.value);
             setErrored(false);
-          }} >
+          }}
+          onBlur={(e) => {
+            e.preventDefault();
+            setDisplaySearch(false);
+          }}
+          onFocus={() => {
+            if (searchTerm) {
+              setDisplaySearch(true);
+            }
+          }}
+        >
         </input>
         <button
           id='search-button'
