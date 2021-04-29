@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TopBanner from './TopBanner/TopBanner.jsx';
 import DraftList from './DraftList/DraftList.jsx';
+import DisplayCardInfo from './DisplayCardInfo/DisplayCardInfo.jsx';
 import io from 'socket.io-client';
 import './App.css';
 
@@ -13,7 +14,16 @@ socket.on('connect', () => {
 const App = () => {
   const [allUsers, setAllUsers] = useState({});
   const [allCardsDrafted, setAllCardsDrafted] = useState([]);
-  const [currentlyDisplayedCard, setCurrentlyDisplayedCard] = useState('');
+  const [currentlyDisplayedCard, setCurrentlyDisplayedCard] = useState(
+    {
+      normal: '',
+      name: '',
+      mana_cost: '',
+      oracle_text: '',
+      type_line: '',
+      artist: '',
+      flavor_text: '',
+    });
 
   socket.on('new connection', ({ users, allDrafted }) => {
     setAllUsers(users);
@@ -36,8 +46,8 @@ const App = () => {
     }
   }
 
-  const displayCardInfo = (cardImageNormal) => {
-    setCurrentlyDisplayedCard(cardImageNormal);
+  const setDisplayedCard = (card) => {
+    setCurrentlyDisplayedCard(card);
   }
 
   return (
@@ -50,19 +60,15 @@ const App = () => {
               <DraftList
                 key={userID}
                 draftedCards={allUsers[userID]}
-                displayCardInfo={displayCardInfo}
+                displayCardInfo={setDisplayedCard}
               />
             ))}
           </div>
-          <div id='app-grid-top-row-right-col'>
-            <div id='display-card-info-image-container'>
-              {
-                currentlyDisplayedCard
-                ? <img src={currentlyDisplayedCard} alt='displayed card' ></img>
-                : <div id='no-card-to-display'></div>
-              }
-            </div>
-          </div>
+          {
+            currentlyDisplayedCard.name
+              ? <DisplayCardInfo card={currentlyDisplayedCard} />
+              : <div></div>
+          }
         </div>
         <div id='app-grid-bottom-row'></div>
       </div>

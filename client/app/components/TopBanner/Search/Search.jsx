@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchList from './SearchList.jsx'
 import './Search.css';
@@ -8,6 +8,12 @@ const Search = ({ addCardToDraft }) => {
   const [cardsSearched, setCardsSearched] = useState([]);
   const [errored, setErrored] = useState(false);
   const [displaySearch, setDisplaySearch] = useState(true);
+
+  useEffect(() => {
+    if (!searchTerm) {
+      setDisplaySearch(false);
+    }
+  }, [searchTerm]);
 
   const handleSearch = () => {
     axios.get(`/search?term=${searchTerm}`)
@@ -35,7 +41,15 @@ const Search = ({ addCardToDraft }) => {
         </input>
         <button
           id='search-button'
-          onClick={(e) => { e.preventDefault(); handleSearch(); }}
+          onClick={(e) => {
+            e.preventDefault();
+            if (searchTerm) {
+              handleSearch();
+            } else {
+              setDisplaySearch(false);
+            }
+          }
+        }
         >
           <i className="fas fa-search" />
         </button>

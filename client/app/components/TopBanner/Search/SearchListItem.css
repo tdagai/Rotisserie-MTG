@@ -1,5 +1,5 @@
 .search-item {
-  width: 300px;
+  width: 301px;
   height: 1.5rem;
   padding: 1px 5px;
   padding-right: 0;
@@ -26,4 +26,5 @@
   border: 1px solid #000;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 0 4px 2px #808080;
 }

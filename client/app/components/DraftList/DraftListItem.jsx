@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './DraftListItem.css';
 
-const DraftListItem = ({ cardName, cardImageSmall, index, cardImageNormal, displayCardInfo }) => {
+const DraftListItem = ({ card, index, displayCardInfo }) => {
 
   const styleObj = { top: `${4.5 * (index % 15)}%` };
   if (index >= 15) {
@@ -12,8 +12,8 @@ const DraftListItem = ({ cardName, cardImageSmall, index, cardImageNormal, displ
   }
 
   return (
-    <div className='drafted-card' style={styleObj} onMouseEnter={() => displayCardInfo(cardImageNormal)} >
-      <img src={cardImageSmall} alt={cardName} />
+    <div className='drafted-card' style={styleObj} onMouseEnter={() => displayCardInfo(card)} >
+      <img src={card.small} alt={card.name} />
     </div>
   );
 }

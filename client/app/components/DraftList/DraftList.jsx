@@ -16,9 +16,10 @@ const DraftList = ({ draftedCards = [], displayCardInfo }) => {
         return (
           <DraftListItem
             key={index}
-            cardName={card.name}
-            cardImageSmall={card.small}
-            cardImageNormal={card.normal}
+            card={card}
+            // cardName={card.name}
+            // cardImageSmall={card.small}
+            // cardImageNormal={card.normal}
             index={index}
             displayCardInfo={displayCardInfo}
           />
