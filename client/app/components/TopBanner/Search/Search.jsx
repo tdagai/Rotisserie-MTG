@@ -3,7 +3,7 @@ import axios from 'axios';
 import SearchList from './SearchList.jsx'
 import './Search.css';
 
-const Search = ({ addCardToDraft }) => {
+const Search = ({ addCardToDraft, currentTurn }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [cardsSearched, setCardsSearched] = useState([]);
   const [errored, setErrored] = useState(false);
@@ -71,6 +71,7 @@ const Search = ({ addCardToDraft }) => {
           addCardToDraft={addCardToDraft}
           displaySearch={displaySearch}
           setDisplaySearch={setDisplaySearch}
+          currentTurn={currentTurn}
         />
       }
     </div>

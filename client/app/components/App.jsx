@@ -14,6 +14,7 @@ socket.on('connect', () => {
 const App = () => {
   const [allUsers, setAllUsers] = useState({});
   const [allCardsDrafted, setAllCardsDrafted] = useState([]);
+  const [currentTurn, setCurrentTurn] = useState(true);
   const [currentlyDisplayedCard, setCurrentlyDisplayedCard] = useState(
     {
       normal: '',
@@ -52,7 +53,7 @@ const App = () => {
 
   return (
     <div>
-      <TopBanner addCardToDraft={addCardToDraft} />
+      <TopBanner addCardToDraft={addCardToDraft} setCurrentTurn={setCurrentTurn} currentTurn={currentTurn} />
       <div id='app-container'>
         <div id='app-grid-top-row'>
           <div id='app-grid-top-row-left-col'>

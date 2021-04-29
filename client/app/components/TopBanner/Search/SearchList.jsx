@@ -2,7 +2,7 @@ import React from 'react';
 import SearchListItem from './SearchListItem.jsx';
 import './SearchList.css';
 
-const SearchList = ({ cardsSearched, addCardToDraft, displaySearch, setDisplaySearch }) => {
+const SearchList = ({ cardsSearched, addCardToDraft, displaySearch, setDisplaySearch, currentTurn }) => {
   if (cardsSearched.length === 0 || !displaySearch) {
     return (<div id="empty-search-list"></div>)
   }
@@ -14,6 +14,7 @@ const SearchList = ({ cardsSearched, addCardToDraft, displaySearch, setDisplaySe
           card={card}
           addCardToDraft={addCardToDraft}
           setDisplaySearch={setDisplaySearch}
+          currentTurn={currentTurn}
         />
       ))}
     </div>
