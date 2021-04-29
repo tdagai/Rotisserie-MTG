@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SearchListItem.css';
 
-const SearchListItem = ({ card, addCardToDraft, setDisplaySearch, currentTurn }) => {
+const SearchListItem = ({ card, addCardToDraft, currentTurn, addCardToStash }) => {
   const [hoverState, setHoverState] = useState(false);
 
   return (
@@ -14,6 +14,8 @@ const SearchListItem = ({ card, addCardToDraft, setDisplaySearch, currentTurn })
           e.preventDefault();
           if (currentTurn) {
             addCardToDraft(card);
+          } else {
+            addCardToStash(card)
           }
         }}
       >

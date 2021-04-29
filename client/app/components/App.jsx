@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TopBanner from './TopBanner/TopBanner.jsx';
 import DraftList from './DraftList/DraftList.jsx';
 import DisplayCardInfo from './DisplayCardInfo/DisplayCardInfo.jsx';
+import TheStash from './TheStash/TheStash.jsx';
 import io from 'socket.io-client';
 import './App.css';
 
@@ -15,6 +16,7 @@ const App = () => {
   const [allUsers, setAllUsers] = useState({});
   const [allCardsDrafted, setAllCardsDrafted] = useState([]);
   const [currentTurn, setCurrentTurn] = useState(true);
+  const [myStash, setMyStash] = useState([]);
   const [currentlyDisplayedCard, setCurrentlyDisplayedCard] = useState(
     {
       normal: '',
@@ -47,13 +49,26 @@ const App = () => {
     }
   }
 
+  const addCardToStash = (card) => {
+    console.log(card);
+    if (myStash.length === 0) {
+      setMyStash([card]);
+    } else {
+      setMyStash([...myStash, card]);
+    }
+  }
+
   const setDisplayedCard = (card) => {
     setCurrentlyDisplayedCard(card);
   }
 
   return (
     <div>
-      <TopBanner addCardToDraft={addCardToDraft} setCurrentTurn={setCurrentTurn} currentTurn={currentTurn} />
+      <TopBanner
+        addCardToDraft={addCardToDraft}
+        setCurrentTurn={setCurrentTurn}
+        currentTurn={currentTurn}
+        addCardToStash={addCardToStash} />
       <div id='app-container'>
         <div id='app-grid-top-row'>
           <div id='app-grid-top-row-left-col'>
@@ -61,17 +76,18 @@ const App = () => {
               <DraftList
                 key={userID}
                 draftedCards={allUsers[userID]}
-                displayCardInfo={setDisplayedCard}
-              />
+                displayCardInfo={setDisplayedCard} />
             ))}
           </div>
           {
             currentlyDisplayedCard.name
               ? <DisplayCardInfo card={currentlyDisplayedCard} />
-              : <div></div>
+              : <></>
           }
         </div>
-        <div id='app-grid-bottom-row'></div>
+        <TheStash
+          currentTurn={currentTurn}
+          myStash={myStash} />
       </div>
     </div>
   );
