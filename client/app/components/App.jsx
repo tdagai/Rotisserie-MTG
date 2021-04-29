@@ -50,7 +50,6 @@ const App = () => {
   }
 
   const addCardToStash = (card) => {
-    console.log(card);
     if (myStash.length === 0) {
       setMyStash([card]);
     } else {
@@ -87,7 +86,10 @@ const App = () => {
         </div>
         <TheStash
           currentTurn={currentTurn}
-          myStash={myStash} />
+          myStash={myStash}
+          setMyStash={setMyStash}
+          setDisplayedCard={setDisplayedCard}
+          addCardToDraft={addCardToDraft} />
       </div>
     </div>
   );

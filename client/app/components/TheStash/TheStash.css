@@ -1,0 +1,17 @@
+#app-grid-bottom-row {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+}
+
+.stash-image-container {
+  margin: auto 5px;
+  min-width: 146px;
+  height: 204px;
+}
+
+.stash-image-container img {
+  width: 100%;
+  height: auto;
+}
+

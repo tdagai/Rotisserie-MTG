@@ -15,11 +15,8 @@ const DraftList = ({ draftedCards = [], displayCardInfo }) => {
       {draftedCards.map((card, index) => {
         return (
           <DraftListItem
-            key={index}
+            key={card.name}
             card={card}
-            // cardName={card.name}
-            // cardImageSmall={card.small}
-            // cardImageNormal={card.normal}
             index={index}
             displayCardInfo={displayCardInfo}
           />
