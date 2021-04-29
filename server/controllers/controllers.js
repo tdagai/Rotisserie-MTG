@@ -6,7 +6,7 @@ const fetchCardsByName = async (req, res) => {
   try {
     const searchResults = await axios.get(`${URL}/cards/search?q="${term}"`);
     const formattedCards = searchResults.data.data.reduce((acc, card) => {
-      const { name, legalities, mana_cost, oracle_text, type_line, artist, flavor_text } = card;
+      const { name, legalities, mana_cost, oracle_text, type_line, artist, flavor_text, power, toughness, loyalty } = card;
       if (legalities.vintage !== "legal" && legalities.vintage !== "restricted") {
         return acc;
       }
@@ -18,6 +18,9 @@ const fetchCardsByName = async (req, res) => {
           type_line,
           artist,
           flavor_text,
+          power,
+          toughness,
+          loyalty,
           small: card.image_uris
             ? card.image_uris.small
             : card.card_faces[0].image_uris.small,
