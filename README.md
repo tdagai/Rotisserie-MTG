@@ -1,6 +1,20 @@
 # Rotisserie-MTG
-A web app for the Rotisserie MTG format
+A companion web app for the Rotisserie MTG format
 
+## What Is Rotisserie MTG?
+
+Rotisserie MTG is a fan made turn-based Magic: The Gathering draft format.
+- Players draft cards in a snaking fashion (so if there are 6 players drafting, it will go from 1 to 6 and then from 6 to 1, which means the players at the edges get to draft twice in a row).
+- Players may draft any card that is legal in the Vintage MTG format.
+- There can only be one copy of a card drafted amongst all players (so if Timmy drafted Black Lotus, no one else can).
+- Because of that, all drafted cards will be publicly known to all players.
+- Players draft until everyone has drafted 35 cards.
+- After drafting 35 cards, each player will begin constructing their final decks, adding any number of basic lands to reach a minimum of 40 cards.
+- After locking their decks, players will decide on up to 5 cards to act as their "sideboard" to swap between turns, and will not be allowed to change their decks or sideboard after that decision is made.
+  - This is done to prevent sideboarding against a specific matchup due to all cards and decks being publicly known.
+- The next step is to shuffle up and play!
+
+### In this README I will keep a changelog of the app as it goes along and improves over time
 
 # Latest Update:
 
