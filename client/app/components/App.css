@@ -5,8 +5,6 @@ html {
 
 #app {
   height: 98.5vh;
-  padding-left: 8px;
-  padding-top: 8px;
 }
 
 body {
@@ -14,11 +12,27 @@ body {
   margin: 0;
 }
 
-#draft-lists-container {
-  display: flex;
-  flex-direction: row;
+#app-container {
+  display: grid;
+  grid-template-rows: 75% 25%;
+  top: 58px;
+  height: calc(100vh - 58px);
 }
 
-#app-title {
-  margin: 10px 0;
+#app-grid-top-row {
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: 55% 45%;
+}
+
+#app-grid-top-row-left-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #000;
+}
+
+#app-grid-bottom-row {
+  grid-row-start: 2;
+  border-top: 1px solid #000;
 }

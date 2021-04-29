@@ -1,0 +1,10 @@
+#banner-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #C4C4C4;
+  border-bottom: 1px solid #000;
+}
+
+#app-title {
+  margin: 10px;
+}
