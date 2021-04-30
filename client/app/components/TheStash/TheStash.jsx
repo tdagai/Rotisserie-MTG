@@ -15,20 +15,23 @@ const TheStash = ({ currentTurn, myStash, setMyStash, setDisplayedCard, addCardT
 
   return (
     <div id='app-grid-bottom-row'>
+      <ul>
       {myStash.map((card) => (
-        <div
+        <li
           key={card.name}
           className='stash-image-container'
           onMouseOver={() => setDisplayedCard(card)}
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             if (currentTurn) {
               addCardToDraft(card);
               removeFromStash(card.name);
             }
           }} >
             <img src={card.small} alt={card.name}></img>
-        </div>
+        </li>
       ))}
+      </ul>
     </div>
   );
 }

@@ -50,10 +50,19 @@ const App = () => {
   }
 
   const addCardToStash = (card) => {
-    if (myStash.length === 0) {
-      setMyStash([card]);
-    } else {
-      setMyStash([...myStash, card]);
+    let found = false;
+    myStash.forEach(({ name }) => {
+      if (name === card.name) {
+        found = true;
+      }
+    });
+
+    if (!found && !allCardsDrafted.includes(card.name)) {
+      if (myStash.length === 0) {
+        setMyStash([card]);
+      } else {
+        setMyStash([card, ...myStash]);
+      }
     }
   }
 

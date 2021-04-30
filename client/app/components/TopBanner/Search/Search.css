@@ -10,7 +10,8 @@
 }
 
 #search-bar:focus {
-  box-shadow: 1px 1px 2px #808080;
+  box-shadow: 2px 2px 4px #808080,
+              -2px 2px 4px #808080;
   transition: box-shadow .2s;
 }
 
