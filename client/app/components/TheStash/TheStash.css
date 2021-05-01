@@ -1,16 +1,38 @@
-#app-grid-bottom-row {
+.app-grid-bottom-row {
   overflow-x: auto;
-  overflow-y: hidden;
   position: relative;
+  border-top: 1px solid #000;
+  bottom: 0;
+  transition: bottom .5s;
 }
 
-#app-grid-bottom-row ul {
-  position: absolute;
+.collapsed {
+  bottom: -100%;
+  transition: bottom .5s;
+}
+
+.collapse-stash-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.25rem;
+  transform: rotate(0deg);
+  transition: transform .5s;
+}
+
+.collapsed-btn {
+  transform: rotate(180deg);
+  transition: transform .5s;
+}
+
+.app-grid-bottom-row ul {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0;
-  overflow: auto;
+  margin: 0;
 }
 
 .stash-image-container {
