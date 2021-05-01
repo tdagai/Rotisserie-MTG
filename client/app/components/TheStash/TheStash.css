@@ -39,8 +39,9 @@
   margin: 0 5px;
   min-width: 146px;
   height: 204px;
-  border-radius: 7px;
+  border-radius: 8px;
   overflow: hidden;
+  border: 1px solid #000;
 }
 
 .stash-image-container img {
