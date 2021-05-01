@@ -2,7 +2,7 @@ import React from 'react';
 import Search from './Search/Search.jsx';
 import './TopBanner.css';
 
-const TopBanner = ({ addCardToDraft, setCurrentTurn, currentTurn, addCardToStash }) => {
+const TopBanner = ({ setCurrentTurn, currentTurn }) => {
   return (
     <div id='banner-container'>
       <h1 id='app-title'>Rotisserie MTG</h1>
@@ -12,7 +12,7 @@ const TopBanner = ({ addCardToDraft, setCurrentTurn, currentTurn, addCardToStash
         <span>{`${currentTurn}`}</span>
       </div>
       {/* THIS BUTTON IS FOR DEVELOPMENT ONLY AND WILL BE REMOVED ONCE THE TURN SYSTEM WILL BE IMPELEMNTED */}
-      <Search addCardToDraft={addCardToDraft} currentTurn={currentTurn} addCardToStash={addCardToStash} />
+      <Search currentTurn={currentTurn} />
     </div>
   );
 }

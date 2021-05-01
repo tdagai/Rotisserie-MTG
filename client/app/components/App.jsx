@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import TopBanner from './TopBanner/TopBanner.jsx';
 import DraftList from './DraftList/DraftList.jsx';
 import DisplayCardInfo from './DisplayCardInfo/DisplayCardInfo.jsx';
 import TheStash from './TheStash/TheStash.jsx';
+import { SearchContext, stashContext } from '../Contexts/Contexts.js';
 import io from 'socket.io-client';
 import './App.css';
 
@@ -72,11 +73,11 @@ const App = () => {
 
   return (
     <div>
-      <TopBanner
-        addCardToDraft={addCardToDraft}
-        setCurrentTurn={setCurrentTurn}
-        currentTurn={currentTurn}
-        addCardToStash={addCardToStash} />
+      <SearchContext.Provider value={{ addCardToDraft, addCardToStash }} >
+        <TopBanner
+          setCurrentTurn={setCurrentTurn}
+          currentTurn={currentTurn} />
+      </SearchContext.Provider>
       <div id='app-container'>
         <div id='app-grid-top-row'>
           <div id='app-grid-top-row-left-col'>
@@ -93,12 +94,11 @@ const App = () => {
               : <></>
           }
         </div>
-        <TheStash
-          currentTurn={currentTurn}
-          myStash={myStash}
-          setMyStash={setMyStash}
-          setDisplayedCard={setDisplayedCard}
-          addCardToDraft={addCardToDraft} />
+        <stashContext.Provider value={{ currentTurn, setDisplayedCard, addCardToDraft }} >
+          <TheStash
+            myStash={myStash}
+            setMyStash={setMyStash} />
+          </stashContext.Provider>
       </div>
     </div>
   );

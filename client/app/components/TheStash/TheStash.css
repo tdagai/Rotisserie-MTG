@@ -31,8 +31,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0;
-  margin: 0;
 }
 
 .stash-image-container {

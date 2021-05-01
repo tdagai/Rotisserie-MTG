@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { SearchContext } from '../../../Contexts/Contexts.js';
 import './SearchListItem.css';
 
-const SearchListItem = ({ card, addCardToDraft, currentTurn, addCardToStash }) => {
+const SearchListItem = ({ card, currentTurn }) => {
   const [hoverState, setHoverState] = useState(false);
+  const { addCardToDraft, addCardToStash } = useContext(SearchContext);
 
   return (
-    <>
+    <li>
       <div
         className='search-item'
         onMouseEnter={() => setHoverState(true)}
@@ -24,7 +26,7 @@ const SearchListItem = ({ card, addCardToDraft, currentTurn, addCardToStash }) =
       <div className={hoverState ? 'floating-image-container' : 'invisible'} >
         <img src={card.small} alt={card.name} />
       </div>
-    </>
+    </li>
   );
 }
 

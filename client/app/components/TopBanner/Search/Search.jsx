@@ -3,7 +3,7 @@ import axios from 'axios';
 import SearchList from './SearchList.jsx'
 import './Search.css';
 
-const Search = ({ addCardToDraft, currentTurn, addCardToStash }) => {
+const Search = ({ currentTurn }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [cardsSearched, setCardsSearched] = useState([]);
   const [errored, setErrored] = useState(false);
@@ -68,11 +68,9 @@ const Search = ({ addCardToDraft, currentTurn, addCardToStash }) => {
         ? <div id='search-error' >{`No cards found for the term ${searchTerm}`}</div>
         : <SearchList
           cardsSearched={cardsSearched}
-          addCardToDraft={addCardToDraft}
           displaySearch={displaySearch}
           setDisplaySearch={setDisplaySearch}
           currentTurn={currentTurn}
-          addCardToStash={addCardToStash}
         />
       }
     </div>

@@ -11,7 +11,7 @@ const DraftList = ({ draftedCards = [], displayCardInfo }) => {
   }
 
   return (
-    <div id='draft-list'>
+    <ul id='draft-list'>
       {draftedCards.map((card, index) => {
         return (
           <DraftListItem
@@ -22,7 +22,7 @@ const DraftList = ({ draftedCards = [], displayCardInfo }) => {
           />
         );
       })}
-    </div>
+    </ul>
   );
 }
 

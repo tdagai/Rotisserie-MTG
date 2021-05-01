@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import StashItem from './StashItem.jsx';
 import './TheStash.css';
 
-const TheStash = ({ currentTurn, myStash, setMyStash, setDisplayedCard, addCardToDraft }) => {
+const TheStash = ({ myStash, setMyStash }) => {
   const [collapseStash, setCollapseStash] = useState(false);
 
   const removeFromStash = (cardNameToRemove) => {
@@ -28,9 +28,6 @@ const TheStash = ({ currentTurn, myStash, setMyStash, setDisplayedCard, addCardT
           <StashItem
             key={card.name}
             card={card}
-            currentTurn={currentTurn}
-            setDisplayedCard={setDisplayedCard}
-            addCardToDraft={addCardToDraft}
             removeFromStash={removeFromStash}
           />
         ))}
