@@ -2,7 +2,7 @@ import React from 'react';
 import SearchListItem from './SearchListItem.jsx';
 import './SearchList.css';
 
-const SearchList = ({ cardsSearched, displaySearch, currentTurn }) => {
+const SearchList = ({ cardsSearched, displaySearch, }) => {
   if (cardsSearched.length === 0 || !displaySearch) {
     return (<></>);
   }
@@ -12,7 +12,6 @@ const SearchList = ({ cardsSearched, displaySearch, currentTurn }) => {
         <SearchListItem
           key={card.name}
           card={card}
-          currentTurn={currentTurn}
         />
       ))}
     </ul>

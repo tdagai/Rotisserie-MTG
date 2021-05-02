@@ -18,6 +18,7 @@ const App = () => {
   const [allCardsDrafted, setAllCardsDrafted] = useState([]);
   const [currentTurn, setCurrentTurn] = useState(true);
   const [myStash, setMyStash] = useState([]);
+  const [gridWithStash, setGridWithStash] = useState(true);
   const [currentlyDisplayedCard, setCurrentlyDisplayedCard] = useState(
     {
       normal: '',
@@ -73,12 +74,11 @@ const App = () => {
 
   return (
     <div>
-      <SearchContext.Provider value={{ addCardToDraft, addCardToStash }} >
+      <SearchContext.Provider value={{ addCardToDraft, addCardToStash, currentTurn }} >
         <TopBanner
-          setCurrentTurn={setCurrentTurn}
-          currentTurn={currentTurn} />
+          setCurrentTurn={setCurrentTurn} />
       </SearchContext.Provider>
-      <div id='app-container'>
+      <div className={`app-container${gridWithStash ? '' : ' grid-without-stash'}`}>
         <div id='app-grid-top-row'>
           <div id='app-grid-top-row-left-col'>
             {Object.keys(allUsers).map((userID) => (
@@ -97,7 +97,9 @@ const App = () => {
         <stashContext.Provider value={{ currentTurn, setDisplayedCard, addCardToDraft }} >
           <TheStash
             myStash={myStash}
-            setMyStash={setMyStash} />
+            setMyStash={setMyStash}
+            gridWithStash={gridWithStash}
+            setGridWithStash={setGridWithStash} />
           </stashContext.Provider>
       </div>
     </div>

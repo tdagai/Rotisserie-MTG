@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import StashItem from './StashItem.jsx';
 import './TheStash.css';
 
-const TheStash = ({ myStash, setMyStash }) => {
+const TheStash = ({ myStash, setMyStash, gridWithStash, setGridWithStash }) => {
   const [collapseStash, setCollapseStash] = useState(false);
 
   const removeFromStash = (cardNameToRemove) => {
@@ -20,10 +20,13 @@ const TheStash = ({ myStash, setMyStash }) => {
     <div className={`app-grid-bottom-row${collapseStash ? ' collapsed' : ''}`}>
       <button
         className={`collapse-stash-btn${collapseStash ? ' collapsed-btn' : ''}`}
-        onClick={() => setCollapseStash(!collapseStash)} >
+        onClick={() => {
+          setCollapseStash(!collapseStash);
+          setGridWithStash(!gridWithStash);
+        }} >
         <i className="fas fa-chevron-down" />
       </button>
-      <ul>
+      <ul className={collapseStash ? 'hide-stash-list' : 'show-stash-list'}>
         {myStash.map((card) => (
           <StashItem
             key={card.name}

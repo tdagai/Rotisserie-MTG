@@ -2,9 +2,9 @@ import React, { useState, useContext } from 'react';
 import { SearchContext } from '../../../Contexts/Contexts.js';
 import './SearchListItem.css';
 
-const SearchListItem = ({ card, currentTurn }) => {
+const SearchListItem = ({ card }) => {
   const [hoverState, setHoverState] = useState(false);
-  const { addCardToDraft, addCardToStash } = useContext(SearchContext);
+  const { addCardToDraft, addCardToStash, currentTurn } = useContext(SearchContext);
 
   return (
     <li>

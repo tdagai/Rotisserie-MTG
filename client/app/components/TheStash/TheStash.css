@@ -1,13 +1,14 @@
 .app-grid-bottom-row {
+  grid-row-start: 2;
   overflow-x: auto;
   position: relative;
-  border-top: 1px solid #000;
   bottom: 0;
   transition: bottom .5s;
+  background-color: #FAFAFA;
 }
 
 .collapsed {
-  bottom: -100%;
+  bottom: 0%;
   transition: bottom .5s;
 }
 
@@ -27,10 +28,21 @@
   transition: transform .5s;
 }
 
-.app-grid-bottom-row ul {
+.show-stash-list,
+.hide-stash-list {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.show-stash-list {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.hide-stash-list {
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
 .stash-image-container {
