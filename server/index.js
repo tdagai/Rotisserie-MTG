@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
   socket.on('new draft list', ({ socketID, card }) => {
     users[socketID]?.push(card);
     allDrafted.push(card.name);
-    io.emit('new card drafted', { users, allDrafted });
+    io.emit('new card drafted', { users, allDrafted, newCard: card });
   });
 
   socket.on('disconnecting', () => {

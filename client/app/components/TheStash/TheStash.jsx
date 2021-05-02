@@ -2,19 +2,8 @@ import React, { useState } from 'react';
 import StashItem from './StashItem.jsx';
 import './TheStash.css';
 
-const TheStash = ({ myStash, setMyStash, gridWithStash, setGridWithStash }) => {
+const TheStash = ({ myStash, gridWithStash, setGridWithStash }) => {
   const [collapseStash, setCollapseStash] = useState(false);
-
-  const removeFromStash = (cardNameToRemove) => {
-    const updatedStash = myStash.filter(({ name }) => {
-      return name !== cardNameToRemove
-    });
-    if (updatedStash.length === 0) {
-      setMyStash([]);
-    } else {
-      setMyStash([...updatedStash]);
-    }
-  }
 
   return (
     <div className={`app-grid-bottom-row${collapseStash ? ' collapsed' : ''}`}>
@@ -30,9 +19,7 @@ const TheStash = ({ myStash, setMyStash, gridWithStash, setGridWithStash }) => {
         {myStash.map((card) => (
           <StashItem
             key={card.name}
-            card={card}
-            removeFromStash={removeFromStash}
-          />
+            card={card} />
         ))}
       </ul>
     </div>

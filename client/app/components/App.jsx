@@ -30,14 +30,26 @@ const App = () => {
       flavor_text: '',
     });
 
+  const removeFromStash = (cardNameToRemove) => {
+    const updatedStash = myStash.filter(({ name }) => {
+      return name !== cardNameToRemove
+    });
+    if (updatedStash.length === 0) {
+      setMyStash([]);
+    } else {
+      setMyStash([...updatedStash]);
+    }
+  }
+
   socket.on('new connection', ({ users, allDrafted }) => {
     setAllUsers(users);
     setAllCardsDrafted(allDrafted);
   });
 
-  socket.on('new card drafted', ({ users, allDrafted }) => {
+  socket.on('new card drafted', ({ users, allDrafted, newCard }) => {
     setAllUsers(users);
     setAllCardsDrafted(allDrafted);
+    removeFromStash(newCard.name);
   });
 
   const addCardToDraft = (card) => {
@@ -46,6 +58,7 @@ const App = () => {
     if (/*!prevDrafted.includes(card.name) && */prevDrafted.length < 35/* && allCardsDrafted.length < 35*/) {
       prevDrafted.push(card.name);
       prevUsers[socketID].push(card);
+      removeFromStash(card.name)
       setAllUsers(prevUsers);
       socket.emit('new draft list', { socketID, card });
     }
@@ -94,13 +107,12 @@ const App = () => {
               : <></>
           }
         </div>
-        <stashContext.Provider value={{ currentTurn, setDisplayedCard, addCardToDraft }} >
+        <stashContext.Provider value={{ currentTurn, setDisplayedCard, addCardToDraft, removeFromStash }} >
           <TheStash
             myStash={myStash}
-            setMyStash={setMyStash}
             gridWithStash={gridWithStash}
             setGridWithStash={setGridWithStash} />
-          </stashContext.Provider>
+        </stashContext.Provider>
       </div>
     </div>
   );

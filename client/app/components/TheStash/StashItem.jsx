@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { stashContext } from '../../Contexts/Contexts';
 
-const StashItem = ({ card, removeFromStash }) => {
+const StashItem = ({ card }) => {
   const cursorStyle = {cursor: currentTurn ? 'pointer' : 'default'}
-  const { currentTurn, setDisplayedCard, addCardToDraft } = useContext(stashContext);
+  const { currentTurn, setDisplayedCard, addCardToDraft, removeFromStash } = useContext(stashContext);
 
   return (
     <li
