@@ -18,25 +18,10 @@ const DisplayCardInfo = ({ card }) => {
           <p id='display-card-mana' >{mana_cost}</p>
         </div>
         <p id='display-card-type-line' >{type_line}</p>
-        {
-          oracle_text
-            ? <p id='display-card-oracle-text' >{oracle_text}</p>
-            : <></>
-        }
-        {
-          flavor_text
-            ? <p id='display-card-flavor-text' ><i>{flavor_text}</i></p>
-            : <></>
-        }
-        {power
-          ? <p id='display-card-p-t' ><b>{`${power}/${toughness}`}</b></p>
-          : <></>
-        }
-        {
-          loyalty
-            ? <p id='display-card-loyalty' ><b>{`Loyalty: ${loyalty}`}</b></p>
-            : <></>
-        }
+        { oracle_text && <p id='display-card-oracle-text' >{oracle_text}</p> }
+        { flavor_text && <p id='display-card-flavor-text' ><i>{flavor_text}</i></p> }
+        { power && <p id='display-card-p-t' ><b>{`${power}/${toughness}`}</b></p> }
+        { loyalty && <p id='display-card-loyalty' ><b>{`Loyalty: ${loyalty}`}</b></p> }
         <p id='display-card-artist' >Illustrated by <i>{artist}</i></p>
       </div>
     </div>

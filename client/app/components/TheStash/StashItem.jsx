@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
-import { stashContext } from '../../Contexts/Contexts';
+import { stashContext } from '../../Contexts/Contexts.js';
+import './StashItem.css';
 
 const StashItem = ({ card }) => {
-  const cursorStyle = {cursor: currentTurn ? 'pointer' : 'default'}
   const { currentTurn, setDisplayedCard, addCardToDraft, removeFromStash } = useContext(stashContext);
+  const cursorStyle = {cursor: currentTurn ? 'pointer' : 'default'}
 
   return (
     <li
-    style={cursorStyle}
+      style={cursorStyle}
       className='stash-image-container'
       onMouseOver={() => setDisplayedCard(card)}
       onClick={(e) => {
