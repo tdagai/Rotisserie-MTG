@@ -3,8 +3,15 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 #app {
-  height: 98.5vh;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 body {
@@ -12,17 +19,24 @@ body {
   margin: 0;
 }
 
-#app-container {
+.app-container {
   display: grid;
-  grid-template-rows: 75% 25%;
+  grid-template-rows: 73% 27%;
   top: 58px;
   height: calc(100vh - 58px);
+  transition: grid-template-rows 1s;
+}
+
+.grid-without-stash {
+  grid-template-rows: 97% 3%;
+  transition: grid-template-rows 1s;
 }
 
 #app-grid-top-row {
   grid-row-start: 1;
   display: grid;
   grid-template-columns: 55% 45%;
+  border-bottom: 1px solid #000;
 }
 
 #app-grid-top-row-left-col {
@@ -30,9 +44,4 @@ body {
   align-items: center;
   justify-content: center;
   border-right: 1px solid #000;
-}
-
-#app-grid-bottom-row {
-  grid-row-start: 2;
-  border-top: 1px solid #000;
 }

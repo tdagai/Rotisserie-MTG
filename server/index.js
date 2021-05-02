@@ -8,7 +8,7 @@ const io = require('socket.io')(http);
 
 const PORT = 3000;
 const users = {};
-const allDrafted = [];
+let allDrafted = [];
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,14 +22,20 @@ io.on('connection', (socket) => {
   io.emit('new connection', { users, allDrafted });
 
   socket.on('new draft list', ({ socketID, card }) => {
-    users[socketID]?.push(card);
-    allDrafted.push(card.name);
-    io.emit('new card drafted', { users, allDrafted });
+    if (card?.name) {
+      users[socketID]?.push(card);
+      allDrafted.push(card.name);
+      socket.broadcast.emit('new card drafted', { users, allDrafted, senderID: socketID, newCard: card });
+    }
   });
 
   socket.on('disconnecting', () => {
     console.log(`user ${socket.id} disconnected`);
+    users[socket.id]?.forEach((card) => {
+      allDrafted = allDrafted.filter((cardName) => cardName !== card.name);
+    });
     delete users[socket.id];
+    io.emit('user-disconnected', { allDrafted });
   });
 });
 

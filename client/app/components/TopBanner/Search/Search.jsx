@@ -3,7 +3,7 @@ import axios from 'axios';
 import SearchList from './SearchList.jsx'
 import './Search.css';
 
-const Search = ({ addCardToDraft }) => {
+const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [cardsSearched, setCardsSearched] = useState([]);
   const [errored, setErrored] = useState(false);
@@ -37,7 +37,17 @@ const Search = ({ addCardToDraft }) => {
           onChange={({ target }) => {
             setSearchTerm(target.value);
             setErrored(false);
-          }} >
+          }}
+          onBlur={(e) => {
+            e.preventDefault();
+            setDisplaySearch(false);
+          }}
+          onFocus={() => {
+            if (searchTerm) {
+              setDisplaySearch(true);
+            }
+          }}
+        >
         </input>
         <button
           id='search-button'
@@ -58,7 +68,6 @@ const Search = ({ addCardToDraft }) => {
         ? <div id='search-error' >{`No cards found for the term ${searchTerm}`}</div>
         : <SearchList
           cardsSearched={cardsSearched}
-          addCardToDraft={addCardToDraft}
           displaySearch={displaySearch}
           setDisplaySearch={setDisplaySearch}
         />

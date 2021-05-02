@@ -11,21 +11,18 @@ const DraftList = ({ draftedCards = [], displayCardInfo }) => {
   }
 
   return (
-    <div id='draft-list'>
+    <ul id='draft-list'>
       {draftedCards.map((card, index) => {
         return (
           <DraftListItem
-            key={index}
+            key={card.name}
             card={card}
-            // cardName={card.name}
-            // cardImageSmall={card.small}
-            // cardImageNormal={card.normal}
             index={index}
             displayCardInfo={displayCardInfo}
           />
         );
       })}
-    </div>
+    </ul>
   );
 }
 

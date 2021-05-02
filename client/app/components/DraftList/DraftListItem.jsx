@@ -12,9 +12,9 @@ const DraftListItem = ({ card, index, displayCardInfo }) => {
   }
 
   return (
-    <div className='drafted-card' style={styleObj} onMouseEnter={() => displayCardInfo(card)} >
+    <li className='drafted-card' style={styleObj} onMouseEnter={() => displayCardInfo(card)} >
       <img src={card.small} alt={card.name} />
-    </div>
+    </li>
   );
 }
 

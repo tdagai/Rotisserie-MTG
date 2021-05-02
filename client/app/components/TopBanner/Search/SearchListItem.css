@@ -6,6 +6,7 @@
   background-color: #fff;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .search-item:hover {
@@ -19,6 +20,7 @@
 .floating-image-container {
   position: absolute;
   right: 110%;
+  top: 0;
   z-index: 2;
 }
 

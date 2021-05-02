@@ -1,0 +1,46 @@
+.app-grid-bottom-row {
+  grid-row-start: 2;
+  overflow-x: auto;
+  position: relative;
+  bottom: 0;
+  transition: bottom .5s;
+  background-color: #FAFAFA;
+}
+
+.collapsed {
+  bottom: 0%;
+  transition: bottom .5s;
+}
+
+.collapse-stash-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.25rem;
+  transform: rotate(0deg);
+  transition: transform .5s;
+}
+
+.collapsed-btn {
+  transform: rotate(180deg);
+  transition: transform .5s;
+}
+
+.show-stash-list,
+.hide-stash-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.show-stash-list {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.hide-stash-list {
+  opacity: 0;
+  transition: opacity 1s;
+}
