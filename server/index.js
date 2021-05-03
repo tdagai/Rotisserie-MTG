@@ -16,6 +16,7 @@ const receiveSymbols = (req, res, next) => {
     controllers.fetchSymbols()
     .then(s => {
       symbols = s;
+      io.emit('symbols', symbols);
       next();
     });
   } else {
@@ -34,6 +35,9 @@ io.on('connection', (socket) => {
   users[socket.id] = [];
   console.log(users);
   io.emit('new connection', { users, allDrafted });
+  if (symbols !== null) {
+    io.emit('symbols', symbols);
+  }
 
   socket.on('new draft list', ({ socketID, card }) => {
     if (card?.name) {
@@ -54,5 +58,6 @@ io.on('connection', (socket) => {
 });
 
 app.get('/search', (req, res) => controllers.fetchCardsByName(req, res));
+app.get('/symbols/:parsedSymbs', (req, res) => controllers.replaceStandinWithSymbol(req, res, symbols));
 
 http.listen(PORT, () => console.log(`Go to http://localhost:${PORT}`));

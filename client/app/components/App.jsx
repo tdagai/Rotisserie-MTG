@@ -17,6 +17,7 @@ const App = () => {
   const [myStash, setMyStash] = useState([]);
   const [gridWithStash, setGridWithStash] = useState(true);
   const [latestCardAdded, setLatestCardAdded] = useState({});
+  const [allSymbols, setAllSymbols] = useState(null);
   const [currentlyDisplayedCard, setCurrentlyDisplayedCard] = useState(
     {
       normal: '',
@@ -41,6 +42,12 @@ const App = () => {
       setAllCardsDrafted(allDrafted);
     });
 
+    socket.on('symbols', (symbols) => {
+      if (allSymbols === null) {
+        setAllSymbols(symbols);
+      }
+    });
+
     socket.on('user-disconnected', ({ allDrafted }) => {
       setAllCardsDrafted(allDrafted);
     });
@@ -50,6 +57,12 @@ const App = () => {
 
   /* This useEffect takes care of data being emitted from the server */
   useEffect(() => {
+    socket.on('symbols', (symbols) => {
+      if (allSymbols === null) {
+        setAllSymbols(symbols);
+      }
+    });
+
     socket.on('new card drafted', ({ users, allDrafted, newCard, senderID }) => {
       if (newCard.name !== latestCardAdded.name) {
         setAllUsers(users);
@@ -134,7 +147,13 @@ const App = () => {
                 displayCardInfo={setDisplayedCard} />
             ))}
           </div>
-          {currentlyDisplayedCard.name && <DisplayCardInfo card={currentlyDisplayedCard} />}
+          {
+            currentlyDisplayedCard.name &&
+            <DisplayCardInfo
+              card={currentlyDisplayedCard}
+              symbols={allSymbols}
+              gridWithStash={gridWithStash} />
+          }
         </div>
         <stashContext.Provider value={{ currentTurn, setDisplayedCard, addCardToDraft, removeFromStash }} >
           <TheStash

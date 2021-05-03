@@ -1,34 +1,43 @@
-#app-grid-top-row-right-col {
+.app-grid-top-row-right-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  place-items: center;
+  grid-template-rows: 15% 85%;
+  align-items: top;
+  justify-items: center;
+  column-gap: 20px;
   padding: 20px;
+  transition: grid-template-rows 1s;
 }
 
-#app-grid-top-row-right-col p {
+.right-col-no-stash {
+  grid-template-rows: 25% 75%;
+  transition: grid-template-rows 1s;
+}
+
+.app-grid-top-row-right-col p {
   margin: 0;
   margin-bottom: 16px;
 }
 
 #display-card-info-image-container {
   grid-column-start: 1;
-  width: 288px;
-  height: 400px;
-  border-radius: 15px;
-  border: 1px solid #000;
-  overflow: hidden;
+  grid-row-start: 2;
+  max-width: 290px;
+  max-height: 403px;
 }
 
 #display-card-info-image-container img {
   max-width: 100%;
   height: auto;
+  border-radius: 5%;
+  border: 1px solid #000;
 }
 
 #display-card-info-text-container {
   grid-column-start: 2;
+  grid-row-start: 2;
   padding: 10px;
-  padding-right: 20px;
-  min-height: 350px;
+  padding-left: 0;
   display: flex;
   flex-direction: column;
 }
@@ -37,6 +46,29 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+#display-card-name {
+  font-size: 1.1rem;
+}
+
+.display-mana-cost {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mana-symbol-container {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 2px;
+}
+
+.mana-symbol-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: -1px 2px 0 #333;
 }
 
 #display-card-flavor-text {

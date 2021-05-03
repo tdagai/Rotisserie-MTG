@@ -48,9 +48,19 @@ const fetchSymbols = async () => {
   } catch {
     console.log('oopsie')
   }
+};
+
+const replaceStandinWithSymbol = (req, res, symbols) => {
+  const parsedSymbs = JSON.parse(req.params.parsedSymbs);
+  const replaced = [];
+  for (let i = 0; i < parsedSymbs.length; i++) {
+    replaced.push(symbols[parsedSymbs[i]]);
+  }
+  res.status(200).send(replaced);
 }
 
 module.exports = {
   fetchCardsByName,
   fetchSymbols,
+  replaceStandinWithSymbol,
 };

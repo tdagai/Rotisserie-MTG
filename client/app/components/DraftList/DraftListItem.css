@@ -9,8 +9,6 @@
 
 .drafted-card {
   position: absolute;
-  border-radius: 8px;
-  overflow: hidden;
   margin: 5px 0 0 5px;
   width: 146px;
   height: 204px;
