@@ -3,6 +3,11 @@ import './DisplayCardInfo.css';
 
 const DisplayCardInfo = ({ card }) => {
   const { normal: image, name, mana_cost, type_line, oracle_text, flavor_text, artist, power, toughness, loyalty } = card;
+
+  const parseOracle = () => {
+
+  }
+
   return (
     <div id='app-grid-top-row-right-col'>
       <div id='display-card-info-image-container'>

@@ -37,6 +37,20 @@ const fetchCardsByName = async (req, res) => {
   }
 };
 
+const fetchSymbols = async () => {
+  try {
+    const symbols = await axios.get(`${URL}/symbology`);
+    const formattedSymbols = symbols.data.data.reduce((acc, symbol) => {
+      acc[symbol.symbol] = symbol['svg_uri'];
+      return acc;
+    }, {});
+    return formattedSymbols;
+  } catch {
+    console.log('oopsie')
+  }
+}
+
 module.exports = {
   fetchCardsByName,
+  fetchSymbols,
 };

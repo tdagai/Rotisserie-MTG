@@ -9,11 +9,25 @@ const io = require('socket.io')(http);
 const PORT = 3000;
 const users = {};
 let allDrafted = [];
+let symbols = null;
+
+const receiveSymbols = (req, res, next) => {
+  if (symbols === null) {
+    controllers.fetchSymbols()
+    .then(s => {
+      symbols = s;
+      next();
+    });
+  } else {
+    next();
+  }
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('tiny'));
 app.use(express.static('./client/dist/'));
+app.use(receiveSymbols);
 
 io.on('connection', (socket) => {
   console.log('new user connected');

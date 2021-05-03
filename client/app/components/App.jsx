@@ -69,8 +69,6 @@ const App = () => {
     }
   }, [latestCardAdded]);
 
-  console.log('rerendering');
-
   const removeFromStash = (cardNameToRemove) => {
     if (myStash.length > 0) {
       const updatedStash = myStash.filter(({ name }) => {
