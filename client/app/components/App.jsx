@@ -18,16 +18,7 @@ const App = () => {
   const [gridWithStash, setGridWithStash] = useState(true);
   const [latestCardAdded, setLatestCardAdded] = useState({});
   const [allSymbols, setAllSymbols] = useState(null);
-  const [currentlyDisplayedCard, setCurrentlyDisplayedCard] = useState(
-    {
-      normal: '',
-      name: '',
-      mana_cost: '',
-      oracle_text: '',
-      type_line: '',
-      artist: '',
-      flavor_text: '',
-    });
+  const [currentlyDisplayedCard, setCurrentlyDisplayedCard] = useState({});
 
   /* This useEffect takes care of all of the socket events */
   useEffect(() => {
@@ -148,7 +139,7 @@ const App = () => {
             ))}
           </div>
           {
-            currentlyDisplayedCard.name &&
+            currentlyDisplayedCard?.ff?.name &&
             <DisplayCardInfo
               card={currentlyDisplayedCard}
               symbols={allSymbols}

@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ManaCost from './ManaCost.jsx';
 import './DisplayCardInfo.css';
 
 const DisplayCardInfo = ({ card, symbols, gridWithStash }) => {
-  const { normal: image, name, type_line, flavor_text, artist, power, toughness, loyalty } = card;
-  let { mana_cost, oracle_text } = card;
+  const [displayFrontFace, setDisplayFrontFace] = useState(true);
+  const {
+    normal: ff_image,
+    name: ff_name,
+    type_line: ff_type_line,
+    flavor_text: ff_flavor_text,
+    artist: ff_artist,
+    power: ff_power,
+    toughness: ff_toughness,
+    loyalty: ff_loyalty
+  } = card.ff;
+  let {
+    mana_cost: ff_mana_cost,
+    oracle_text: ff_oracle_text
+  } = card.ff;
 
   const parseSymbols = (str) => {
     if (str.length === 0) { return str; }
@@ -37,37 +50,31 @@ const DisplayCardInfo = ({ card, symbols, gridWithStash }) => {
     return brokenString;
   }
 
-  mana_cost = parseSymbols(mana_cost);
+  ff_mana_cost = parseSymbols(ff_mana_cost);
 
-
-  oracle_text = parseOracleText(oracle_text);
-
+  ff_oracle_text = parseOracleText(ff_oracle_text);
 
   return (
     <div className={`app-grid-top-row-right-col${gridWithStash ? '' : ' right-col-no-stash'}`}>
       <div id='display-card-info-image-container'>
-        {
-          image
-            ? <img src={image} alt='displayed card' ></img>
-            : <div id='no-card-to-display'></div>
-        }
+        { ff_image && <img src={ff_image} alt='displayed card' ></img> }
       </div>
       <div id='display-card-info-text-container'>
         <div id='display-card-text-name-mana'>
-          <b><p id='display-card-name' >{name}</p></b>
-          {mana_cost && <ManaCost manaCost={mana_cost} />}
+          <b><p id='display-card-name' >{ff_name}</p></b>
+          {ff_mana_cost && <ManaCost manaCost={ff_mana_cost} />}
         </div>
-        <p id='display-card-type-line' >{type_line}</p>
+        <p id='display-card-type-line' >{ff_type_line}</p>
         {
-          oracle_text &&
-          oracle_text.map((line, index) => (
+          ff_oracle_text &&
+          ff_oracle_text.map((line, index) => (
             <p key={index} className='display-card-oracle-text-line' >{line}</p>
           ))
         }
-        {flavor_text && <p id='display-card-flavor-text' ><i>{flavor_text}</i></p>}
-        {power && <p id='display-card-p-t' ><b>{`${power}/${toughness}`}</b></p>}
-        {loyalty && <p id='display-card-loyalty' ><b>{`Loyalty: ${loyalty}`}</b></p>}
-        <p id='display-card-artist' >Illustrated by <i>{artist}</i></p>
+        {ff_flavor_text && <p id='display-card-flavor-text' ><i>{ff_flavor_text}</i></p>}
+        {ff_power && <p id='display-card-p-t' ><b>{`${ff_power}/${ff_toughness}`}</b></p>}
+        {ff_loyalty && <p id='display-card-loyalty' ><b>{`Loyalty: ${ff_loyalty}`}</b></p>}
+        <p id='display-card-artist' >Illustrated by <i>{ff_artist}</i></p>
       </div>
     </div>
   )

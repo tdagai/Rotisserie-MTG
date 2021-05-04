@@ -21,12 +21,10 @@ const Search = () => {
         setCardsSearched(data);
         setErrored(false);
         setDisplaySearch(true);
-        console.log('found it!');
       })
       .catch(() => {
         setErrored(true);
         setCardsSearched([]);
-        console.log('didn\'t find it!');
       });
   };
 
