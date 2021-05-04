@@ -37,11 +37,35 @@ const fetchCardsByName = async (req, res) => {
   }
 };
 
+const validateSymbols = (str) => {
+  return (
+    str === '{PW}'      ||
+    str === '{CHAOS}'   ||
+    str === '{A}'       ||
+    str === '{Y}'       ||
+    str === '{Z}'       ||
+    str === '{½}'       ||
+    str === '{14}'      ||
+    str === '{17}'      ||
+    str === '{18}'      ||
+    str === '{19}'      ||
+    str === '{20}'      ||
+    str === '{100}'     ||
+    str === '{1000000}' ||
+    str === '{∞}'       ||
+    str === '{P}'       ||
+    str === '{HW}'      ||
+    str === '{HR}'
+  );
+}
+
 const fetchSymbols = async () => {
   try {
     const symbols = await axios.get(`${URL}/symbology`);
     const formattedSymbols = symbols.data.data.reduce((acc, symbol) => {
-      acc[symbol.symbol] = symbol['svg_uri'];
+      if (!validateSymbols(symbol.symbol)) {
+        acc[symbol.symbol] = symbol['svg_uri'];
+      }
       return acc;
     }, {});
     return formattedSymbols;
@@ -50,17 +74,7 @@ const fetchSymbols = async () => {
   }
 };
 
-const replaceStandinWithSymbol = (req, res, symbols) => {
-  const parsedSymbs = JSON.parse(req.params.parsedSymbs);
-  const replaced = [];
-  for (let i = 0; i < parsedSymbs.length; i++) {
-    replaced.push(symbols[parsedSymbs[i]]);
-  }
-  res.status(200).send(replaced);
-}
-
 module.exports = {
   fetchCardsByName,
   fetchSymbols,
-  replaceStandinWithSymbol,
 };

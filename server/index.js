@@ -58,6 +58,5 @@ io.on('connection', (socket) => {
 });
 
 app.get('/search', (req, res) => controllers.fetchCardsByName(req, res));
-app.get('/symbols/:parsedSymbs', (req, res) => controllers.replaceStandinWithSymbol(req, res, symbols));
 
 http.listen(PORT, () => console.log(`Go to http://localhost:${PORT}`));

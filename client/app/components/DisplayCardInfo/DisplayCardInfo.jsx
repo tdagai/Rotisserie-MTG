@@ -7,6 +7,7 @@ const DisplayCardInfo = ({ card, symbols, gridWithStash }) => {
   let { mana_cost, oracle_text } = card;
 
   const parseSymbols = (str) => {
+    if (str.length === 0) { return str; }
     const parsed = [];
     const replaced = [];
 
@@ -32,8 +33,8 @@ const DisplayCardInfo = ({ card, symbols, gridWithStash }) => {
   };
 
   const parseOracleText = (str) => {
-    const brokenStirng = str.split('\n');
-    return brokenStirng;
+    const brokenString = str.split('\n');
+    return brokenString;
   }
 
   mana_cost = parseSymbols(mana_cost);
@@ -54,7 +55,7 @@ const DisplayCardInfo = ({ card, symbols, gridWithStash }) => {
       <div id='display-card-info-text-container'>
         <div id='display-card-text-name-mana'>
           <b><p id='display-card-name' >{name}</p></b>
-          <ManaCost manaCost={mana_cost} />
+          {mana_cost && <ManaCost manaCost={mana_cost} />}
         </div>
         <p id='display-card-type-line' >{type_line}</p>
         {
