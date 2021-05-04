@@ -1,6 +1,9 @@
 import React from 'react';
 
 const ManaCost = ({ manaCost }) => {
+  if (manaCost.length === 0) {
+    return <></>
+  }
   if (manaCost[0][0] === '{') {
     return (
       <div className='display-mana-cost' >

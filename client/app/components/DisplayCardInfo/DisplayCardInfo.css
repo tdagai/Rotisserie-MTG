@@ -19,9 +19,13 @@
   margin-bottom: 16px;
 }
 
-#display-card-info-image-container {
+#diplay-card-info-image-and-button {
   grid-column-start: 1;
   grid-row-start: 2;
+}
+
+#display-card-info-image-container {
+
   max-width: 290px;
   max-height: 403px;
 }
