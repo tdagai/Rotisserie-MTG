@@ -84,8 +84,8 @@ const App = () => {
 
   const removeFromStash = (cardNameToRemove) => {
     if (myStash.length > 0) {
-      const updatedStash = myStash.filter(({ name }) => {
-        return name !== cardNameToRemove
+      const updatedStash = myStash.filter((stashCard) => {
+        return stashCard.ff.name !== cardNameToRemove
       });
       if (updatedStash.length === 0) {
         setMyStash([]);
@@ -98,27 +98,27 @@ const App = () => {
   const addCardToDraft = (card) => {
     const prevDrafted = allCardsDrafted;
     const updatedUserData = allUsers;
-    if (!prevDrafted.includes(card.name) && prevDrafted.length < 35) {
-      prevDrafted.push(card.name);
+    if (!prevDrafted.includes(card.ff.name) && prevDrafted.length < 35) {
+      prevDrafted.push(card.ff.name);
       setAllCardsDrafted(prevDrafted);
       if (socketID) {
         updatedUserData[socketID].push(card);
         setAllUsers(updatedUserData);
       }
-      removeFromStash(card.name);
+      removeFromStash(card.ff.name);
       setLatestCardAdded(card);
     }
   }
 
   const addCardToStash = (card) => {
     let found = false;
-    myStash.forEach(({ name }) => {
-      if (name === card.name) {
+    myStash.forEach((stashCard) => {
+      if (stashCard.ff.name === card.ff.name) {
         found = true;
       }
     });
 
-    if (!found && !allCardsDrafted.includes(card.name)) {
+    if (!found && !allCardsDrafted.includes(card.ff.name)) {
       if (myStash.length === 0) {
         setMyStash([card]);
       } else {

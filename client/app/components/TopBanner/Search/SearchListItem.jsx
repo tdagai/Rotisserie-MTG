@@ -21,10 +21,10 @@ const SearchListItem = ({ card }) => {
           }
         }}
       >
-        {card.name}
+        {card.searchName}
       </div>
       <div className={hoverState ? 'floating-image-container' : 'invisible'} >
-        <img src={card.small} alt={card.name} />
+        <img src={card.ff.small} alt={card.ff.name} />
       </div>
     </li>
   );

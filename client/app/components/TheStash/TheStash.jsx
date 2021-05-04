@@ -18,7 +18,7 @@ const TheStash = ({ myStash, gridWithStash, setGridWithStash }) => {
       <ul className={collapseStash ? 'hide-stash-list' : 'show-stash-list'}>
         {myStash.map((card) => (
           <StashItem
-            key={card.name}
+            key={card.ff.name}
             card={card} />
         ))}
       </ul>

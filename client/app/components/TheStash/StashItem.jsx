@@ -15,10 +15,10 @@ const StashItem = ({ card }) => {
         e.preventDefault();
         if (currentTurn) {
           addCardToDraft(card);
-          removeFromStash(card.name);
+          removeFromStash(card.ff.name);
         }
       }} >
-      <img src={card.small} alt={card.name}></img>
+      <img src={card.ff.small} alt={card.ff.name}></img>
     </li>
   )
 };

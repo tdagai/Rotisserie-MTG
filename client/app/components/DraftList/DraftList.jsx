@@ -15,7 +15,7 @@ const DraftList = ({ draftedCards = [], displayCardInfo }) => {
       {draftedCards.map((card, index) => {
         return (
           <DraftListItem
-            key={card.name}
+            key={card.ff.name}
             card={card}
             index={index}
             displayCardInfo={displayCardInfo}

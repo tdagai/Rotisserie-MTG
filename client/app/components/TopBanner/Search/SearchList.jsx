@@ -10,7 +10,7 @@ const SearchList = ({ cardsSearched, displaySearch, }) => {
     <ul id="search-list" >
       {cardsSearched.map((card) => (
         <SearchListItem
-          key={card.name}
+          key={card.ff.name}
           card={card}
         />
       ))}
