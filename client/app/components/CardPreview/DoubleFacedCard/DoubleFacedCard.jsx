@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { CardPreviewContext } from '../../../Contexts/Contexts';
 import ManaCost from '../ManaCost.jsx';
 import OracleText from '../OracleText.jsx';
@@ -55,21 +55,27 @@ const DoubleFacedCard = ({ parseSymbols, parseOracleText }) => {
   return (
     <>
       <div className='card-preview-grid-col-1'>
-        <div className='card-preview-image-container'>
+        {/* <div className='card-preview-image-container'>
           {
             showFront
               ? <img className='front-face' src={ff_image} alt='card preview first face' ></img>
               : <img className='back-face' src={sf_image} alt='card preview sencond face' ></img>
           }
+        </div> */}
+        <div className={`${showFront ? '' : 'transformed-'}card-preview-image-container dfc-image front-face`}>
+          <img src={ff_image} alt='card preview first face' ></img>
+        </div>
+        <div className={`${showFront ? 'transformed-' : ''}card-preview-image-container dfc-image back-face`}>
+          <img src={sf_image} alt='card preview second face' ></img>
         </div>
         <button
           className='card-image-action-button'
           onClick={() => setShowFront(!showFront)} >
-            {
-              card.layout === 'transform'
+          {
+            card.layout === 'transform'
               ? 'Transform'
               : 'Turn Over'
-            }
+          }
         </button>
       </div>
       <div className='card-preview-text-container'>

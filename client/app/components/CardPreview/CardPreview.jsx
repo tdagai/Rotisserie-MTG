@@ -45,7 +45,7 @@ const CardPreview = ({ symbols, gridWithStash }) => {
       {
         layout === 'normal' || layout === 'saga'
           ? <NormalCard parseSymbols={parseSymbols} parseOracleText={parseOracleText} />
-          : layout === 'split'
+          : layout === 'split' || layout === 'flip'
             ? <SplitCard parseSymbols={parseSymbols} parseOracleText={parseOracleText} />
             : <DoubleFacedCard parseSymbols={parseSymbols} parseOracleText={parseOracleText} />
       }
