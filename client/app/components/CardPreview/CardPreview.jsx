@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import NormalCard from './NormalCard/NormalCard.jsx';
 import DoubleFacedCard from './DoubleFacedCard/DoubleFacedCard.jsx';
-import ManaCost from './ManaCost.jsx';
-import OracleText from './OracleText.jsx';
+import SplitCard from './SplitCard/SplitCard.jsx';
 import './CardPreview.css';
 import { CardPreviewContext } from '../../Contexts/Contexts.js';
 
@@ -46,7 +45,9 @@ const CardPreview = ({ symbols, gridWithStash }) => {
       {
         layout === 'normal' || layout === 'saga'
           ? <NormalCard parseSymbols={parseSymbols} parseOracleText={parseOracleText} />
-          : <DoubleFacedCard parseSymbols={parseSymbols} parseOracleText={parseOracleText} />
+          : layout === 'split'
+            ? <SplitCard parseSymbols={parseSymbols} parseOracleText={parseOracleText} />
+            : <DoubleFacedCard parseSymbols={parseSymbols} parseOracleText={parseOracleText} />
       }
 
     </div>

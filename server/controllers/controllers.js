@@ -35,7 +35,6 @@ const fetchCardsByName = async (req, res) => {
             normal: image_uris.normal,
           }
         } else if (
-            layout === 'split'      ||
             layout === 'flip'       ||
             layout === 'transform'  ||
             layout === 'modal_dfc') {
@@ -66,6 +65,26 @@ const fetchCardsByName = async (req, res) => {
             loyalty: secondFace.loyalty,
             small: secondFace.image_uris.small,
             normal: secondFace.image_uris.normal,
+          }
+        }
+        if (layout === 'split') {
+          const firstFace = card.card_faces[0];
+          const secondFace = card.card_faces[1];
+          acc[name].ff = {
+            name: firstFace.name,
+            mana_cost: firstFace.mana_cost,
+            oracle_text: firstFace.oracle_text,
+            type_line: firstFace.type_line,
+            artist: firstFace.artist,
+            small: image_uris.small,
+            normal: image_uris.normal,
+          }
+          acc[name].sf = {
+            name: secondFace.name,
+            mana_cost: secondFace.mana_cost,
+            oracle_text: secondFace.oracle_text,
+            type_line: secondFace.type_line,
+            artist: secondFace.artist,
           }
         }
       }

@@ -63,7 +63,7 @@ const DoubleFacedCard = ({ parseSymbols, parseOracleText }) => {
           }
         </div>
         <button
-          className='flip-card-button'
+          className='card-image-action-button'
           onClick={() => setShowFront(!showFront)} >
             {
               card.layout === 'transform'
