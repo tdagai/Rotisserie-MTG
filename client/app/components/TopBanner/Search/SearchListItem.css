@@ -1,6 +1,6 @@
 .search-item {
   width: 301px;
-  height: 1.5rem;
+  min-height: 1.5rem;
   padding: 1px 5px;
   padding-right: 0;
   background-color: #fff;

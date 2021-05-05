@@ -20,7 +20,7 @@ const fetchCardsByName = async (req, res) => {
           ff: {},
           sf: {},
         };
-        if (layout === 'normal') {
+        if (layout === 'normal' || layout === 'saga') {
           acc[name].ff = {
             name,
             mana_cost,
@@ -34,7 +34,11 @@ const fetchCardsByName = async (req, res) => {
             small: image_uris.small,
             normal: image_uris.normal,
           }
-        } else if (layout === 'split' || layout === 'flip' || layout === 'transform') {
+        } else if (
+            layout === 'split'      ||
+            layout === 'flip'       ||
+            layout === 'transform'  ||
+            layout === 'modal_dfc') {
           const firstFace = card.card_faces[0];
           const secondFace = card.card_faces[1];
           acc[name].ff = {

@@ -7,7 +7,7 @@ const OracleText = ({ cardText }) => {
 
   return (
     cardText.map((line, index) => (
-      <p key={index} className='display-card-oracle-text-line' >{line}</p>
+      <p key={index} className='card-preview-oracle-text-line' >{line}</p>
     ))
   )
 }

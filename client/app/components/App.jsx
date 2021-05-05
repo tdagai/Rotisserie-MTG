@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import TopBanner from './TopBanner/TopBanner.jsx';
 import DraftList from './DraftList/DraftList.jsx';
-import DisplayCardInfo from './DisplayCardInfo/DisplayCardInfo.jsx';
+import CardPreview from './CardPreview/CardPreview.jsx';
 import TheStash from './TheStash/TheStash.jsx';
-import { SearchContext, stashContext } from '../Contexts/Contexts.js';
+import { SearchContext, stashContext, CardPreviewContext } from '../Contexts/Contexts.js';
 import io from 'socket.io-client';
 import './App.css';
 
@@ -140,10 +140,11 @@ const App = () => {
           </div>
           {
             currentlyDisplayedCard?.ff?.name &&
-            <DisplayCardInfo
-              card={currentlyDisplayedCard}
-              symbols={allSymbols}
-              gridWithStash={gridWithStash} />
+            <CardPreviewContext.Provider value={{card: currentlyDisplayedCard}} >
+              <CardPreview
+                symbols={allSymbols}
+                gridWithStash={gridWithStash} />
+            </CardPreviewContext.Provider>
           }
         </div>
         <stashContext.Provider value={{ currentTurn, setDisplayedCard, addCardToDraft, removeFromStash }} >
