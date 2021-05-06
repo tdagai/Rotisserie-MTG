@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DraftListItem.css';
+import './DraftList.css';
 
 const DraftListItem = ({ card, index, displayCardInfo }) => {
 

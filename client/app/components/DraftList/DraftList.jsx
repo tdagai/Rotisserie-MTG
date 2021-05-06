@@ -1,6 +1,6 @@
 import React from 'react';
 import DraftListItem from './DraftListItem.jsx';
-import './DraftListItem.css';
+import './DraftList.css';
 
 const DraftList = ({ draftedCards = [], displayCardInfo }) => {
 
