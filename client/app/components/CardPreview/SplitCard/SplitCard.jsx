@@ -58,36 +58,39 @@ const SplitCard = ({ parseSymbols, parseOracleText }) => {
               ? (rotated ? 'rotated-' : '')
               : (flipped ? 'flipped-' : '')}card-preview-image-container
             ${layout === 'split'
-                ? `split-card-${!rotated ? '' : rotateCCW ? 'rotate-ccw' : 'rotate-cw'}`
-                : ''
-          }`}>
-        {
-          image &&
-          <img src={image} alt='displayed card' ></img>
-        }
+              ? `split-card-${!rotated ? '' : rotateCCW ? 'rotate-ccw' : 'rotate-cw'}`
+              : ''
+            }`}>
+          {
+            image &&
+            <img src={image} alt='displayed card' ></img>
+          }
         </div>
-        <button
-          className='card-image-action-button'
-          onClick={() => layout === 'split' ? setRotated(!rotated) : setFlipped(!flipped)} >
+        {
+          layout !== 'adventure' &&
+          <button
+            className='card-image-action-button'
+            onClick={() => layout === 'split' ? setRotated(!rotated) : setFlipped(!flipped)} >
             {layout === 'split' ? 'Rotate' : 'Flip'}
-        </button>
+          </button>
+        }
       </div>
       <div className='card-preview-text-container'>
         <div className='card-preview-name-mana'>
           <b><p className='card-preview-name' >{ff_name}</p></b>
-          { ff_mana_cost && <ManaCost manaCost={ff_mana_cost} /> }
+          {ff_mana_cost && <ManaCost manaCost={ff_mana_cost} />}
         </div>
         <p className='card-preview-type-line' >{ff_type_line}</p>
-        { ff_oracle_text && <OracleText cardText={ff_oracle_text} /> }
-        { ff_power && <p className='card-preview-p-t' ><b>{`${ff_power}/${ff_toughness}`}</b></p> }
+        {ff_oracle_text && <OracleText cardText={ff_oracle_text} />}
+        {ff_power && <p className='card-preview-p-t' ><b>{`${ff_power}/${ff_toughness}`}</b></p>}
         <p className='card-preview-artist' >Illustrated by <i>{ff_artist}</i></p>
         <div className='card-preview-name-mana'>
           <b><p className='card-preview-name' >{sf_name}</p></b>
-          { sf_mana_cost && <ManaCost manaCost={sf_mana_cost} /> }
+          {sf_mana_cost && <ManaCost manaCost={sf_mana_cost} />}
         </div>
         <p className='card-preview-type-line' >{sf_type_line}</p>
-        { sf_oracle_text && <OracleText cardText={sf_oracle_text} /> }
-        { sf_power && <p className='card-preview-p-t' ><b>{`${sf_power}/${sf_toughness}`}</b></p> }
+        {sf_oracle_text && <OracleText cardText={sf_oracle_text} />}
+        {sf_power && <p className='card-preview-p-t' ><b>{`${sf_power}/${sf_toughness}`}</b></p>}
         <p className='card-preview-artist' >Illustrated by <i>{sf_artist}</i></p>
       </div>
     </>

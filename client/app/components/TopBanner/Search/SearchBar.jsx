@@ -14,10 +14,18 @@ const SearchBar = ({ searchTerm, handleSearch, setDisplaySearch, setSearchTerm, 
         setDisplaySearch(false);
       }
     }}
+    onReset={(e) => {
+      e.preventDefault();
+      if (searchTerm) {
+        setSearchTerm('');
+        const searchBar = document.querySelector('#search-bar');
+        searchBar.value = '';
+      }
+    }}
   >
     <input
       id='search-bar'
-      type='search'
+      type='text'
       aria-label='Search'
       placeholder={`Add cards to ${currentTurn ? 'draft' : 'stash'}`}
       spellCheck='false'
@@ -39,6 +47,7 @@ const SearchBar = ({ searchTerm, handleSearch, setDisplaySearch, setSearchTerm, 
     }}
     >
     </input>
+    { searchTerm && <button id='clear-search-bar-button' type="reset" >X</button> }
   </form>
   )
 }

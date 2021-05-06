@@ -71,9 +71,9 @@ const CardPreview = ({ gridWithStash }) => {
   return (
     <div className={`app-grid-top-row-right-col${gridWithStash ? '' : ' right-col-no-stash'}`}>
       {
-        layout === 'normal' || layout === 'saga'
+        layout === 'normal' || layout === 'saga' || layout === 'leveler'
           ? <NormalCard parseSymbols={parseSymbols} parseOracleText={parseOracleText} />
-          : layout === 'split' || layout === 'flip'
+          : layout === 'split' || layout === 'flip' || layout === 'adventure'
             ? <SplitCard parseSymbols={parseSymbols} parseOracleText={parseOracleText} />
             : <DoubleFacedCard parseSymbols={parseSymbols} parseOracleText={parseOracleText} />
       }

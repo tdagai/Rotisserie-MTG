@@ -46,11 +46,7 @@ const Search = () => {
       {
     errored
       ? <div id='search-error' >{`No cards found for the term ${searchTerm}`}</div>
-      : <SearchList
-        cardsSearched={cardsSearched}
-        displaySearch={displaySearch}
-        setDisplaySearch={setDisplaySearch}
-      />
+      : displaySearch && <SearchList cardsSearched={cardsSearched} />
   }
     </div >
   );

@@ -6,13 +6,10 @@ const URL = 'https://api.scryfall.com';
 const fetchCardsByName = async (req, res) => {
   const { term } = req.query;
   try {
-    const searchResults = await axios.get(`${URL}/cards/search?q="${term}"`);
+    const searchResults = await axios.get(`${URL}/cards/search?q=legal%3Avintage+name%3D"${term}"`);
     const formattedCards = searchResults.data.data.reduce((acc, card) => {
-      const { legalities, layout } = card;
+      const { layout } = card;
       const { name, mana_cost, oracle_text, type_line, artist, flavor_text, power, toughness, loyalty, image_uris } = card;
-      if (legalities.vintage !== "legal" && legalities.vintage !== "restricted") {
-        return acc;
-      }
       if (!acc[name]) {
         acc[name] = {
           searchName: name,
@@ -20,7 +17,7 @@ const fetchCardsByName = async (req, res) => {
           ff: {},
           sf: {},
         };
-        if (layout === 'normal' || layout === 'saga') {
+        if (layout === 'normal' || layout === 'saga' || layout === 'leveler') {
           acc[name].ff = {
             name,
             mana_cost,
@@ -64,7 +61,7 @@ const fetchCardsByName = async (req, res) => {
             normal: secondFace.image_uris.normal,
           }
         }
-        if (layout === 'split' || layout === 'flip') {
+        if (layout === 'split' || layout === 'flip' || layout === 'adventure') {
           const firstFace = card.card_faces[0];
           const secondFace = card.card_faces[1];
           acc[name].keywords = card.keywords;

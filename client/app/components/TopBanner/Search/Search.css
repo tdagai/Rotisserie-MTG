@@ -61,3 +61,17 @@
   justify-content: center;
   align-items: center;
 }
+
+#clear-search-bar-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+}
