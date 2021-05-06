@@ -132,14 +132,9 @@ const App = () => {
       </SearchContext.Provider>
       <div className={`app-container${gridWithStash ? '' : ' grid-without-stash'}`}>
         <div id='app-grid-top-row'>
-          <div id='app-grid-top-row-left-col'>
-            {Object.keys(allUsers).map((userID) => (
-              <DraftList
-                key={userID}
-                draftedCards={allUsers[userID]}
-                displayCardInfo={setDisplayedCard} />
-            ))}
-          </div>
+          <DraftList
+            allUsers={allUsers}
+            setDisplayedCard={setDisplayedCard} />
           {
             currentlyDisplayedCard?.ff?.name &&
             <CardPreviewContext.Provider value={{card: currentlyDisplayedCard, symbols: allSymbols}} >
