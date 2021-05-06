@@ -140,3 +140,18 @@
   font-family: "MPlantin", Georgia, "Times New Roman", serif;
   font-weight: 300;
 }
+
+.card-preview-oracle-text-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.oracle-text-image-container {
+  height: 1rem;
+  width: 1rem;
+}
+
+.oracle-text-image-container img {
+  width: 100%;
+  height: auto;
+}

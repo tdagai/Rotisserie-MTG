@@ -1,6 +1,7 @@
 .app-grid-bottom-row {
   grid-row-start: 2;
   overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
   bottom: 0;
   transition: bottom .5s;
@@ -42,5 +43,5 @@
 
 .hide-stash-list {
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 1s, bottom 2s;
 }

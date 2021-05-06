@@ -55,13 +55,6 @@ const DoubleFacedCard = ({ parseSymbols, parseOracleText }) => {
   return (
     <>
       <div className='card-preview-grid-col-1'>
-        {/* <div className='card-preview-image-container'>
-          {
-            showFront
-              ? <img className='front-face' src={ff_image} alt='card preview first face' ></img>
-              : <img className='back-face' src={sf_image} alt='card preview sencond face' ></img>
-          }
-        </div> */}
         <div className={`${showFront ? '' : 'transformed-'}card-preview-image-container dfc-image front-face`}>
           <img src={ff_image} alt='card preview first face' ></img>
         </div>

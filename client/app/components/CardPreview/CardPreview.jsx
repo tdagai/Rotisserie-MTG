@@ -5,8 +5,8 @@ import SplitCard from './SplitCard/SplitCard.jsx';
 import './CardPreview.css';
 import { CardPreviewContext } from '../../Contexts/Contexts.js';
 
-const CardPreview = ({ symbols, gridWithStash }) => {
-  const { card } = useContext(CardPreviewContext);
+const CardPreview = ({ gridWithStash }) => {
+  const { card, symbols } = useContext(CardPreviewContext);
   const { layout } = card;
 
   const parseSymbols = (str) => {
@@ -39,6 +39,34 @@ const CardPreview = ({ symbols, gridWithStash }) => {
     const brokenString = str.split('\n');
     return brokenString;
   }
+
+  // const parseOracleText = (str) => {
+  //   const brokenString = str.split('\n');
+  //   let lastParsed = 0;
+  //   const parsedLines = [];
+  //   const parsedLine = [];
+  //   brokenString.forEach((line) => {
+  //     for (let i = 0; i <= line.length; i++) {
+  //       if (i === line.length) {
+  //         parsedLine.push(line.substring(lastParsed, i));
+  //         parsedLines.push(parsedLine);
+  //         break;
+  //       }
+  //       if (line[i] === '{') {
+  //         if (i !== 0) {
+  //           parsedLine.push(line.substring(lastParsed, i));
+  //           lastParsed = i;
+  //         }
+  //         while (line[i] !== '}') {
+  //           i++;
+  //         }
+  //         parsedLine.push(line.substring(lastParsed, i + 1));
+  //         lastParsed = i + 1;
+  //       }
+  //     }
+  //   })
+  //   return parsedLines;
+  // }
 
   return (
     <div className={`app-grid-top-row-right-col${gridWithStash ? '' : ' right-col-no-stash'}`}>

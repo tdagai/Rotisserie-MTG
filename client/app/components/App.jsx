@@ -140,9 +140,8 @@ const App = () => {
           </div>
           {
             currentlyDisplayedCard?.ff?.name &&
-            <CardPreviewContext.Provider value={{card: currentlyDisplayedCard}} >
+            <CardPreviewContext.Provider value={{card: currentlyDisplayedCard, symbols: allSymbols}} >
               <CardPreview
-                symbols={allSymbols}
                 gridWithStash={gridWithStash} />
             </CardPreviewContext.Provider>
           }
