@@ -3,6 +3,7 @@ const app = express();
 const http = require('http').createServer(app);
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const compression = require('compression');
 const controllers = require('./controllers/controllers.js');
 const io = require('socket.io')(http);
 
@@ -27,6 +28,7 @@ const receiveSymbols = (req, res, next) => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('tiny'));
+app.use(compression());
 app.use(express.static('./client/dist/'));
 app.use(receiveSymbols);
 

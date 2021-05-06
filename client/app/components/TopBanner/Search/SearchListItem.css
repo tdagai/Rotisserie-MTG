@@ -1,8 +1,7 @@
 .search-item {
-  width: 301px;
+  width: 100%;
   min-height: 1.5rem;
-  padding: 1px 5px;
-  padding-right: 0;
+  padding: 1px 0 1px 10px;
   background-color: #fff;
   display: flex;
   align-items: center;

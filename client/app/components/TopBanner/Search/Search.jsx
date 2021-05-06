@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchList from './SearchList.jsx'
+import SearchBar from './SearchBar.jsx';
 import './Search.css';
 
 const Search = () => {
@@ -8,6 +9,7 @@ const Search = () => {
   const [cardsSearched, setCardsSearched] = useState([]);
   const [errored, setErrored] = useState(false);
   const [displaySearch, setDisplaySearch] = useState(true);
+  const [focused, setFocused] = useState(false);
 
   useEffect(() => {
     if (!searchTerm) {
@@ -29,50 +31,28 @@ const Search = () => {
   };
 
   return (
-    <div id='search-area'>
-      <form>
-        <input
-          id='search-bar'
-          placeholder="search..."
-          onChange={({ target }) => {
-            setSearchTerm(target.value);
-            setErrored(false);
-          }}
-          onBlur={(e) => {
-            e.preventDefault();
-            setDisplaySearch(false);
-          }}
-          onFocus={() => {
-            if (searchTerm) {
-              setDisplaySearch(true);
-            }
-          }}
-        >
-        </input>
-        <button
-          id='search-button'
-          onClick={(e) => {
-            e.preventDefault();
-            if (searchTerm) {
-              handleSearch();
-            } else {
-              setDisplaySearch(false);
-            }
-          }
-        }
-        >
-          <i className="fas fa-search" />
-        </button>
-      </form>
-      {errored
-        ? <div id='search-error' >{`No cards found for the term ${searchTerm}`}</div>
-        : <SearchList
-          cardsSearched={cardsSearched}
-          displaySearch={displaySearch}
-          setDisplaySearch={setDisplaySearch}
-        />
-      }
-    </div>
+    <div
+      id={`search-area${focused ? '-focused' : ''}`}
+      className={`${displaySearch ? 'show-results' : 'hide-results'}`}
+      onFocus={() => setFocused(true)}
+      onBlur={(e) => { e.preventDefault(); setFocused(false) }} >
+      <span id='input-prepend' ><i className="fas fa-search"></i></span>
+      <SearchBar
+        searchTerm={searchTerm}
+        handleSearch={handleSearch}
+        setDisplaySearch={setDisplaySearch}
+        setSearchTerm={setSearchTerm}
+        setErrored={setErrored} />
+      {
+    errored
+      ? <div id='search-error' >{`No cards found for the term ${searchTerm}`}</div>
+      : <SearchList
+        cardsSearched={cardsSearched}
+        displaySearch={displaySearch}
+        setDisplaySearch={setDisplaySearch}
+      />
+  }
+    </div >
   );
 };
 
