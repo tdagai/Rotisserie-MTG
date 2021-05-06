@@ -6,12 +6,12 @@ const DraftList = ({ draftedCards = [], displayCardInfo }) => {
 
   if (draftedCards.length === 0) {
     return (
-      <div id='draft-list' ></div>
+      <div className='draft-list' ></div>
     );
   }
 
   return (
-    <ul id='draft-list'>
+    <ul className='draft-list'>
       {draftedCards.map((card, index) => {
         return (
           <DraftListItem

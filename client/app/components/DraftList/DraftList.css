@@ -1,11 +1,12 @@
-#draft-list {
+.draft-list {
   position: relative;
-  height: 600px;
-  width: 500px;
+  min-height: 600px;
+  min-width: 500px;
   overflow: auto;
   border: 3px solid #000;
   background-color: #F0F0F0;
   padding-top: 5px;
+  margin: 0 100px;
 }
 
 .drafted-card {

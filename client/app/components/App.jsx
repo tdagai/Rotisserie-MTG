@@ -55,10 +55,12 @@ const App = () => {
     });
 
     socket.on('new card drafted', ({ users, allDrafted, newCard, senderID }) => {
-      if (newCard.name !== latestCardAdded.name) {
+      console.log('new card:', newCard);
+      console.log('latest card added:', latestCardAdded);
+      if (newCard.searchName !== latestCardAdded.searchName) {
         setAllUsers(users);
         setAllCardsDrafted(allDrafted);
-        removeFromStash(newCard.name);
+        removeFromStash(newCard.ff.name);
       }
     });
 
@@ -67,7 +69,7 @@ const App = () => {
   /* This useEffect takes care of emitting data to the server */
   /* through sockets when a user adds a new card to the draft */
   useEffect(() => {
-    if (latestCardAdded?.name) {
+    if (latestCardAdded?.ff?.name) {
       console.log('emitting new card')
       socket.emit('new draft list', { socketID, card: latestCardAdded });
     }
