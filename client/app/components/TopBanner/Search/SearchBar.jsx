@@ -47,7 +47,7 @@ const SearchBar = ({ searchTerm, handleSearch, setDisplaySearch, setSearchTerm, 
     }}
     >
     </input>
-    { searchTerm && <button id='clear-search-bar-button' type="reset" >X</button> }
+    { searchTerm && <button aria-label='clear search bar button' id='clear-search-bar-button' type="reset" >X</button> }
   </form>
   )
 }

@@ -62,6 +62,7 @@ const DoubleFacedCard = ({ parseSymbols, parseOracleText }) => {
           <img src={sf_image} alt='card preview second face' ></img>
         </div>
         <button
+          aria-label='image action button'
           className='card-image-action-button'
           onClick={() => setShowFront(!showFront)} >
           {

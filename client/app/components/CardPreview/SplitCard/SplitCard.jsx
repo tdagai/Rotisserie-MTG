@@ -69,6 +69,7 @@ const SplitCard = ({ parseSymbols, parseOracleText }) => {
         {
           layout !== 'adventure' &&
           <button
+            aria-label='image action button'
             className='card-image-action-button'
             onClick={() => layout === 'split' ? setRotated(!rotated) : setFlipped(!flipped)} >
             {layout === 'split' ? 'Rotate' : 'Flip'}

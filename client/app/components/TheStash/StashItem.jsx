@@ -20,7 +20,7 @@ const StashItem = ({ card, collapsed }) => {
       {
         currentTurn && showButtons && !collapsed &&
         <button
-          name='Add To Draft Button'
+          aria-label='Add To Draft Button'
           className='stash-add-to-draft'
           onClick={(e) => {
             e.preventDefault();
@@ -34,7 +34,7 @@ const StashItem = ({ card, collapsed }) => {
       {
         showButtons && !collapsed &&
         <button
-          name='Remove From Stash Button'
+          aria-label='Remove From Stash Button'
           className='stash-remove-from-stash'
           onClick={(e) => {
             e.preventDefault();

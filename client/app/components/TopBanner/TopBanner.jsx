@@ -12,7 +12,11 @@ const TopBanner = ({ setCurrentTurn }) => {
       <h1 id='app-title'>Rotisserie MTG</h1>
       {/* THIS BUTTON IS FOR DEVELOPMENT ONLY AND WILL BE REMOVED ONCE THE TURN SYSTEM WILL BE IMPELEMNTED */}
       <div id='turn-changer'>
-        <button  onClick={() => { setCurrentTurn(!currentTurn) }} >change turn</button>
+        <button
+          aria-label='change turn button'
+          onClick={() => {
+            setCurrentTurn(!currentTurn)
+          }} >change turn</button>
         <span>{`${currentTurn}`}</span>
       </div>
       {/* THIS BUTTON IS FOR DEVELOPMENT ONLY AND WILL BE REMOVED ONCE THE TURN SYSTEM WILL BE IMPELEMNTED */}
