@@ -8,6 +8,7 @@ const TheStash = ({ myStash, gridWithStash, setGridWithStash }) => {
   return (
     <div className={`app-grid-bottom-row${collapseStash ? ' collapsed' : ''}`}>
       <button
+        aria-label='collapse stash button'
         className={`collapse-stash-btn${collapseStash ? ' collapsed-btn' : ''}`}
         onClick={() => {
           setCollapseStash(!collapseStash);
@@ -18,7 +19,8 @@ const TheStash = ({ myStash, gridWithStash, setGridWithStash }) => {
       <ul className={collapseStash ? 'hide-stash-list' : 'show-stash-list'}>
         {myStash.map((card) => (
           <StashItem
-            key={card.name}
+            key={card.ff.name}
+            collapsed={collapseStash}
             card={card} />
         ))}
       </ul>

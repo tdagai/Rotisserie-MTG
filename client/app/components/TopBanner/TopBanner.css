@@ -1,4 +1,5 @@
 #banner-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   background-color: #C4C4C4;
@@ -10,5 +11,5 @@
 }
 
 #turn-changer {
-  margin: auto;
+  margin: auto 50px;
 }

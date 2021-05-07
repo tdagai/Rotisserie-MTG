@@ -1,8 +1,7 @@
 .search-item {
-  width: 301px;
-  height: 1.5rem;
-  padding: 1px 5px;
-  padding-right: 0;
+  width: 100%;
+  min-height: 1.5rem;
+  padding: 1px 0 1px 10px;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -13,7 +12,7 @@
   background-color: #dddddd;
 }
 
-.invisible {
+/* .invisible {
   display: none;
 }
 
@@ -29,4 +28,4 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 4px 2px #808080;
-}
+} */

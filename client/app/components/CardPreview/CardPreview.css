@@ -1,0 +1,157 @@
+.app-grid-top-row-right-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15% 85%;
+  align-items: start;
+  justify-items: center;
+  column-gap: 20px;
+  padding: 20px;
+  transition: grid-template-rows 1s;
+}
+
+.right-col-no-stash {
+  grid-template-rows: 25% 75%;
+  transition: grid-template-rows 1s;
+}
+
+.app-grid-top-row-right-col p {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.card-preview-grid-col-1 {
+  position: relative;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 440px;
+  min-width: 290px;
+}
+
+.dfc-image {
+  position: absolute;
+  top: 0;
+}
+
+.front-face {
+  z-index: 2;
+  transform: rotate(0deg);
+  transition: all .8s;
+  backface-visibility: hidden;
+}
+
+.card-preview-image-container,
+.flipped-card-preview-image-container,
+.transformed-card-preview-image-container {
+  max-width: 290px;
+  max-height: 403px;
+}
+
+.card-preview-image-container {
+  transform: rotate(0deg);
+  transition: all .8s;
+}
+
+.transformed-card-preview-image-container {
+  transform: rotateY(180deg);
+  transition: all .8s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.flipped-card-preview-image-container {
+  transform: rotate(180deg);
+  transition: transform .8s;
+}
+
+.rotated-card-preview-image-container {
+  max-width: 234px;
+  max-height: 325px;
+  transition: all .8s;
+}
+
+.card-preview-image-container img,
+.flipped-card-preview-image-container img,
+.rotated-card-preview-image-container img,
+.transformed-card-preview-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5%;
+  border: 1px solid #000;
+}
+
+.split-card-rotate-cw {
+  transform: rotate(90deg);
+  transition: all .8s;
+}
+
+.split-card-rotate-ccw {
+  transform: rotate(-90deg);
+  transition: all .8s;
+}
+
+.card-image-action-button {
+  position: absolute;
+  bottom: 0;
+  width: 60%;
+}
+
+.card-preview-text-container {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  padding: 10px;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-preview-name-mana {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-preview-name {
+  font-size: 1.1rem;
+}
+
+.display-mana-cost {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mana-symbol-container {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 2px;
+}
+
+.mana-symbol-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: -1px 2px 0 #333;
+}
+
+.display-card-flavor-text {
+  font-family: "MPlantin", Georgia, "Times New Roman", serif;
+  font-weight: 300;
+}
+
+.card-preview-oracle-text-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.oracle-text-image-container {
+  height: 1rem;
+  width: 1rem;
+}
+
+.oracle-text-image-container img {
+  width: 100%;
+  height: auto;
+}

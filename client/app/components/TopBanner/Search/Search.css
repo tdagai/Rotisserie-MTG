@@ -1,46 +1,96 @@
-#search-bar {
-  width: 300px;
-  height: 1.75em;
-  outline: none;
-  font-size: 0.9rem;
+#search-area,
+#search-area-focused {
+  position: absolute;
+  z-index: 3;
+  top: 12.5%;
+  right: 15px;
   border: 1px solid #000;
-  border-radius: 5px;
-  padding-left: 5px;
+  overflow: hidden;
+}
+
+.show-results {
+  border-radius: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.hide-results {
+  border-radius: 20px;
+}
+
+#search-area {
+  box-shadow: 1px 1px 2px #a0a0a0,
+              -1px 1px 2px #a0a0a0;
   transition: box-shadow .2s;
 }
 
-#search-bar:focus {
+#search-area-focused {
   box-shadow: 2px 2px 4px #808080,
               -2px 2px 4px #808080;
   transition: box-shadow .2s;
 }
 
-#search-area {
-  margin: auto;
-  margin-right: 15px;
+#search-bar {
+  width: 25rem;
+  height: 2.25rem;
+  outline: none;
+  font-size: 1rem;
+  border: none;
+  padding: 0 2rem 0 2.25rem;
+  transition: box-shadow .2s;
 }
 
 #search-error {
-  position: absolute;
   background-color: hsl(0, 100%, 95%);
   color: hsl(6, 75%, 49%);
-  border: 1px solid #000;
-  width: 304px;
-  height: 1.75em;
-  padding: 1px 3px;
-  padding-top: 10px;
-  padding-right: 0;
-  font-size: 1rem;
-  box-shadow: 1px 1px 2px #808080,
-              -1px 1px 2px #808080;
+  border-top: 1px solid #888;
+  max-width: 100%;
+  min-height: 1.5rem;
+  padding: 1px 0 1px 10px;
+  display: flex;
+  align-items: center;
+  word-wrap: break-word;
 }
 
-#search-button {
+#input-prepend {
   position: absolute;
-  right: 15px;
-  border: none;
-  background-color: transparent;
-  margin-top: 6px;
+  left: 0;
+  width: 2.25rem;
+  height: 2.25rem;
   font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#clear-search-bar-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  font-weight: 600;
+  padding: 0;
   cursor: pointer;
+}
+
+.invisible {
+  display: none;
+}
+
+.floating-image-container {
+  position: absolute;
+  right: 110%;
+  top: 0;
+  z-index: 2;
+}
+
+.floating-image-container img {
+  border: 1px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 4px 2px #808080;
 }

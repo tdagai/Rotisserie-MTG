@@ -2,15 +2,12 @@ import React from 'react';
 import SearchListItem from './SearchListItem.jsx';
 import './SearchList.css';
 
-const SearchList = ({ cardsSearched, displaySearch, }) => {
-  if (cardsSearched.length === 0 || !displaySearch) {
-    return (<></>);
-  }
+const SearchList = ({ cardsSearched }) => {
   return (
     <ul id="search-list" >
       {cardsSearched.map((card) => (
         <SearchListItem
-          key={card.name}
+          key={card.ff.name}
           card={card}
         />
       ))}
