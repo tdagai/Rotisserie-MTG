@@ -2,7 +2,7 @@ import React from 'react';
 import DraftListItem from './DraftListItem.jsx';
 import './DraftList.css';
 
-const DraftList = ({ allUsers, displayCardInfo }) => {
+const DraftList = ({ allUsers, setDisplayedCard }) => {
 
   return (
     <div id='app-grid-top-row-left-col'>
@@ -14,7 +14,7 @@ const DraftList = ({ allUsers, displayCardInfo }) => {
                 key={card.ff.name}
                 card={card}
                 index={index}
-                displayCardInfo={displayCardInfo}
+                setDisplayedCard={setDisplayedCard}
               />
             );
           })}

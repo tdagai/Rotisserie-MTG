@@ -33,7 +33,7 @@ const Search = () => {
   return (
     <div
       id={`search-area${focused ? '-focused' : ''}`}
-      className={`${displaySearch ? 'show-results' : 'hide-results'}`}
+      className={`${displaySearch || errored ? 'show-results' : 'hide-results'}`}
       onFocus={() => setFocused(true)}
       onBlur={(e) => { e.preventDefault(); setFocused(false) }} >
       <span id='input-prepend' ><i className="fas fa-search"></i></span>

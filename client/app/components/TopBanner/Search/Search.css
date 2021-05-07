@@ -10,8 +10,8 @@
 
 .show-results {
   border-radius: 20px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .hide-results {
@@ -36,7 +36,7 @@
   outline: none;
   font-size: 1rem;
   border: none;
-  padding: 0 5px 0 2.25rem;
+  padding: 0 2rem 0 2.25rem;
   transition: box-shadow .2s;
 }
 
@@ -44,11 +44,12 @@
   background-color: hsl(0, 100%, 95%);
   color: hsl(6, 75%, 49%);
   border-top: 1px solid #888;
-  width: 100%;
+  max-width: 100%;
   min-height: 1.5rem;
   padding: 1px 0 1px 10px;
   display: flex;
   align-items: center;
+  word-wrap: break-word;
 }
 
 #input-prepend {

@@ -16,6 +16,7 @@ const SearchBar = ({ searchTerm, handleSearch, setDisplaySearch, setSearchTerm, 
     }}
     onReset={(e) => {
       e.preventDefault();
+      setErrored(false);
       if (searchTerm) {
         setSearchTerm('');
         const searchBar = document.querySelector('#search-bar');
