@@ -107,28 +107,21 @@ After giving it some thought, the potential for missclicks and accidental additi
 
 ## In Conclusion
 
-### My Next Move
-
 So first of all some general thoughts:
 
-I am happy with the progrress I've made on the app so far, and think that the main part of the app (the draft page) is mostly complete.
-HOWEVER, while it is mostly complete in functionality, it is nowhere near complete in accessibility and presentation.
+I've come such a long way from the basic square and a search bar I started with to what the app looks like today! I've been able to stay on top of schedule and complete all the features I had planned for the app and that makes me really happy!
 
-#### Because of that, I have a few things I'd like to work on for the next update:
-- One of the main things I'd like to have worked out by the next update is ***accessibility***, both in the sense of adding names aria-labels to tags to make it more screen-reader accessible, but also using introducing elements of responsive design to make sure it is also device friendly.
+### My Next Move
 
-#### Functionality-wise, the two areas that lack the most as of right now are the draft areas and the card preview.
-- The card preview has very poor support for Magic cards right now and was just kinda thrown together for testing purposes (for example, you can't look at double-faced cards right now and the formatting for the oracle text is really off).
-  - Another main focus for the next update will be to add test cases that will aid me in increasing the support for Magic cards and making sure any card can be drafted and viewed without a hitch.
+I have two main things I'd like to get done by the next update:
 
-- The draft area is a mess right now. Whenever more than one player join the draft, all draft piles are smooshed together and it really does not look great right now. Some thoughts I have on that are as follows:
-  - I would like to turn the draft area into a carousel, where a user will be able to click through and see all players' draft piles.
-  - This is also something that will be affected by responsive design and I'll have to put some thought and consideration into how I'd like to implement that for smaller screens.
-  - One of the biggest issues with the draft area I foresee right now is the lack of persistance in data that I have right now. Since players aren't maintained once they leave, things could get complicated very quickly, and so I think this part might have to wait for a future update, perhaps after a room system is added.
+- The first one is going to be turning the draft area into a carrousel. I've already began preparing for that by making some internal changes to the way the code for the draft pile was laid out and I will begin taking care of that tomorrow.
+- The next thing I'd like to get done is deployment! I am really excited about being able to share the Rotisserie MTG format with the world and I can't wait to have people try it out on a live and deployed website!
 
-##### Despite having a lot of hard work ahead of me, I am really happy with how the app is turning out so far!
+##### Last Wednesday, I set myself the goal of making the app "presentable" by this Friday (tomorrow, May 7th), and I put some gas and worked really hard and I feel that while it may never look "perfect" to me because I'm always looking forward and thinking of what features I can add next, I do feel like at the very least after adding the carrousel feature I will be about there and be ready to deploy - and that makes me not only really happy, but also really proud of both myself and the work I do, which is a very rare feat for me.
 
-##### More Updates To Come Soon!
+##### More Updates To Come Soon! ![pixilart-drawing](https://user-images.githubusercontent.com/7985557/117416092-e0eba380-aecd-11eb-8783-bac3c9c5e094.png)
+
 
 ##### Teva
 
