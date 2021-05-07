@@ -13,3 +13,17 @@
 #turn-changer {
   margin: auto 50px;
 }
+
+#floating-card-container {
+  position: absolute;
+  right: 500px;
+  top: 40px;
+  z-index: 2;
+}
+
+#floating-card-container img {
+  border: 1px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 4px 2px #808080;
+}
