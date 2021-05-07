@@ -5,12 +5,14 @@
   position: relative;
   bottom: 0;
   transition: bottom .5s;
+  -webkit-transition: bottom .5s;
   background-color: #FAFAFA;
 }
 
 .collapsed {
   bottom: 0%;
   transition: bottom .5s;
+  -webkit-transition: bottom .5s;
 }
 
 .collapse-stash-btn {
@@ -22,11 +24,13 @@
   font-size: 1.25rem;
   transform: rotate(0deg);
   transition: transform .5s;
+  -webkit-transition: transform .5s;
 }
 
 .collapsed-btn {
   transform: rotate(180deg);
   transition: transform .5s;
+  -webkit-transition: transform .5s;
 }
 
 .show-stash-list,
@@ -39,9 +43,11 @@
 .show-stash-list {
   opacity: 1;
   transition: opacity 0.5s;
+  -webkit-transition: opacity .5s;
 }
 
 .hide-stash-list {
   opacity: 0;
   transition: opacity 1s, bottom 2s;
+  -webkit-transition: opacity 1s, bottom 2s;
 }

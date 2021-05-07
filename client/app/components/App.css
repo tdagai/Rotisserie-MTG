@@ -25,11 +25,13 @@ body {
   top: 58px;
   height: calc(100vh - 58px);
   transition: grid-template-rows 1s;
+  -webkit-transition: grid-template-rows 1s;
 }
 
 .grid-without-stash {
   grid-template-rows: 97% 3%;
   transition: grid-template-rows 1s;
+  -webkit-transition: grid-template-rows 1s;
 }
 
 #app-grid-top-row {
