@@ -37,17 +37,17 @@ const Search = () => {
       onFocus={() => setFocused(true)}
       onBlur={(e) => { e.preventDefault(); setFocused(false) }} >
       <span id='input-prepend' ><i className="fas fa-search"></i></span>
-      <SearchBar
-        searchTerm={searchTerm}
-        handleSearch={handleSearch}
-        setDisplaySearch={setDisplaySearch}
-        setSearchTerm={setSearchTerm}
-        setErrored={setErrored} />
+        <SearchBar
+          searchTerm={searchTerm}
+          handleSearch={handleSearch}
+          setDisplaySearch={setDisplaySearch}
+          setSearchTerm={setSearchTerm}
+          setErrored={setErrored} />
       {
-    errored
-      ? <div id='search-error' >{`No cards found for the term ${searchTerm}`}</div>
-      : displaySearch && <SearchList cardsSearched={cardsSearched} />
-  }
+        errored
+          ? <div id='search-error' >{`No cards found for the term ${searchTerm}`}</div>
+          : displaySearch && <SearchList cardsSearched={cardsSearched} />
+      }
     </div >
   );
 };

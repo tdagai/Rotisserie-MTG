@@ -10,6 +10,9 @@ const fetchCardsByName = async (req, res) => {
     const formattedCards = searchResults.data.data.reduce((acc, card) => {
       const { layout } = card;
       const { name, mana_cost, oracle_text, type_line, artist, flavor_text, power, toughness, loyalty, image_uris } = card;
+      if (layout === 'meld') {
+        return acc;
+      }
       if (!acc[name]) {
         acc[name] = {
           searchName: name,

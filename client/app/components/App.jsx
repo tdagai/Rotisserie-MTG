@@ -55,8 +55,6 @@ const App = () => {
     });
 
     socket.on('new card drafted', ({ users, allDrafted, newCard, senderID }) => {
-      console.log('new card:', newCard);
-      console.log('latest card added:', latestCardAdded);
       if (newCard.searchName !== latestCardAdded.searchName) {
         setAllUsers(users);
         setAllCardsDrafted(allDrafted);
@@ -70,7 +68,6 @@ const App = () => {
   /* through sockets when a user adds a new card to the draft */
   useEffect(() => {
     if (latestCardAdded?.ff?.name) {
-      console.log('emitting new card')
       socket.emit('new draft list', { socketID, card: latestCardAdded });
     }
   }, [latestCardAdded]);
