@@ -55,7 +55,7 @@ io.on('connection', (socket) => {
       allDrafted = allDrafted.filter((cardName) => cardName !== card.ff.name);
     });
     delete users[socket.id];
-    io.emit('user-disconnected', { allDrafted });
+    io.emit('user-disconnected', { allDrafted, disconnectedID: socket.id });
   });
 });
 
