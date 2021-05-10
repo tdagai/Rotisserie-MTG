@@ -42,3 +42,12 @@
 #draft-carousel-back {
   left: 5vw;
 }
+
+/* .not-shifted {
+  left: 0;
+}
+
+.left-shifted {
+  left: calc((25vw + 250px + 6px) * -1);
+  transition: left .5s;
+} */
