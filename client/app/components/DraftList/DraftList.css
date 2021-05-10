@@ -29,16 +29,16 @@
   border: 1px solid #000;
 }
 
-#draft-carrousel-back,
-#draft-carrousel-next {
+#draft-carousel-back,
+#draft-carousel-next {
   position: absolute;
   z-index: 5;
 }
 
-#draft-carrousel-next {
-  left: 45vw;
+#draft-carousel-next {
+  right: 55vw;
 }
 
-#draft-carrousel-back {
+#draft-carousel-back {
   left: 5vw;
 }

@@ -41,7 +41,7 @@ const App = () => {
 
     socket.on('user-disconnected', ({ allDrafted, disconnectedID }) => {
       setAllCardsDrafted(allDrafted);
-      delete users[disconnectedID];
+      delete allUsers[disconnectedID];
     });
 
     return () => socket.disconnect();
