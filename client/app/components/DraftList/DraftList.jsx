@@ -4,24 +4,28 @@ import './DraftList.css';
 
 const DraftList = ({ allUsers, setDisplayedCard, me }) => {
   const [listIndex, setListIndex] = useState(0);
+  const [allPlayerNames, setAllPlayerNames] = useState([])
   const [currentPlayerName, setCurrentPlayerName] = useState('');
 
   useEffect(() => {
+    setAllPlayerNames(Object.keys(allUsers));
     setCurrentPlayerName(Object.keys(allUsers)[0]);
   }, [allUsers]);
 
+  useEffect(() => {
+    setAllPlayerNames(Object.keys(allUsers));
+  }, [Object.keys(allUsers).length]);
+
   const handleNext = () => {
-    const playerNames = Object.keys(allUsers);
-    if (listIndex < playerNames.length - 1) {
-      setCurrentPlayerName(playerNames[listIndex + 1]);
+    if (listIndex < allPlayerNames.length - 1) {
+      setCurrentPlayerName(allPlayerNames[listIndex + 1]);
       setListIndex(listIndex + 1);
     }
   }
 
   const handleBack = () => {
-    const playerNames = Object.keys(allUsers);
     if (listIndex > 0) {
-      setCurrentPlayerName(playerNames[listIndex - 1]);
+      setCurrentPlayerName(allPlayerNames[listIndex - 1]);
       setListIndex(listIndex - 1);
     }
   }
@@ -42,9 +46,12 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
 
   return (
     <div className='app-grid-top-row-left-col'>
-      <button
-        id='draft-carousel-back'
-        onClick={handleBack} >{'<'}</button>
+      {
+        listIndex > 0 &&
+        <button
+          id='draft-carousel-back'
+          onClick={handleBack} >{'<'}</button>
+      }
       <span id='player-name' >{currentPlayerName}</span>
       {Object.keys(allUsers).map((userID) => (
         <ul
@@ -63,9 +70,12 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
           })}
         </ul>
       ))}
-      <button
-        id='draft-carousel-next'
-        onClick={handleNext} >{'>'}</button>
+      {
+        (listIndex !== allPlayerNames.length - 1) &&
+        <button
+          id='draft-carousel-next'
+          onClick={handleNext} >{'>'}</button>
+      }
     </div>
   );
 }
