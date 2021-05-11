@@ -43,7 +43,7 @@ io.on('connection', (socket) => {
 
   socket.on('new draft list', ({ socketID, card }) => {
     if (card.ff.name) {
-      users[socketID]?.push(card);
+      users[socketID].push(card);
       allDrafted.push(card.ff.name);
       socket.broadcast.emit('new card drafted', { users, allDrafted, senderID: socketID, newCard: card });
     }
@@ -51,7 +51,7 @@ io.on('connection', (socket) => {
 
   socket.on('disconnecting', () => {
     console.log(`user ${socket.id} disconnected`);
-    users[socket.id]?.forEach((card) => {
+    users[socket.id].forEach((card) => {
       allDrafted = allDrafted.filter((cardName) => cardName !== card.ff.name);
     });
     delete users[socket.id];
