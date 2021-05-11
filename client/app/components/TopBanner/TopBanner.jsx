@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import Search from './Search/Search.jsx';
-import { useContext } from 'react';
-import { SearchContext } from '../../Contexts/Contexts.js';
+import { FloatingCardContext, SearchContext } from '../../Contexts/Contexts.js';
 import './TopBanner.css';
 
 const TopBanner = ({ setCurrentTurn }) => {
+  const [hoveredCard, setHoveredCard] = useState({});
+  const [hoverState, setHoverState] = useState(false);
   const { currentTurn } = useContext(SearchContext);
 
   return (
@@ -20,7 +21,15 @@ const TopBanner = ({ setCurrentTurn }) => {
         <span>{`${currentTurn}`}</span>
       </div>
       {/* THIS BUTTON IS FOR DEVELOPMENT ONLY AND WILL BE REMOVED ONCE THE TURN SYSTEM WILL BE IMPELEMNTED */}
-      <Search />
+      {
+        hoverState &&
+        <div id='floating-card-container' >
+          <img src={hoveredCard?.image} alt={hoveredCard?.name} ></img>
+        </div>
+      }
+      <FloatingCardContext.Provider value={{ setHoverState, hoveredCard, setHoveredCard }}  >
+        <Search />
+      </FloatingCardContext.Provider>
     </div>
   );
 }

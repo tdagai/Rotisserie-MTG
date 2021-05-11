@@ -39,8 +39,9 @@ const App = () => {
       }
     });
 
-    socket.on('user-disconnected', ({ allDrafted }) => {
+    socket.on('user-disconnected', ({ allDrafted, disconnectedID }) => {
       setAllCardsDrafted(allDrafted);
+      delete allUsers[disconnectedID];
     });
 
     return () => socket.disconnect();
@@ -131,7 +132,8 @@ const App = () => {
         <div id='app-grid-top-row'>
           <DraftList
             allUsers={allUsers}
-            setDisplayedCard={setDisplayedCard} />
+            setDisplayedCard={setDisplayedCard}
+            me={socketID} />
           {
             currentlyDisplayedCard?.ff?.name &&
             <CardPreviewContext.Provider value={{card: currentlyDisplayedCard, symbols: allSymbols}} >
