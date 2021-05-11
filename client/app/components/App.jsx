@@ -7,7 +7,7 @@ import { SearchContext, stashContext, CardPreviewContext } from '../Contexts/Con
 import io from 'socket.io-client';
 import './App.css';
 
-const socket = io('http://ec2-52-53-186-155.us-west-1.compute.amazonaws.com/:3000', { autoConnect: false });
+const socket = io('http://ec2-52-53-186-155.us-west-1.compute.amazonaws.com', { autoConnect: false });
 
 const App = () => {
   const [socketID, setSocketID] = useState('');
