@@ -20,6 +20,9 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
     if (listIndex < allPlayerNames.length - 1) {
       setCurrentPlayerName(allPlayerNames[listIndex + 1]);
       setListIndex(listIndex + 1);
+    } else if (listIndex === allPlayerNames.length - 1) {
+      setCurrentPlayerName(allPlayerNames[0]);
+      setListIndex(0);
     }
   }
 
@@ -27,6 +30,9 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
     if (listIndex > 0) {
       setCurrentPlayerName(allPlayerNames[listIndex - 1]);
       setListIndex(listIndex - 1);
+    } else if (listIndex === 0) {
+      setCurrentPlayerName(allPlayerNames[allPlayerNames.length - 1]);
+      setListIndex(allPlayerNames.length - 1);
     }
   }
 
@@ -46,12 +52,10 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
 
   return (
     <div className='app-grid-top-row-left-col'>
-      {
-        listIndex > 0 &&
-        <button
-          id='draft-carousel-back'
-          onClick={handleBack} >{'<'}</button>
-      }
+      <button
+        aria-label='draft carousel back button'
+        id='draft-carousel-back'
+        onClick={handleBack} >{'<'}</button>
       <span id='player-name' >{currentPlayerName}</span>
       {Object.keys(allUsers).map((userID) => (
         <ul
@@ -70,12 +74,10 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
           })}
         </ul>
       ))}
-      {
-        (listIndex !== allPlayerNames.length - 1) &&
-        <button
-          id='draft-carousel-next'
-          onClick={handleNext} >{'>'}</button>
-      }
+      <button
+        aria-label='draft carousel next button'
+        id='draft-carousel-next'
+        onClick={handleNext} >{'>'}</button>
     </div>
   );
 }
