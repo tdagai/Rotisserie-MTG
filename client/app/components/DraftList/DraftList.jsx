@@ -40,7 +40,11 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
   // 6px:           account for borders (3px on each side)
   // listIndex:     indicate which list to show
   // -1:            to rotate the list in the correct direction
-  const styleObj = { left: `calc((25vw + 250px + 6px) * ${listIndex} * -1)`, transition: 'left .5s' };
+  const styleObj = {
+    left: `calc((25vw + 250px + 6px) * ${listIndex} * -1)`,
+    transition: 'left .5s',
+    '-webkit-transition': 'left .5s'
+  };
 
   if (!Object.keys(allUsers)[0]) {
     return (
