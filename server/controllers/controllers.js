@@ -6,7 +6,9 @@ const URL = 'https://api.scryfall.com';
 const fetchCardsByName = async (req, res) => {
   const { term } = req.query;
   try {
-    const searchResults = await axios.get(`${URL}/cards/search?q=legal%3Avintage+name%3D"${term}"`);
+    const searchResults = await axios.get(
+      `${URL}/cards/search?q=legal%3Avintage+name%3D"${term}"`,
+      { headers: {'Access-Control-Allow-Origin' : '*'} });
     const formattedCards = searchResults.data.data.reduce((acc, card) => {
       const { layout } = card;
       const { name, mana_cost, oracle_text, type_line, artist, flavor_text, power, toughness, loyalty, image_uris } = card;
@@ -122,7 +124,7 @@ const validateSymbols = (str) => {
 
 const fetchSymbols = async () => {
   try {
-    const symbols = await axios.get(`${URL}/symbology`);
+    const symbols = await axios.get(`${URL}/symbology`, { headers: {'Access-Control-Allow-Origin' : '*'} });
     const formattedSymbols = symbols.data.data.reduce((acc, symbol) => {
       if (!validateSymbols(symbol.symbol)) {
         acc[symbol.symbol] = symbol['svg_uri'];

@@ -18,7 +18,7 @@ const Search = () => {
   }, [searchTerm]);
 
   const handleSearch = () => {
-    axios.get(`/search?term=${searchTerm}`)
+    axios.get(`/search?term=${searchTerm}`, { headers: {'Access-Control-Allow-Origin' : '*'} })
       .then(({ data }) => {
         setCardsSearched(data);
         setErrored(false);
