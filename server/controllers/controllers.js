@@ -94,7 +94,7 @@ const fetchCardsByName = async (req, res) => {
       }
       return acc;
     }, {});
-    res.status(200).send(Object.values(formattedCards).slice(0, 8));
+    res.status(200).send(Object.values(formattedCards).slice(0, 8), { headers: {"Access-Control-Allow-Origin": "*"} });
   } catch (e) {
     res.status(404).send(e);
   }
