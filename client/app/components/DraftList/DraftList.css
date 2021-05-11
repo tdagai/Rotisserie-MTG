@@ -7,6 +7,12 @@
   overflow: hidden;
 }
 
+#player-name {
+  position: absolute;
+  top: 63px;
+  left: .5rem;
+}
+
 .draft-list {
   position: relative;
   min-height: 580px;
