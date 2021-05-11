@@ -1,10 +1,14 @@
-#app-grid-top-row-left-col {
+.app-grid-top-row-left-col {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   border-right: 1px solid #000;
   overflow: hidden;
+}
+
+#draft-page-preload {
+  margin: auto;
 }
 
 #player-name {

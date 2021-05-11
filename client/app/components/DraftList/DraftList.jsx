@@ -32,8 +32,16 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
   // -1:            to rotate the list in the correct direction
   const styleObj = { left: `calc((25vw + 250px + 6px) * ${listIndex} * -1)`, transition: 'left .5s' };
 
+  if (!Object.keys(allUsers)[0]) {
+    return (
+      <div className='app-grid-top-row-left-col'>
+        <img id='draft-page-preload' src='https://i.imgur.com/qlSBso9.gif' alt='loading gif'></img>
+      </div>
+    )
+  }
+
   return (
-    <div id='app-grid-top-row-left-col'>
+    <div className='app-grid-top-row-left-col'>
       <button
         id='draft-carousel-back'
         onClick={handleBack} >{'<'}</button>
