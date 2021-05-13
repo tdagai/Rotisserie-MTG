@@ -2,12 +2,16 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  background-color: #C4C4C4;
-  border-bottom: 1px solid #000;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--orange-hl);
 }
 
 #app-title {
   margin: 10px;
+  background: linear-gradient(to right, var(--orange-hl), var(--orange-hl) 70%, #fff 70%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #turn-changer {

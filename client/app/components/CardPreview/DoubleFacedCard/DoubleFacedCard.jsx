@@ -63,7 +63,7 @@ const DoubleFacedCard = ({ parseSymbols, parseOracleText }) => {
         </div>
         <button
           aria-label='image action button'
-          className='card-image-action-button'
+          className='card-image-action-button button-style'
           onClick={() => setShowFront(!showFront)} >
           {
             card.layout === 'transform'

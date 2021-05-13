@@ -6,7 +6,7 @@
   bottom: 0;
   transition: bottom .5s;
   -webkit-transition: bottom .5s;
-  background-color: #FAFAFA;
+  background-color: var(--bg-color);
 }
 
 .collapsed {

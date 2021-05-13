@@ -14,6 +14,7 @@ const TopBanner = ({ setCurrentTurn }) => {
       {/* THIS BUTTON IS FOR DEVELOPMENT ONLY AND WILL BE REMOVED ONCE THE TURN SYSTEM WILL BE IMPELEMNTED */}
       <div id='turn-changer'>
         <button
+        className='button-style'
           aria-label='change turn button'
           onClick={() => {
             setCurrentTurn(!currentTurn)

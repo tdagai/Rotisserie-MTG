@@ -49,7 +49,7 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
   if (!Object.keys(allUsers)[0]) {
     return (
       <div className='app-grid-top-row-left-col'>
-        <img id='draft-page-preload' src='https://i.imgur.com/qlSBso9.gif' alt='loading gif'></img>
+        <img id='draft-page-preload' src='https://i.imgur.com/TiPDsSa.gif' alt='loading gif'></img>
       </div>
     )
   }
@@ -59,6 +59,7 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
       <button
         aria-label='draft carousel back button'
         id='draft-carousel-back'
+        className='button-style'
         onClick={handleBack} >{'<'}</button>
       <span id='player-name' >{currentPlayerName}</span>
       {Object.keys(allUsers).map((userID) => (
@@ -81,6 +82,7 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
       <button
         aria-label='draft carousel next button'
         id='draft-carousel-next'
+        className='button-style'
         onClick={handleNext} >{'>'}</button>
     </div>
   );
