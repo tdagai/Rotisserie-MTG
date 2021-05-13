@@ -9,7 +9,7 @@ const TheStash = ({ myStash, gridWithStash, setGridWithStash }) => {
     <div className={`app-grid-bottom-row${collapseStash ? ' collapsed' : ''}`}>
       <button
         aria-label='collapse stash button'
-        className={`collapse-stash-btn${collapseStash ? ' collapsed-btn' : ''}`}
+        className={`button-style collapse-stash-btn${collapseStash ? ' collapsed-btn' : ''}`}
         onClick={() => {
           setCollapseStash(!collapseStash);
           setGridWithStash(!gridWithStash);

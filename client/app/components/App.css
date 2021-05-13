@@ -40,7 +40,7 @@ ul {
 }
 
 .button-style:hover {
-  background-color: transparent;
+  background-color: var(--bg-color);
   transition: background-color .2s;
   -webkit-transition: background-color .2s;
 }
@@ -55,7 +55,7 @@ ul {
 }
 
 .grid-without-stash {
-  grid-template-rows: 97% 3%;
+  grid-template-rows: 100% 0;
   transition: grid-template-rows 1s;
   -webkit-transition: grid-template-rows 1s;
 }
@@ -64,5 +64,5 @@ ul {
   grid-row-start: 1;
   display: grid;
   grid-template-columns: 50% 50%;
-  border-bottom: 1px solid var(--orange-hl);
+  /* border-bottom: 1px solid var(--orange-hl); */
 }

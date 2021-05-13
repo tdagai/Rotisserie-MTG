@@ -12,6 +12,10 @@
   border: 1px solid #000;
 }
 
+.stash-image-container img:hover {
+  border-color: var(--orange-hl);
+}
+
 .stash-add-to-draft,
 .stash-remove-from-stash {
   position: absolute;

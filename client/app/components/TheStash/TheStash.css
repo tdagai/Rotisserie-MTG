@@ -1,12 +1,12 @@
 .app-grid-bottom-row {
+  max-width: 100vw;
   grid-row-start: 2;
-  overflow-x: auto;
-  overflow-y: hidden;
   position: relative;
   bottom: 0;
   transition: bottom .5s;
   -webkit-transition: bottom .5s;
   background-color: var(--bg-color);
+  border-top: 1px solid var(--orange-hl);
 }
 
 .collapsed {
@@ -16,18 +16,28 @@
 }
 
 .collapse-stash-btn {
-  background-color: transparent;
-  border: none;
+  position: absolute;
+  top: -26px;
+  left: 10px;
+  width: 50px;
+  border: 1px solid var(--orange-hl) !important;
+  border-radius: 10px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom: transparent !important;
   outline: none;
   cursor: pointer;
   font-weight: 700;
   font-size: 1.25rem;
+}
+
+.collapse-stash-btn i {
   transform: rotate(0deg);
   transition: transform .5s;
   -webkit-transition: transform .5s;
 }
 
-.collapsed-btn {
+.collapsed-btn i {
   transform: rotate(180deg);
   transition: transform .5s;
   -webkit-transition: transform .5s;
@@ -35,6 +45,8 @@
 
 .show-stash-list,
 .hide-stash-list {
+  overflow: hidden;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
