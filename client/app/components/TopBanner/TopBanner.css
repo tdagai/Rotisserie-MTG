@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  height: 58px;
   background-color: var(--bg-color);
   border-bottom: 1px solid var(--orange-hl);
 }
@@ -29,5 +30,5 @@
   border: 1px solid #000;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 4px 2px #808080;
+  box-shadow: 0 0 4px 2px hsl(20, 100%, 88%);
 }

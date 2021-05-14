@@ -5,6 +5,8 @@ import './TheStash.css';
 const TheStash = ({ myStash, gridWithStash, setGridWithStash }) => {
   const [collapseStash, setCollapseStash] = useState(false);
 
+  // console.log(document.getElementById('stash-list')?.clientWidth);
+
   return (
     <div className={`app-grid-bottom-row${collapseStash ? ' collapsed' : ''}`}>
       <button
@@ -16,7 +18,17 @@ const TheStash = ({ myStash, gridWithStash, setGridWithStash }) => {
         }} >
         <i className="fas fa-chevron-down" />
       </button>
-      <ul className={collapseStash ? 'hide-stash-list' : 'show-stash-list'}>
+      {
+        !collapseStash &&
+        <button
+          id='stash-back-button'
+          className='button-style stash-carousel-button' >
+          <i className="fas fa-caret-left"></i>
+        </button>
+      }
+      <ul
+        id='stash-list'
+        className={collapseStash ? 'hide-stash-list' : 'show-stash-list'}>
         {myStash.map((card) => (
           <StashItem
             key={card.ff.name}
@@ -24,6 +36,14 @@ const TheStash = ({ myStash, gridWithStash, setGridWithStash }) => {
             card={card} />
         ))}
       </ul>
+      {
+        !collapseStash &&
+        <button
+          id='stash-next-button'
+          className='button-style stash-carousel-button'>
+          <i className="fas fa-caret-right"></i>
+        </button>
+      }
     </div>
   );
 }

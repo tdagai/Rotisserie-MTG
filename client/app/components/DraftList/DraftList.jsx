@@ -59,8 +59,10 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
       <button
         aria-label='draft carousel back button'
         id='draft-carousel-back'
-        className='button-style'
-        onClick={handleBack} >{'<'}</button>
+        className='button-style draft-carousel-button'
+        onClick={handleBack} >
+          <i className="fas fa-caret-left"></i>
+        </button>
       <span id='player-name' >{currentPlayerName}</span>
       {Object.keys(allUsers).map((userID) => (
         <ul
@@ -82,8 +84,10 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
       <button
         aria-label='draft carousel next button'
         id='draft-carousel-next'
-        className='button-style'
-        onClick={handleNext} >{'>'}</button>
+        className='button-style draft-carousel-button'
+        onClick={handleNext} >
+          <i className="fas fa-caret-right"></i>
+        </button>
     </div>
   );
 }

@@ -75,4 +75,10 @@
   padding: 0;
   cursor: pointer;
   color: #000;
+  transition: color .25s;
+}
+
+#clear-search-bar-button:hover {
+  color: var(--orange-hl);
+  transition: color .25s;
 }

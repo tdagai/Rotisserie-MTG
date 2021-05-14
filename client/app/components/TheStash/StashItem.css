@@ -1,4 +1,5 @@
 .stash-image-container {
+  z-index: 1;
   position: relative;
   margin: 0 5px;
   min-width: 146px;
@@ -14,10 +15,12 @@
 
 .stash-image-container img:hover {
   border-color: var(--orange-hl);
+  opacity: .8;
 }
 
 .stash-add-to-draft,
 .stash-remove-from-stash {
+  z-index: 2;
   position: absolute;
   top: -5px;
   cursor: pointer;
