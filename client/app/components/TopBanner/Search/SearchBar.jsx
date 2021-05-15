@@ -42,8 +42,7 @@ const SearchBar = ({ searchTerm, handleSearch, setDisplaySearch, setSearchTerm, 
   return (
     <form
     onSubmit={handleFormSubmit}
-    onReset={handleFormReset}
-  >
+    onReset={handleFormReset} >
     <input
       id='search-bar'
       type='text'
