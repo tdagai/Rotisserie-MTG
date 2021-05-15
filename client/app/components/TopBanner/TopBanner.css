@@ -4,7 +4,8 @@
   flex-direction: row;
   height: 58px;
   background-color: var(--bg-color);
-  border-bottom: 1px solid var(--orange-hl);
+  border-bottom: 2px solid var(--orange-hl);
+  /* border-bottom: 1px solid var(--orange-hl); */
 }
 
 #app-title {

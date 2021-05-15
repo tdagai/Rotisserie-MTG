@@ -9,8 +9,6 @@ const TheStash = ({ myStash, gridWithStash, setGridWithStash }) => {
 
   useEffect(() => {
     if (myStash) {
-      // console.log(myStash.length);
-      // console.log(Math.floor((myStash.length - 1) / 10));
       if (myStash.length <= 10) {
         setDisplayedStash(myStash);
       } else {
@@ -56,7 +54,8 @@ const TheStash = ({ myStash, gridWithStash, setGridWithStash }) => {
         !collapseStash &&
         <button
           id='stash-back-button'
-          className='button-style stash-carousel-button'
+          className={`${!carouselIndex ? 'disabled-' : ''}button-style stash-carousel-button`}
+          disabled={!carouselIndex}
           onClick={handleBack} >
           <i className="fas fa-caret-left"></i>
         </button>
@@ -75,7 +74,8 @@ const TheStash = ({ myStash, gridWithStash, setGridWithStash }) => {
         !collapseStash &&
         <button
           id='stash-next-button'
-          className='button-style stash-carousel-button'
+          className={`stash-carousel-button
+          ${carouselIndex === (Math.floor((myStash.length - 1) / 10)) || myStash.length === 0 ? 'disabled-' : ''}button-style`}
           onClick={handleNext} >
           <i className="fas fa-caret-right"></i>
         </button>

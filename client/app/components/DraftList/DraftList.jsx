@@ -43,7 +43,7 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
   const styleObj = {
     left: `calc((25vw + 250px + 6px) * ${listIndex} * -1)`,
     transition: 'left .5s',
-    '-webkit-transition': 'left .5s'
+    WebkitTransition: 'left .5s'
   };
 
   if (!Object.keys(allUsers)[0]) {

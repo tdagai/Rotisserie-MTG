@@ -35,17 +35,29 @@ ul {
   background-color: var(--orange-hl);
   border: 2px solid var(--orange-hl);
   border-radius: 5px;
-  transition: background-color .2s;
-  -webkit-transition: background-color .2s;
   cursor: pointer;
-  outline: none;
-  padding: 0;
 }
 
 .button-style:hover {
   background-color: var(--bg-color);
   transition: background-color .2s;
   -webkit-transition: background-color .2s;
+}
+
+.disabled-button-style {
+  color: #000;
+  background-color: rgba(255, 113, 40, .3);
+  border: 2px solid rgba(255, 113, 40, .1);
+  cursor: not-allowed;
+}
+
+.button-style,
+.disabled-button-style {
+  border-radius: 5px;
+  outline: none;
+  padding: 0;
+  transition: background-color .2s, border .2s;
+  -webkit-transition: background-color .2s, border .2s;
 }
 
 .app-container {
@@ -67,5 +79,4 @@ ul {
   grid-row-start: 1;
   display: grid;
   grid-template-columns: 50% 50%;
-  /* border-bottom: 1px solid var(--orange-hl); */
 }

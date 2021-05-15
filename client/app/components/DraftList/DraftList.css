@@ -3,7 +3,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  border-right: 1px solid var(--orange-hl);
+  border-right: 2px solid var(--orange-hl);
+  /* border-right: 1px solid var(--orange-hl); */
   overflow: hidden;
 }
 
@@ -23,7 +24,8 @@
   min-width: 500px;
   margin-left: calc(25vw - 250px);
   border: 3px solid var(--orange-hl);
-  background-color: #393935;
+  background-color: hsl(60, 4%, 27%);
+  /* background-color: #393935; */
   padding-top: 5px;
 }
 
