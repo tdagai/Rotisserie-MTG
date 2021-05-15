@@ -65,10 +65,11 @@ const DoubleFacedCard = ({ parseSymbols, parseOracleText }) => {
           aria-label='image action button'
           className='card-image-action-button button-style'
           onClick={() => setShowFront(!showFront)} >
+            <i className="fas fa-sync"></i>
           {
             card.layout === 'transform'
-              ? 'Transform'
-              : 'Turn Over'
+              ? ' Transform'
+              : ' Turn Over'
           }
         </button>
       </div>

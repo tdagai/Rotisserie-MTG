@@ -5,11 +5,11 @@
   height: 58px;
   background-color: var(--bg-color);
   border-bottom: 2px solid var(--orange-hl);
-  /* border-bottom: 1px solid var(--orange-hl); */
 }
 
 #app-title {
   margin: 10px;
+  font-size: 2rem;
   background: linear-gradient(to right, var(--orange-hl), var(--orange-hl) 70%, #fff 70%);
   background-clip: text;
   -webkit-background-clip: text;
