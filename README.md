@@ -18,47 +18,38 @@ Rotisserie MTG is a fan made turn-based Magic: The Gathering draft format.
 
 # Latest Update:
 
-## _May 11th:_ Draft Carousel and Deployment!
-This update focused mainly on turning the draft piles into a carousel and adding some browser support.
-
-This update was a much smaller than the others, though it was definitely a necessary one because it added the last features I wanted to have in the draft page before deploying the website!
-
-The website will be deployed later on today and the address will be added here so you can check it out!
+## _May 17th:_ New Design For the Website!
+This update focused on adding new flavor and styling to the website and let me tell ya - the new design looks FANTASTIC! I am loving it so much and hopefully you will too!
 
 ### Update Highlights:
 
-### Draft Piles
+### The Stash
 
-- _**NEW**_ Draft piles are now a carousel!
-- The Player who's draft pile is being viewed has their name showing at the top left
-- Clicking on the 'next' button when viewing the last pile will send the user to the start
-- Clicking on the 'back' button when viewing the first pile will send the user to the end
+- _**NEW**_ The Stash is now a paginated carousel!
+- _**NEW**_ Stash collapse button is now a lip above The Stash
 
-### Miscellaneous Changes
+### Miscellaneous Changes & Bug Fixes
 
-- Floating images of search results now properly appear when the search result is hovered
-- Added more browser support
-- Fixed a bug where floating card images appeared behind double faced cards
-- Fixed a bug where the back side of double faced cards was not visible on Safari
+- Fixed a bug where floating card image persisted after removing all text from the search bar and the search results disappeared
+- Draft Carousel buttons are now disabled when there is only one player connected
+- Added "player name placeholder" instead of the socketID due to user confusion during testing
 
 
 ## In Conclusion
 
 So first of all some general thoughts:
 
-I'm really happy with the current state of the website and the fact that the general features of the draft page are complete and ready to be put out there in the world!
-However, the website doesn't look good, like, at all. it's all gray and ugly and if you look at it in any smaller screen it doesn't work.
+I think that at this point, the draft page is basically done functionality-wise. So what's next? Well there's still the issue of responsiveness looming over that page, which is an issue I need to address at some point, but it's also something I need to really sit down and think about and design, which might not be what I'm looking for at this very moment. Right now I'd like to focus on this being a portfolio piece and something I can really display, so I'd like to focus on perhaps other things first
 
 ### My Next Move
 
-I have two main things I'd like to do after deployment:
+I think the next move is gonna be as follows:
 
-- The first one is going to be the styling and overall look for the draft page. Though I still need come up with the new style for the draft page, this will most definitely be done by the next update. 
-- The next thing I'd like to get done after deployment is making the website responsive to different screen sizes. This will most likely take longer and not be ready by the next update because it's something I've never done before, but I think it's relevant and important both that I learn how to do it and so that the website can be viewed and enjoyed by as many people as possible!
+- create a landing page and a log in / sign up page to the website, as well as an about page for inquiring minds looking to understand what the Rotisserie MTG format is all about!
+- This all means that I'd like to also incorporate routing, probably via ReactRouter to add to the experience while still keeping the website as a SPA
 
 
-
-##### More Updates To Come Soon! ![pixilart-drawing](https://user-images.githubusercontent.com/7985557/117416092-e0eba380-aecd-11eb-8783-bac3c9c5e094.png)
+##### That's All For Now - More Updates To Come Soon! ![pixilart-drawing](https://user-images.githubusercontent.com/7985557/117416092-e0eba380-aecd-11eb-8783-bac3c9c5e094.png)
 
 
 ##### Teva
