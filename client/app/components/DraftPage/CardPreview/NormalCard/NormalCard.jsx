@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CardPreviewContext } from '../../../Contexts/Contexts';
+import { CardPreviewContext } from '../../../../Contexts/Contexts';
 import ManaCost from '../ManaCost.jsx';
 import OracleText from '../OracleText.jsx';
 

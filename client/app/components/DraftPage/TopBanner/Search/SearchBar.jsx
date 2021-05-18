@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { SearchContext } from '../../../Contexts/Contexts';
+import { SearchContext } from '../../../../Contexts/Contexts';
 
 const SearchBar = ({ searchTerm, handleSearch, setDisplaySearch, setSearchTerm, setErrored }) => {
   const { currentTurn } = useContext(SearchContext);

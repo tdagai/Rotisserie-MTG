@@ -61,7 +61,7 @@ ul {
   -webkit-transition: background-color .2s, border .2s;
 }
 
-.app-container {
+/* .app-container {
   display: grid;
   grid-template-rows: 73% 27%;
   top: 58px;
@@ -80,4 +80,4 @@ ul {
   grid-row-start: 1;
   display: grid;
   grid-template-columns: 50% 50%;
-}
+} */

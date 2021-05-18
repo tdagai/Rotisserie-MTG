@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { CardPreviewContext } from '../../Contexts/Contexts';
 
 const OracleText = ({ cardText }) => {
   // const { symbols } = useContext(CardPreviewContext);
@@ -7,7 +6,6 @@ const OracleText = ({ cardText }) => {
   if (cardText.length === 0) {
     return <></>;
   }
-
   return (
     cardText.map((line, index) => (
       <p key={index} >{line}</p>

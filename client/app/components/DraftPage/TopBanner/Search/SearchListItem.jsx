@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { FloatingCardContext, SearchContext } from '../../../Contexts/Contexts.js';
+import { FloatingCardContext, SearchContext } from '../../../../Contexts/Contexts.js';
 import './SearchListItem.css';
 
 const SearchListItem = ({ card }) => {

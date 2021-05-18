@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import SearchListItem from './SearchListItem.jsx';
 import './SearchList.css';
-import { FloatingCardContext } from '../../../Contexts/Contexts.js';
+import { FloatingCardContext } from '../../../../Contexts/Contexts.js';
 
 const SearchList = ({ cardsSearched }) => {
   const { setHoverState } = useContext(FloatingCardContext);

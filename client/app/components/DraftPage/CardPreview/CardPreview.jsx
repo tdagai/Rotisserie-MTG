@@ -3,7 +3,7 @@ import NormalCard from './NormalCard/NormalCard.jsx';
 import DoubleFacedCard from './DoubleFacedCard/DoubleFacedCard.jsx';
 import SplitCard from './SplitCard/SplitCard.jsx';
 import './CardPreview.css';
-import { CardPreviewContext } from '../../Contexts/Contexts.js';
+import { CardPreviewContext } from '../../../Contexts/Contexts.js';
 
 const CardPreview = ({ gridWithStash }) => {
   const { card, symbols } = useContext(CardPreviewContext);

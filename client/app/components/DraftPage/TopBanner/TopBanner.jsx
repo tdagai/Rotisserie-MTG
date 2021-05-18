@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import Search from './Search/Search.jsx';
-import { FloatingCardContext, SearchContext } from '../../Contexts/Contexts.js';
+import { FloatingCardContext, SearchContext } from '../../../Contexts/Contexts.js';
 import './TopBanner.css';
 
 const TopBanner = ({ setCurrentTurn }) => {

@@ -3,7 +3,7 @@ import axios from 'axios';
 import SearchList from './SearchList.jsx'
 import SearchBar from './SearchBar.jsx';
 import './Search.css';
-import { FloatingCardContext } from '../../../Contexts/Contexts.js';
+import { FloatingCardContext } from '../../../../Contexts/Contexts.js';
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');

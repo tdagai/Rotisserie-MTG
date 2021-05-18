@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { stashContext } from '../../Contexts/Contexts.js';
+import { stashContext } from '../../../Contexts/Contexts.js';
 import './StashItem.css';
 
 const StashItem = ({ card, collapsed }) => {
