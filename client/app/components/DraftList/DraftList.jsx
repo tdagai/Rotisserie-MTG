@@ -5,11 +5,11 @@ import './DraftList.css';
 const DraftList = ({ allUsers, setDisplayedCard, me }) => {
   const [listIndex, setListIndex] = useState(0);
   const [allPlayerNames, setAllPlayerNames] = useState([])
-  const [currentPlayerName, setCurrentPlayerName] = useState('');
+  // const [currentPlayerName, setCurrentPlayerName] = useState('');
 
   useEffect(() => {
     setAllPlayerNames(Object.keys(allUsers));
-    setCurrentPlayerName(Object.keys(allUsers)[0]);
+    // setCurrentPlayerName(Object.keys(allUsers)[0]);
   }, [allUsers]);
 
   useEffect(() => {
@@ -18,20 +18,20 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
 
   const handleNext = () => {
     if (listIndex < allPlayerNames.length - 1) {
-      setCurrentPlayerName(allPlayerNames[listIndex + 1]);
+      // setCurrentPlayerName(allPlayerNames[listIndex + 1]);
       setListIndex(listIndex + 1);
     } else if (listIndex === allPlayerNames.length - 1) {
-      setCurrentPlayerName(allPlayerNames[0]);
+      // setCurrentPlayerName(allPlayerNames[0]);
       setListIndex(0);
     }
   }
 
   const handleBack = () => {
     if (listIndex > 0) {
-      setCurrentPlayerName(allPlayerNames[listIndex - 1]);
+      // setCurrentPlayerName(allPlayerNames[listIndex - 1]);
       setListIndex(listIndex - 1);
     } else if (listIndex === 0) {
-      setCurrentPlayerName(allPlayerNames[allPlayerNames.length - 1]);
+      // setCurrentPlayerName(allPlayerNames[allPlayerNames.length - 1]);
       setListIndex(allPlayerNames.length - 1);
     }
   }
@@ -43,13 +43,13 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
   const styleObj = {
     left: `calc((25vw + 250px + 6px) * ${listIndex} * -1)`,
     transition: 'left .5s',
-    '-webkit-transition': 'left .5s'
+    WebkitTransition: 'left .5s'
   };
 
   if (!Object.keys(allUsers)[0]) {
     return (
       <div className='app-grid-top-row-left-col'>
-        <img id='draft-page-preload' src='https://i.imgur.com/qlSBso9.gif' alt='loading gif'></img>
+        <img id='draft-page-preload' src='https://i.imgur.com/TiPDsSa.gif' alt='loading gif'></img>
       </div>
     )
   }
@@ -59,8 +59,11 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
       <button
         aria-label='draft carousel back button'
         id='draft-carousel-back'
-        onClick={handleBack} >{'<'}</button>
-      <span id='player-name' >{currentPlayerName}</span>
+        className={`${allPlayerNames.length === 1 ? 'disabled-' : '' }button-style draft-carousel-button`}
+        onClick={handleBack} >
+          <i className="fas fa-caret-left"></i>
+        </button>
+      <span id='player-name' >{`Player's name placeholder`}</span>
       {Object.keys(allUsers).map((userID) => (
         <ul
           key={userID}
@@ -81,7 +84,10 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
       <button
         aria-label='draft carousel next button'
         id='draft-carousel-next'
-        onClick={handleNext} >{'>'}</button>
+        className={`${allPlayerNames.length === 1 ? 'disabled-' : '' }button-style draft-carousel-button`}
+        onClick={handleNext} >
+          <i className="fas fa-caret-right"></i>
+        </button>
     </div>
   );
 }

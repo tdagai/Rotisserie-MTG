@@ -1,10 +1,17 @@
+:root {
+  --bg-color: #2f2f2b;
+  --orange-hl: #ff7128;
+  --top-blue: #26527e;
+}
+
 html {
-  background-color: #FAFAFA;
+  background-color: var(--bg-color);
+  color: #fff;
   font-family: 'Roboto', sans-serif;
 }
 
 body {
-  background-color: #FAFAFA;
+  background-color: var(--bg-color);
   margin: 0;
 }
 
@@ -24,6 +31,36 @@ ul {
   padding-inline-start: 0;
 }
 
+.button-style {
+  color: #fff;
+  background-color: var(--orange-hl);
+  border: 2px solid var(--orange-hl);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-style:hover {
+  background-color: var(--bg-color);
+  transition: background-color .2s;
+  -webkit-transition: background-color .2s;
+}
+
+.disabled-button-style {
+  color: #000;
+  background-color: rgba(255, 113, 40, .3);
+  border: 2px solid rgba(255, 113, 40, .1);
+  cursor: not-allowed;
+}
+
+.button-style,
+.disabled-button-style {
+  border-radius: 5px;
+  outline: none;
+  padding: 0;
+  transition: background-color .2s, border .2s;
+  -webkit-transition: background-color .2s, border .2s;
+}
+
 .app-container {
   display: grid;
   grid-template-rows: 73% 27%;
@@ -34,7 +71,7 @@ ul {
 }
 
 .grid-without-stash {
-  grid-template-rows: 97% 3%;
+  grid-template-rows: 100% 0;
   transition: grid-template-rows 1s;
   -webkit-transition: grid-template-rows 1s;
 }
@@ -43,5 +80,4 @@ ul {
   grid-row-start: 1;
   display: grid;
   grid-template-columns: 50% 50%;
-  border-bottom: 1px solid #000;
 }

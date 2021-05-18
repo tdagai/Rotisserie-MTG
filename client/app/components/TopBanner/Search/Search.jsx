@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import SearchList from './SearchList.jsx'
 import SearchBar from './SearchBar.jsx';
 import './Search.css';
+import { FloatingCardContext } from '../../../Contexts/Contexts.js';
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,9 +12,12 @@ const Search = () => {
   const [displaySearch, setDisplaySearch] = useState(true);
   const [focused, setFocused] = useState(false);
 
+  const { setHoverState } = useContext(FloatingCardContext);
+
   useEffect(() => {
     if (!searchTerm) {
       setDisplaySearch(false);
+      setHoverState(false);
     }
   }, [searchTerm]);
 

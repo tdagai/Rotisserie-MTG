@@ -105,8 +105,14 @@
 
 .card-image-action-button {
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   width: 60%;
+  height: 25px;
+  font-size: 1rem;
+}
+
+.card-image-action-button i {
+  font-size: .8rem;
 }
 
 .card-preview-text-container {
@@ -144,7 +150,8 @@
   max-width: 100%;
   height: auto;
   border-radius: 50%;
-  box-shadow: -1px 2px 0 #333;
+  box-shadow: -1px 2px 0 #8a8a8a;
+  /* box-shadow: -1px 2px 0 #767676; */
 }
 
 .display-card-flavor-text {
