@@ -102,18 +102,20 @@ const App = () => {
   }
 
   const addCardToStash = (card) => {
-    let found = false;
-    myStash.forEach((stashCard) => {
-      if (stashCard.ff.name === card.ff.name) {
-        found = true;
-      }
-    });
+    if (myStash.length < 30) {
+      let found = false;
+      myStash.forEach((stashCard) => {
+        if (stashCard.ff.name === card.ff.name) {
+          found = true;
+        }
+      });
 
-    if (!found && !allCardsDrafted.includes(card.ff.name)) {
-      if (myStash.length === 0) {
-        setMyStash([card]);
-      } else {
-        setMyStash([card, ...myStash]);
+      if (!found && !allCardsDrafted.includes(card.ff.name)) {
+        if (myStash.length === 0) {
+          setMyStash([card]);
+        } else {
+          setMyStash([card, ...myStash]);
+        }
       }
     }
   }

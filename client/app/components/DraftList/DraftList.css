@@ -3,7 +3,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  border-right: 1px solid #000;
+  border-right: 2px solid var(--orange-hl);
+  /* border-right: 1px solid var(--orange-hl); */
   overflow: hidden;
 }
 
@@ -22,8 +23,9 @@
   min-height: 580px;
   min-width: 500px;
   margin-left: calc(25vw - 250px);
-  border: 3px solid #000;
-  background-color: #F0F0F0;
+  border: 3px solid var(--orange-hl);
+  background-color: hsl(60, 4%, 27%);
+  /* background-color: #393935; */
   padding-top: 5px;
 }
 
@@ -39,8 +41,14 @@
   border: 1px solid #000;
 }
 
-#draft-carousel-back,
-#draft-carousel-next {
+.drafted-card img:hover {
+  border-color: var(--orange-hl);
+}
+
+.draft-carousel-button {
+  font-size: 1.25rem;
+  width: 25px;
+  height: 50px;
   position: absolute;
   z-index: 5;
 }
@@ -52,12 +60,3 @@
 #draft-carousel-back {
   left: 5vw;
 }
-
-/* .not-shifted {
-  left: 0;
-}
-
-.left-shifted {
-  left: calc((25vw + 250px + 6px) * -1);
-  transition: left .5s;
-} */
