@@ -40,7 +40,8 @@
 }
 
 .reveal-password-btn:hover {
-  text-shadow: -2px 2px 0 black;
+  text-shadow: -1px 1px 0 rgba(255, 113, 40, .5),
+               -2px 2px 2px #000;
   transition: text-shadow .3s;
 }
 
