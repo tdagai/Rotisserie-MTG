@@ -5,6 +5,10 @@ import './SignInForm.css';
 const SignInForm = () => {
   const [showPassword, setPasswordVisibility] = useState(false);
 
+  const handlePasswordVisibility = (e) => {
+    e.preventDefault();
+    setPasswordVisibility(!showPassword);
+  }
 
   return (
     <form id='signin-form' >
@@ -13,12 +17,15 @@ const SignInForm = () => {
         <input className='signin-input-style' type='text' ></input>
       </label>
       <label>Password
-        <input className='signin-input-style' type='password' ></input>
-        <button className='reveal-password-btn' >
+        <input className='signin-input-style' type={showPassword ? 'text' : 'password'} ></input>
+        <button
+          className='reveal-password-btn'
+          aria-label='reveal password button'
+          onClick={handlePasswordVisibility}  >
           {
             showPassword
-              ? <i class="fas fa-eye"></i>
-              : <i class="fas fa-eye-slash"></i>
+              ? <i className="fas fa-eye"></i>
+              : <i className="fas fa-eye-slash"></i>
           }
         </button>
       </label>

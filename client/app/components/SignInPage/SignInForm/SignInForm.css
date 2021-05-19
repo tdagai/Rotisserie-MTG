@@ -26,11 +26,14 @@
   font-size: 1rem;
   padding: 0;
   margin: 0;
-  background-color: transparent;
+  background-color: var(--bg-color);
   color: var(--orange-hl);
   outline: none;
   border: none;
+  border-radius: 5px;
   border-left: 2px solid var(--orange-hl);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   cursor: pointer;
   text-shadow: none;
   transition: text-shadow .3s;
@@ -43,7 +46,7 @@
 
 #signin-btn,
 #signup-btn {
-  width: 23.5rem;
+  width: 100%;
   height: 2rem;
   font-size: 1rem;
   font-weight: 700;
