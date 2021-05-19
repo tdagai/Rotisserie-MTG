@@ -17,7 +17,7 @@
 
 #signin-form button,
 #signup-form button {
-  width: 100%;
+  width: 23.5rem;
   height: 2rem;
   font-size: 1rem;
   font-weight: 700;
@@ -40,4 +40,31 @@
   text-align: center;
   width: 100%;
   height: auto;
+}
+
+@media (max-width: 550px) {
+
+  #signin-form,
+  #signup-form {
+    width: 100%;
+    min-height: 50vh;
+  }
+
+  #signin-form label,
+  #signup-form label {
+    position: relative;
+    width: 65%;
+  }
+
+  #signin-form input,
+  #signup-form input {
+    width: calc(100% - 24px);
+    justify-self: stretch;
+  }
+
+  #signin-form button,
+  #signup-form button {
+    width: 65%;
+    margin: 0 auto;
+  }
 }
