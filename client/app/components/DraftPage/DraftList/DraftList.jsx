@@ -63,7 +63,7 @@ const DraftList = ({ allUsers, setDisplayedCard, me }) => {
         onClick={handleBack} >
           <i className="fas fa-caret-left"></i>
         </button>
-      <span id='player-name' >{`Player's name placeholder`}</span>
+      <span id='player-name' >{`Player ${listIndex + 1}`}</span>
       {Object.keys(allUsers).map((userID) => (
         <ul
           key={userID}
