@@ -1,5 +1,6 @@
 #signin-form,
 #signup-form {
+  position: relative;
   place-self: center;
   display: flex;
   flex-direction: column;
@@ -10,13 +11,38 @@
 
 #signin-form label,
 #signup-form label {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-#signin-form button,
-#signup-form button {
+.reveal-password-btn {
+  position: absolute;
+  right: 2px;
+  top: 1.25rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  color: var(--orange-hl);
+  outline: none;
+  border: none;
+  border-left: 2px solid var(--orange-hl);
+  cursor: pointer;
+  text-shadow: none;
+  transition: text-shadow .3s;
+}
+
+.reveal-password-btn:hover {
+  text-shadow: -2px 2px 0 black;
+  transition: text-shadow .3s;
+}
+
+#signin-btn,
+#signup-btn {
   width: 23.5rem;
   height: 2rem;
   font-size: 1rem;
@@ -62,8 +88,8 @@
     justify-self: stretch;
   }
 
-  #signin-form button,
-  #signup-form button {
+  #signin-btn,
+  #signup-btn {
     width: 65%;
     margin: 0 auto;
   }

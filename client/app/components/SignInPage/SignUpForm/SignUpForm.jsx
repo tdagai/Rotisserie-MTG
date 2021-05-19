@@ -15,7 +15,7 @@ const SignUpForm = () => {
       <label>Password
         <input className='signin-input-style' type='password' required ></input>
       </label>
-      <button className='button-style' type='submit' aria-label='sign in button' >Sign up</button>
+      <button id='signup-btn' className='button-style' type='submit' aria-label='sign in button' >Sign up</button>
       <div id='signin-message' >
         Already have an account? <Link to='/signin' className='link-style' >Sign in here!</Link>
       </div>
