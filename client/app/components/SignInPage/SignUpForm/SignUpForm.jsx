@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../SignInForm/SignInForm.css';
 
 const SignUpForm = () => {
@@ -15,7 +16,9 @@ const SignUpForm = () => {
         <input className='signin-input-style' type='password' required ></input>
       </label>
       <button className='button-style' type='submit' aria-label='sign in button' >Sign up</button>
-      <div id='signin-message' >Already have an account? Sign in here!</div>
+      <div id='signin-message' >
+        Already have an account? <Link to='/signin' className='link-style' >Sign in here!</Link>
+      </div>
     </form>
   );
 };

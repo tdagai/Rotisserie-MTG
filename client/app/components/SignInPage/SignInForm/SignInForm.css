@@ -41,3 +41,17 @@
   width: 100%;
   height: auto;
 }
+
+.link-style {
+  color: var(--orange-hl);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link-style:hover {
+  text-decoration: underline;
+}
+
+.link-style:visited {
+  color: var(--orange-hl);
+}
