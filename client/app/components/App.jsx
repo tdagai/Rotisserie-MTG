@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DraftPage from './DraftPage/DraftPage.jsx';
 import SingInPage from './SignInPage/SignInPage.jsx';
+import PageUnavailable from './PageUnavailable/PageUnavailable.jsx';
 import './App.css';
 
 
@@ -22,7 +23,7 @@ const App = () => {
           <SingInPage inOrUp='up' />
         </Route>
         <Route path="/" >
-          <div>404</div>
+          <PageUnavailable />
         </Route>
       </Switch>
     </Router>
