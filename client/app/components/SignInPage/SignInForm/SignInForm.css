@@ -1,0 +1,43 @@
+#signin-form,
+#signup-form {
+  place-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40vh;
+}
+
+#signin-form label,
+#signup-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#signin-form button,
+#signup-form button {
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 20px !important;
+}
+
+#signin-form-title,
+#signup-form-title {
+  margin: 0;
+  font-size: 3rem;
+}
+
+#forgot-password {
+  margin: 0;
+}
+
+#signup-message,
+#signin-message {
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  height: auto;
+}

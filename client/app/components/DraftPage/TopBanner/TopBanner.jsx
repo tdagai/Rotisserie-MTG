@@ -10,7 +10,7 @@ const TopBanner = ({ setCurrentTurn }) => {
 
   return (
     <div id='banner-container'>
-      <h1 id='app-title'>Rotisserie MTG</h1>
+      <h1 id='draft-page-app-title' className='app-title-style' >Rotisserie MTG</h1>
       {/* THIS BUTTON IS FOR DEVELOPMENT ONLY AND WILL BE REMOVED ONCE THE TURN SYSTEM WILL BE IMPELEMNTED */}
       <div id='turn-changer'>
         <button

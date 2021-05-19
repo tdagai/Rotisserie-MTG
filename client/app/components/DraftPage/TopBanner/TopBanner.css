@@ -7,13 +7,9 @@
   border-bottom: 2px solid var(--orange-hl);
 }
 
-#app-title {
+#draft-page-app-title {
   margin: 10px;
   font-size: 2rem;
-  background: linear-gradient(to right, var(--orange-hl), var(--orange-hl) 70%, #fff 70%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 #turn-changer {

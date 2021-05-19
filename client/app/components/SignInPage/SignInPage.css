@@ -1,0 +1,50 @@
+#signin-page-container {
+  display: grid;
+  grid-template-columns: 560px calc(100% - 560px);
+  height: 100vh;
+}
+
+.signin-page-partition {
+  place-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+}
+
+#signin-page-left {
+  background-color: var(--top-blue);
+}
+
+#signin-page-right {
+  background-color: transparent;
+}
+
+.signin-app-title {
+  font-size: 5rem;
+  margin: 0;
+  margin-left: 60px;
+}
+
+#signin-app-title-orange {
+  color: var(--orange-hl);
+}
+
+.signin-input-style {
+  border: 2px solid var(--orange-hl);
+  transition: box-shadow .3s;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  width: 23.5rem;
+  height: 2rem;
+  font-size: 1rem;
+  padding: 0 10px;
+  outline: none;
+}
+
+.signin-input-style:focus {
+  box-shadow: 0 3px 0 var(--orange-hl);
+  transition: box-shadow .3s;
+}
+

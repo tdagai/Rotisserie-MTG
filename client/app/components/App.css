@@ -31,6 +31,13 @@ ul {
   padding-inline-start: 0;
 }
 
+.app-title-style {
+  background: linear-gradient(to right, var(--orange-hl), var(--orange-hl) 70%, #fff 70%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .button-style {
   color: #fff;
   background-color: var(--orange-hl);
