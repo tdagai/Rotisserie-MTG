@@ -14,10 +14,10 @@ const SignInForm = () => {
     <form id='signin-form' >
       <h1 id='signin-form-title' >Sign in</h1>
       <label>Username
-        <input className='signin-input-style' type='text' ></input>
+        <input className='signin-input-style' type='text' required ></input>
       </label>
       <label>Password
-        <input className='signin-input-style' type={showPassword ? 'text' : 'password'} ></input>
+        <input className='signin-input-style' type={showPassword ? 'text' : 'password'} required ></input>
         <button
           className='reveal-password-btn'
           aria-label='reveal password button'

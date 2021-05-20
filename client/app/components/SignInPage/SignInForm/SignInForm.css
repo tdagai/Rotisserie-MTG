@@ -15,6 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 10px;
 }
 
 .reveal-password-btn {
@@ -26,23 +27,23 @@
   font-size: 1rem;
   padding: 0;
   margin: 0;
-  background-color: var(--bg-color);
+  background-color: transparent;
   color: var(--orange-hl);
   outline: none;
   border: none;
-  border-radius: 5px;
   border-left: 2px solid var(--orange-hl);
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
   cursor: pointer;
   text-shadow: none;
-  transition: text-shadow .3s;
+  transition: text-shadow .3s, color .3s;
+  -webkit-transition: text-shadow .3s, color .3s;
 }
 
 .reveal-password-btn:hover {
+  color: hsl(20, 100%, 63%);
   text-shadow: -1px 1px 0 rgba(255, 113, 40, .5),
                -2px 2px 2px #000;
-  transition: text-shadow .3s;
+  transition: text-shadow .3s, color .3s;
+  -webkit-transition: text-shadow .3s, color .3s;
 }
 
 #signin-btn,
