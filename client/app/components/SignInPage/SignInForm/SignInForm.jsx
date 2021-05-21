@@ -51,10 +51,12 @@ const SignInForm = () => {
       </label>
       <button
         id='signin-btn'
-        className={`${usernameInput.length === 0 || passwordInput.length === 0 ? 'disabled-' : ''}button-style`}
+        className={`${!usernameInput || !passwordInput ? 'disabled-' : ''}button-style`}
         type='submit'
-        aria-label='sign
-        in button' >Sign in</button>
+        onClick={(e) => e.preventDefault()}
+        aria-label='sign in button' >
+        Sign in
+        </button>
       <p id='forgot-password' >Forgot Password?</p>
       <div id='signup-message' >
         Don't have an account? <Link to='/signup' className='link-style' >Sign up here!</Link>
