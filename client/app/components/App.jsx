@@ -10,21 +10,27 @@ const App = () => {
   return (
     <Router>
       <Switch>
+
         <Route path="/" exact >
           <div>Home</div>
         </Route>
+
         <Route path="/draft-page" exact >
           <DraftPage />
         </Route>
+
         <Route path="/signin" exact >
           <SingInPage inOrUp='in' />
         </Route>
+
         <Route path="/signup" exact >
           <SingInPage inOrUp='up' />
         </Route>
+
         <Route path="/" >
           <PageUnavailable />
         </Route>
+
       </Switch>
     </Router>
   );
