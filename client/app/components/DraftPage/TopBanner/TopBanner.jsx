@@ -9,7 +9,7 @@ const TopBanner = ({ setCurrentTurn }) => {
   const { currentTurn } = useContext(SearchContext);
 
   return (
-    <div id='banner-container'>
+    <nav id='banner-container'>
       <h1 id='draft-page-app-title' className='app-title-style' >Rotisserie MTG</h1>
       {/* THIS BUTTON IS FOR DEVELOPMENT ONLY AND WILL BE REMOVED ONCE THE TURN SYSTEM WILL BE IMPELEMNTED */}
       <div id='turn-changer'>
@@ -31,7 +31,7 @@ const TopBanner = ({ setCurrentTurn }) => {
       <FloatingCardContext.Provider value={{ setHoverState, hoveredCard, setHoveredCard }}  >
         <Search />
       </FloatingCardContext.Provider>
-    </div>
+    </nav>
   );
 }
 

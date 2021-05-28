@@ -2,7 +2,7 @@
   display: grid;
   grid-template-rows: 73% 27%;
   top: 58px;
-  height: calc(100vh - 58px);
+  height: calc(100vh - 62px);
   transition: grid-template-rows 1s;
   -webkit-transition: grid-template-rows 1s;
 }
