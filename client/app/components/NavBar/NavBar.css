@@ -1,5 +1,5 @@
 #homepage-navbar {
-  position: sticky;
+  position: fixed;
   width: 100%;
   height: 60px;
   background-color: var(--top-blue);
@@ -26,7 +26,7 @@
   align-items: center;
   height: 100%;
   border-left: 2px solid var(--orange-hl);
-  font-weight: 600;
+  font-weight: 500;
   padding: 0 30px;
 }
 

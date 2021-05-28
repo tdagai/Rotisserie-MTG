@@ -1,0 +1,10 @@
+#homepage-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#homepage-content {
+  height: calc(100% - 10rem);
+  flex: 1 0 auto;
+}

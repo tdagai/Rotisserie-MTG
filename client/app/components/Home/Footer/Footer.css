@@ -1,0 +1,20 @@
+#homepage-footer {
+  flex-shrink: 0;
+  min-height: 10rem;
+  padding: 0 40px;
+  background-color: var(--top-blue);
+}
+
+.footer-copyright:nth-child(1) {
+  margin-top: 25px;
+}
+
+#footer-icon-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-icon {
+  font-size: 1.25rem;
+  margin-right: 15px;
+}
