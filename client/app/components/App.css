@@ -32,6 +32,10 @@ ul {
   padding-inline-start: 0;
 }
 
+a:visited {
+  color: white;
+}
+
 .app-title-style {
   background: linear-gradient(to right, var(--orange-hl), var(--orange-hl) 70%, #fff 70%);
   background-clip: text;

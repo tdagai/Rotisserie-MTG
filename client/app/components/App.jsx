@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import HomePage from './Home/HomePage.jsx';
 import DraftPage from './DraftPage/DraftPage.jsx';
 import SingInPage from './SignInPage/SignInPage.jsx';
 import PageUnavailable from './PageUnavailable/PageUnavailable.jsx';
@@ -12,7 +13,7 @@ const App = () => {
       <Switch>
 
         <Route path="/" exact >
-          <div>Home</div>
+          <HomePage />
         </Route>
 
         <Route path="/draft-page" exact >
