@@ -12,6 +12,15 @@
   font-size: 2rem;
 }
 
+#draftpage-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#draftpage-link:visited {
+  color: white;
+}
+
 #turn-changer {
   margin: auto 50px;
 }
