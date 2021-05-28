@@ -34,13 +34,15 @@ const App = () => {
           <UnderConstructions />
         </Route>
 
-        {/* <Route path="/create-new-room" exact >
-          <HomePage />
-        </Route> */}
+        <Route path="/create-new-room" exact >
+          <UnderConstructions />
+          {/* <HomePage /> */}
+        </Route>
 
-        {/* <Route path="/join-room" exact >
-          <HomePage />
-        </Route> */}
+        <Route path="/join-room" exact >
+          <UnderConstructions />
+          {/* <HomePage /> */}
+        </Route>
 
         <Route path="/" >
           <PageUnavailable />
