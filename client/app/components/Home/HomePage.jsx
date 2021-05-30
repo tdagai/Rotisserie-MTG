@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NavBar from './NavBar/NavBar.jsx'
+import HeroCarousel from './HeroCarousel/HeroCarousel.jsx';
 import Footer from './Footer/Footer.jsx'
 import './HomePage.css';
 
@@ -20,6 +21,10 @@ const HomePage = () => {
     <div id='homepage-container' >
       <NavBar />
       <div id='homepage-content' >
+        <section>
+          <HeroCarousel />
+        </section>
+
         <section className='perks' >
           <svg width="177" height="179" viewBox="0 0 177 179" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="136" cy="30" r="27.5" fill="#2F2F2B" stroke="#FF7128" strokeWidth="5" />
@@ -80,7 +85,7 @@ const HomePage = () => {
             </input>
             <button
               type='submit'
-              className={`${inputFocused ? 'newsletter-input-focused ' : ''}button-style`}
+              className={`button-style${inputFocused ? ' newsletter-input-focused' : ''}`}
               onClick={(e) => e.preventDefault()} >
               submit
             </button>

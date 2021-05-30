@@ -14,6 +14,11 @@ const NavBar = () => {
           </h1>
         </li>
         <li className='homepage-nav-item' >
+          <Link to='/contact' className='homepage-link-style' >
+            Contact
+          </Link>
+        </li>
+        <li className='homepage-nav-item' >
           <Link to='/about' className='homepage-link-style' >
             About
           </Link>

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import HomePage from './Home/HomePage.jsx';
 import DraftPage from './DraftPage/DraftPage.jsx';
 import SingInPage from './SignInPage/SignInPage.jsx';
-import About from './AboutPage/AboutPage.jsx';
+// import About from './AboutPage/AboutPage.jsx';
 import PageUnavailable from './PageUnavailable/PageUnavailable.jsx';
 import UnderConstructions from './UnderConstruction/UnderConstruction.jsx';
 import './App.css';
@@ -28,6 +28,10 @@ const App = () => {
 
         <Route path="/signup" exact >
           <SingInPage inOrUp='up' />
+        </Route>
+
+        <Route path="/contact" exact >
+          <UnderConstructions />
         </Route>
 
         <Route path="/about" exact >
