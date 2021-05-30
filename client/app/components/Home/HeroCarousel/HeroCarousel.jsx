@@ -17,7 +17,7 @@ const HeroCarousel = () => {
     text: 'Enjoy A Powerful Search Experience Powered By Scryfall'
   },
   {
-    heroImage: 'https://cybernews.com/wp-content/uploads/2020/07/Discord-privacy-tips-that-you-should-use-.jpg',
+    heroImage: 'https://i.imgur.com/KOGixJF.jpg',
     text: 'Meet More People To Draft With On Our Moderated Discord Community'
   }];
 

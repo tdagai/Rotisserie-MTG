@@ -33,15 +33,17 @@
   top: 0;
   left: 0;
   height: 100%;
+  min-width: 800px;
 }
 
 .hero-text {
   margin: 0;
   z-index: 2;
   font-size: 3rem;
-  max-width: 28rem;
-  right: 10rem;
-  top: calc(50% - 5.5rem);
+  max-width: 30rem;
+  right: 12rem;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .hero-gradient {
