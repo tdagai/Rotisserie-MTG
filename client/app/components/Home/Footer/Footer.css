@@ -1,4 +1,5 @@
 #homepage-footer {
+  width: calc(100% - 80px);
   flex-shrink: 0;
   min-height: 7.5rem;
   padding: 0 40px;

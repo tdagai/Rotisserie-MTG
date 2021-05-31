@@ -37,7 +37,7 @@ const HeroCarousel = () => {
   }];
 
   const styleObj = {
-    left: `calc((100vw - 6px) * ${positionIndex} * -1)`,
+    left: `calc(100% * ${positionIndex} * -1)`,
     transition: 'left .75s',
     WebkitTransition: 'left .75s'
   };

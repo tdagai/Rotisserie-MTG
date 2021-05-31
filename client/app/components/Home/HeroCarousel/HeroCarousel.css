@@ -1,5 +1,5 @@
 .hero-container {
-  width: calc(100vw - 6px);
+  width: 100%;
   height: 315px;
   margin-bottom: 10rem;
   position: relative !important;
@@ -12,13 +12,11 @@
 
 #carousel-item-container {
   position: relative !important;
-  width: calc((100vw - 6px) * 3);
+  width: calc(100% * 3);
   height: 315px;
   display: flex;
   flex-direction: row;
 }
-
-#carousel-item-container
 
 .hero-artcred {
   bottom: 0;
