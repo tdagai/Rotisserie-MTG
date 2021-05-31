@@ -28,7 +28,7 @@ const PopUp = ({ message }) => {
         onClick={handleClosePopUp} >
         <i className="fas fa-times"></i>
       </button>
-      {splitUpMessage.map(line => <p className='pop-up-line' >{line}</p>)}
+      {splitUpMessage.map((line, index) => <p className='pop-up-line' key={`line ${index}`} >{line}</p>)}
     </div>
   );
 };

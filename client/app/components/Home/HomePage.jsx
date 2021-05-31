@@ -38,13 +38,13 @@ const HomePage = () => {
         </section>
 
         <section id='gh-dis-cta' >
-          <a href='https://github.com/tdagai/Rotisserie-MTG' target='_blank' >
+          <a href='https://github.com/tdagai/Rotisserie-MTG' target='_blank' rel='noopener' aria-label='project github' >
             <div id='github-cta' >
               <i className="fab fa-github cta-icon"></i>
               <p>Follow the website’s developement on our Github by clicking here!</p>
             </div>
           </a>
-          <a href='https://discord.gg/XXpR8a43Ts' target='_blank' >
+          <a href='https://discord.gg/XXpR8a43Ts' target='_blank' rel='noopener' aria-label='discord server invite' >
             <div id='discord-cta' >
               <i className="fab fa-discord cta-icon"></i>
               <p>Want to find more people to draft with? Join our moderated Discord community here!</p>

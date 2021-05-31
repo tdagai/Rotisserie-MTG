@@ -27,7 +27,7 @@
 #close-popup:hover {
   color: hsl(20, 100%, 83%);
   text-shadow: -1px 1px 0 rgba(255, 113, 40, .5),
-               -2px 2px 2px #000;
+    -2px 2px 2px #000;
   transition: text-shadow .3s, color .3s;
   -webkit-transition: text-shadow .3s, color .3s;
 }
@@ -53,13 +53,21 @@
 
 @media (max-width: 580px) {
   #popup {
+    font-size: .75rem;
     width: calc(100% - 4rem);
-    padding: .5rem 2rem;
+    height: calc(10% - .5rem);
+    padding: .25rem 2rem;
+  }
+}
+
+@media (max-width: 580px) {
+  #popup {
+    font-size: .625rem;
   }
 }
 
 @media (max-width: 360px) {
   #popup {
-    height: calc(20% - 1rem);
+    height: calc(10%);
   }
 }
