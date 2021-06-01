@@ -25,3 +25,9 @@
   margin-right: 15px;
   cursor: pointer;
 }
+
+@media (max-width: 450px) {
+  #footer-icon-container {
+    justify-content: space-evenly;
+  }
+}

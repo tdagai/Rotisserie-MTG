@@ -5,18 +5,18 @@ import './HeroCarousel.css';
 
 const HeroCarousel = () => {
   const [positionIndex, setPositionIndex] = useState(0);
-  const [timeoutHandle, setTimeoutHandle] = useState('');
+  // const [timeoutHandle, setTimeoutHandle] = useState('');
 
-  useEffect(() => {
-    let tempHandle = setTimeout(() => {
-      if (positionIndex < 2) {
-        setPositionIndex(positionIndex + 1);
-      } else {
-        setPositionIndex(0);
-      }
-    }, 5000);
-    setTimeoutHandle(tempHandle);
-  }, [positionIndex]);
+  // useEffect(() => {
+  //   let tempHandle = setTimeout(() => {
+  //     if (positionIndex < 2) {
+  //       setPositionIndex(positionIndex + 1);
+  //     } else {
+  //       setPositionIndex(0);
+  //     }
+  //   }, 5000);
+  //   setTimeoutHandle(tempHandle);
+  // }, [positionIndex]);
 
 
   const maxItems = 3;
@@ -51,7 +51,7 @@ const HeroCarousel = () => {
     } else {
       setPositionIndex(0);
     }
-    window.clearTimeout(timeoutHandle);
+    // window.clearTimeout(timeoutHandle);
   }
 
   const handleBack = (e) => {
@@ -61,7 +61,7 @@ const HeroCarousel = () => {
     } else {
       setPositionIndex(maxItems - 1);
     }
-    window.clearTimeout(timeoutHandle);
+    // window.clearTimeout(timeoutHandle);
   }
 
   return (

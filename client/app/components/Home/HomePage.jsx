@@ -7,7 +7,8 @@ import './HomePage.css';
 
 const HomePage = () => {
   const [inputFocused, toggleFocus] = useState(false);
-  const biggerThan850 = useMediaPredicate("(min-width: 850px)")
+  const biggerThan850 = useMediaPredicate("(min-width: 850px)");
+  const biggerThan450 = useMediaPredicate("(min-width: 450px)");
 
   const handleInputFocus = (e) => {
     e.preventDefault();
@@ -108,7 +109,7 @@ const HomePage = () => {
             </input>
             <button
               type='submit'
-              className={`button-style${inputFocused ? ' newsletter-input-focused' : ''}`}
+              className={`button-style${inputFocused && biggerThan450 ? ' newsletter-input-focused' : ''}`}
               onClick={(e) => e.preventDefault()} >
               submit
             </button>

@@ -37,6 +37,10 @@ ul {
   padding-inline-start: 0;
 }
 
+a {
+  word-wrap: break-word;
+}
+
 a,
 a:visited {
   color: white;

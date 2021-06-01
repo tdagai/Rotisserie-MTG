@@ -39,7 +39,7 @@
   z-index: 2;
   font-size: 3rem;
   max-width: 30rem;
-  right: 12rem;
+  right: 10%;
   top: 50%;
   transform: translate(0, -50%);
 }
@@ -77,4 +77,24 @@
 
 #hero-back-btn {
   left: 2vw;
+}
+
+@media (max-width: 1075px) {
+  .hero-text {
+    font-size: 2.5rem;
+    max-width: 25rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero-text {
+    font-size: 2rem;
+    max-width: 20rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero-container {
+    margin-bottom: 7rem;
+  }
 }

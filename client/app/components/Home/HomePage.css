@@ -44,12 +44,6 @@
   text-decoration: none !important;
 }
 
-#gh-dis-cta,
-#github-cta,
-#discord-cta {
-  height: 25rem;
-}
-
 #github-cta,
 #discord-cta {
   display: flex;
@@ -57,6 +51,7 @@
   align-items: center;
   justify-content: space-evenly;
   width: 17rem;
+  height: 25rem;
   padding: 0 4rem;
   background-color: var(--top-blue);
   border-radius: 5px;
@@ -139,8 +134,9 @@
 #newsletter-cta label {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  width: 75%;
 }
 
 #newsletter-cta label p {
@@ -155,7 +151,8 @@
   border-bottom-right-radius: 0;
   background-color: transparent;
   color: white;
-  width: 23.5rem;
+  width: 85%;
+  max-width: 23.5rem;
   height: 2rem;
   font-size: 1rem;
   padding: 0 10px;
@@ -195,12 +192,75 @@
 
   #gh-dis-cta {
     flex-direction: column;
-    justify-content: space-between;
-    height: 52rem;
   }
 
-  #gh-dis-cta:nth-child(1) {
+  #github-cta {
     margin-bottom: 2rem;
   }
 
+}
+
+@media (max-width: 450px) {
+  #github-cta,
+  #discord-cta {
+    width: 11.5rem;
+    height: 15.5rem;
+    padding: 0 2rem;
+    font-size: 1rem;
+  }
+
+  .cta-icon {
+    font-size: 6rem;
+  }
+
+  #newsletter-cta {
+    height: calc(17.5rem - 10px);
+  }
+
+  #newsletter-cta h2 {
+    font-size: 1rem;
+    max-width: 75%;
+  }
+
+  #newsletter-cta label {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  #newsletter-cta input,
+  #newsletter-cta label p {
+    margin-bottom: 10px;
+  }
+
+  #newsletter-cta input {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: calc(85% - 24px);
+    font-size: .75rem;
+
+  }
+
+  #newsletter-cta label button {
+    height: 2rem;
+    padding: 0 .5rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .perks,
+  #gh-dis-cta {
+    margin-bottom: 7rem;
+  }
+
+  .perks h2 {
+    max-width: 70vw;
+    font-size: 1.25rem;
+  }
+
+  .perks svg {
+    min-width: 0;
+    max-width: 14rem;
+    height: fit-content;
+    max-height: 9rem;
+  }
 }
