@@ -18,7 +18,7 @@ const NavBar = () => {
         <ul className='top-bar-list' >
           <li id='homepage-title-container'>
             <h1 id='homepage-title' className='app-title-style' >
-              <Link to='/' /*className='homepage-link-style'*/ >
+              <Link to='/' >
                 Rotisserie MTG
             </Link>
             </h1>
@@ -75,7 +75,7 @@ const NavBar = () => {
       <ul className='top-bar-list' >
         <li id='homepage-title-container' >
           <h1 id='homepage-title' className='app-title-style' >
-            <Link to='/' /*className='homepage-link-style'*/ >
+            <Link to='/' >
               Rotisserie MTG
             </Link>
           </h1>

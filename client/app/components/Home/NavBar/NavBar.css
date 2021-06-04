@@ -112,11 +112,9 @@
 
 @media (max-width: 1075px) {
   .homepage-nav-item {
-    display: flex;
     justify-content: flex-start;
-    align-items: center;
-    width: 100%;
     height: fit-content;
+    height: -moz-fit-content;
     padding: 25px 0 25px 15px;
     border: none;
     border-bottom: 2px solid var(--orange-hl);
