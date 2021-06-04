@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './PositionIndicator.css';
+import PositionIndicatorItem from './PositionIndicatorItem.jsx';
 
-const PositionIndicator = ({ positionIndex }) => {
+const PositionIndicator = ({ positionIndex, maxItems }) => {
+  const populateIndicator = new Array(maxItems);
+  for (let i = 0; i < maxItems; i++) {
+    populateIndicator[i] = i;
+  }
 
   return (
     <div id='position-indicator-container' >
-      <div className={`position-indicator-item${positionIndex === 0 ? ' current-position' : ''}`} ></div>
-      <div className={`position-indicator-item${positionIndex === 1 ? ' current-position' : ''}`} ></div>
-      <div className={`position-indicator-item${positionIndex === 2 ? ' current-position' : ''}`} ></div>
+      {
+        populateIndicator.map((item, index) => {
+         return (<PositionIndicatorItem key={index} currentPos={positionIndex} myPos={index} />);
+        })
+      }
     </div>
   );
 };
