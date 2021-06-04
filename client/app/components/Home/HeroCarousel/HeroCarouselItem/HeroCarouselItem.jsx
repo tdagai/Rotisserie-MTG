@@ -4,10 +4,15 @@ import '../HeroCarousel.css';
 const HeroCarouselItem = ({ heroImage, artistCredit, text }) => {
   return (
     <div className='hero-carousel-item' >
-      <p className='hero-artcred' >{artistCredit}</p>
+      { artistCredit &&
+        <div className='hero-artcred-container' >
+          <p className='hero-artcred' >{artistCredit}</p>
+        </div>
+      }
       <img src={heroImage} alt='hero image' className='hero-img' ></img>
-      <h1 className='hero-text' >{text}</h1>
-      <div className='hero-gradient' ></div>
+      <div className='hero-gradient' >
+        <h1 className='hero-text' >{text}</h1>
+      </div>
     </div>
   );
 };
