@@ -5,29 +5,29 @@ import './HeroCarousel.css';
 
 const HeroCarousel = () => {
   const [positionIndex, setPositionIndex] = useState(0);
-  const [timeoutHandle, setTimeoutHandle] = useState('');
+  // const [timeoutHandle, setTimeoutHandle] = useState('');
 
-  useEffect(() => {
-    let tempHandle = setTimeout(() => {
-      if (positionIndex < 2) {
-        setPositionIndex(positionIndex + 1);
-      } else {
-        setPositionIndex(0);
-      }
-    }, 5000);
-    setTimeoutHandle(tempHandle);
-  }, [positionIndex]);
+  // useEffect(() => {
+  //   let tempHandle = setTimeout(() => {
+  //     if (positionIndex < 2) {
+  //       setPositionIndex(positionIndex + 1);
+  //     } else {
+  //       setPositionIndex(0);
+  //     }
+  //   }, 5000);
+  //   setTimeoutHandle(tempHandle);
+  // }, [positionIndex]);
 
 
   const maxItems = 3;
   const heroItemData = [{
-    heroImage: 'https://media.magic.wizards.com/images/wallpaper/Black_Lotus_MTGOweek_Facebook_Wallpaper.jpg',
+    heroImage: 'https://media.magic.wizards.com/images/wallpaper/Black_Lotus_MTGOweek_1920x1080_Wallpaper.jpg',
     artistCredit: 'Black Lotus by Chris Rahn',
     text: 'Draft Cards From Throughout Magic\'s History'
   },
   {
-    heroImage: 'https://i.imgur.com/Th8a4Xd.jpg',
-    // heroImage: 'https://pbs.twimg.com/media/Ce_T7zUUYAASFcV?format=jpg&name=medium',
+    // heroImage: 'https://i.imgur.com/Th8a4Xd.jpg',
+    heroImage: 'https://pbs.twimg.com/media/Ce_T7zUUYAASFcV?format=jpg&name=medium',
     artistCredit: 'Magnifying Glass by Dan Scott',
     text: 'Enjoy A Powerful Search Experience Powered By Scryfall'
   },
@@ -51,7 +51,7 @@ const HeroCarousel = () => {
     } else {
       setPositionIndex(0);
     }
-    window.clearTimeout(timeoutHandle);
+    // window.clearTimeout(timeoutHandle);
   }
 
   const handleBack = (e) => {
@@ -61,7 +61,7 @@ const HeroCarousel = () => {
     } else {
       setPositionIndex(maxItems - 1);
     }
-    window.clearTimeout(timeoutHandle);
+    // window.clearTimeout(timeoutHandle);
   }
 
   return (

@@ -16,9 +16,9 @@ const NavBar = () => {
     return (
       <div id='homepage-navbar' >
         <ul className='top-bar-list' >
-          <li>
+          <li id='homepage-title-container'>
             <h1 id='homepage-title' className='app-title-style' >
-              <Link to='/' className='homepage-link-style' >
+              <Link to='/' /*className='homepage-link-style'*/ >
                 Rotisserie MTG
             </Link>
             </h1>
@@ -73,9 +73,9 @@ const NavBar = () => {
   return (
     <nav id='homepage-navbar' >
       <ul className='top-bar-list' >
-        <li>
+        <li id='homepage-title-container' >
           <h1 id='homepage-title' className='app-title-style' >
-            <Link to='/' className='homepage-link-style' >
+            <Link to='/' /*className='homepage-link-style'*/ >
               Rotisserie MTG
             </Link>
           </h1>
