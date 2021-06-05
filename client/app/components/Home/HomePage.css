@@ -25,7 +25,10 @@
   margin: 0;
   max-width: 25rem;
   text-align: center;
-  font-size: 1.75rem;
+  font-size: clamp(1rem, 3vw, 1.75rem);
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgb(219, 219, 219);
 }
 
 .perks svg {
@@ -75,6 +78,7 @@
   margin: 0;
   text-align: center;
   text-shadow: none;
+  line-height: 1.5;
   transition: text-shadow .5s;
   -webkit-transition: text-shadow .5s;
 }
@@ -128,7 +132,9 @@
 #newsletter-cta h2 {
   margin: 0;
   text-align: center;
-  max-width: 60%;
+  max-width: 45%;
+  line-height: 1.5;
+  font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
 #newsletter-cta label {
@@ -200,13 +206,14 @@
 
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   #github-cta,
   #discord-cta {
     width: 11.5rem;
     height: 15.5rem;
     padding: 0 2rem;
-    font-size: 1rem;
+    font-size: .825rem;
+    line-height: 1.75;
   }
 
   .cta-icon {
@@ -218,7 +225,6 @@
   }
 
   #newsletter-cta h2 {
-    font-size: 1rem;
     max-width: 75%;
   }
 

@@ -19,21 +19,25 @@ const HeroCarousel = () => {
   // }, [positionIndex]);
 
 
-  const maxItems = 3;
+  const maxItems = 4;
   const heroItemData = [{
-    heroImage: 'https://media.magic.wizards.com/images/wallpaper/Black_Lotus_MTGOweek_1920x1080_Wallpaper.jpg',
-    artistCredit: 'Black Lotus by Chris Rahn',
+    heroImage: 'https://images3.alphacoders.com/558/558540.jpg',
+    artistCredit: 'Time Walk by Chris Rahn',
     text: 'Draft Cards From Throughout Magic\'s History'
   },
   {
-    // heroImage: 'https://i.imgur.com/Th8a4Xd.jpg',
     heroImage: 'https://pbs.twimg.com/media/Ce_T7zUUYAASFcV?format=jpg&name=medium',
     artistCredit: 'Magnifying Glass by Dan Scott',
-    text: 'Enjoy A Powerful Search Experience Powered By Scryfall'
+    text: 'Enjoy A Seemless Search Experience Powered By Scryfall'
   },
   {
-    heroImage: 'https://i.imgur.com/KOGixJF.jpg',
+    heroImage: 'https://static-prod.weplay.tv/2020-03-12/w-3360/webp/5ff07c42dbeeeeb9abd2dfedd2593718_large_cover.748CDB-F2F6F9-B4CCEC.jpeg',
+    // heroImage: 'https://i.imgur.com/KOGixJF.jpg',
     text: 'Meet More People To Draft With On Our Moderated Discord Community'
+  },
+  {
+    heroImage: 'https://miro.medium.com/max/1838/1*09z8y8Q7CsZInYJ8IZ27aQ.jpeg',
+    text: 'Like What you see? Want to help support me? Buy me a coffee!'
   }];
 
   const styleObj = {

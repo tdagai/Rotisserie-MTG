@@ -21,6 +21,7 @@
 .reveal-password-btn {
   position: absolute;
   right: 2px;
+  /* top: 1.5rem; */ /* For Cizel font */
   top: 1.25rem;
   width: 2rem;
   height: 2rem;

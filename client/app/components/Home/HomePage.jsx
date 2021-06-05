@@ -95,7 +95,8 @@ const HomePage = () => {
         <section id='newsletter-cta' >
           <h2>
             Wanna be the first to hear about improvements coming to the website?
-            <br></br>
+          </h2>
+          <h2>
             Enter your email below to join our newsletter!
           </h2>
 

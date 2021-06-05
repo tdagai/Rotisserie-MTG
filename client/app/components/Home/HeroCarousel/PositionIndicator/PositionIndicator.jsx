@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './PositionIndicator.css';
 import PositionIndicatorItem from './PositionIndicatorItem.jsx';
 
 const PositionIndicator = ({ positionIndex, maxItems }) => {
-  const populateIndicator = new Array(maxItems);
-  for (let i = 0; i < maxItems; i++) {
-    populateIndicator[i] = i;
-  }
+  const populateIndicator = Array.from(Array(maxItems).keys());
 
   return (
     <div id='position-indicator-container' >
