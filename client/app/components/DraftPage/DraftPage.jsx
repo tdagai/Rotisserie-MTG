@@ -44,7 +44,7 @@ const DraftPage = () => {
       delete allUsers[disconnectedID];
     });
 
-    return () => socket.disconnect();
+    return () => socket.disconnect();  //TODO: Fix The Bug That This Line Is Causing
   }, []);
 
   /* This useEffect takes care of data being emitted from the server */

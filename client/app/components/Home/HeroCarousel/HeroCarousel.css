@@ -7,7 +7,6 @@
 
 #carousel-item-container {
   position: relative;
-  width: calc(100% * 4);
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -140,7 +139,7 @@
     width: 100%;
     height: 120%;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, .55);
+    background-color: rgba(0, 0, 0, .65);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

@@ -2,13 +2,15 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  height: 58px;
+  align-items: center;
+  height: 60px;
   background-color: var(--top-blue);
   border-bottom: 2px solid var(--orange-hl);
 }
 
 #draft-page-app-title {
-  margin: 10px;
+  margin: 0;
+  margin-left: 10px;
   font-size: 2rem;
 }
 

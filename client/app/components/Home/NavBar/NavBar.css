@@ -22,6 +22,7 @@
   margin-top: 1px;
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 #homepage-title {
@@ -87,6 +88,15 @@
 
 .nav-menu-btn i {
   text-shadow: 1px 1px 0 #000;
+  transition: color .25s, text-shadow .25s;
+  -webkit-transition: color .25s, text-shadow .25s;
+}
+
+.nav-menu-btn:hover i {
+  color: hsl(20, 100%, 63%);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .5);
+  transition: color .25s, text-shadow .25s;
+  -webkit-transition: color .25s, text-shadow .25s;
 }
 
 #homepage-mobile-nav-list {

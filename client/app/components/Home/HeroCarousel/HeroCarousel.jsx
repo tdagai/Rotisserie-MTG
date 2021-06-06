@@ -32,7 +32,6 @@ const HeroCarousel = () => {
   },
   {
     heroImage: 'https://static-prod.weplay.tv/2020-03-12/w-3360/webp/5ff07c42dbeeeeb9abd2dfedd2593718_large_cover.748CDB-F2F6F9-B4CCEC.jpeg',
-    // heroImage: 'https://i.imgur.com/KOGixJF.jpg',
     text: 'Meet More People To Draft With On Our Moderated Discord Community'
   },
   {
@@ -41,6 +40,7 @@ const HeroCarousel = () => {
   }];
 
   const styleObj = {
+    width: `calc(100% * ${maxItems})`,
     left: `calc(100% * ${positionIndex} * -1)`,
     transition: 'left .75s',
     WebkitTransition: 'left .75s'

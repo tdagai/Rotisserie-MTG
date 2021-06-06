@@ -108,7 +108,7 @@ const NavBar = () => {
         <li className='homepage-nav-item' >
           <Link to='/signin' className='homepage-link-style' >
             Sign In
-        </Link>
+          </Link>
         </li>
       </ul>
     </nav>
