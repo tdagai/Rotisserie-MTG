@@ -1,0 +1,61 @@
+.notification-container {
+  position: fixed;
+  bottom: 5%;
+  right: 2.5%;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  color: white;
+  min-height: 50px;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 1px #000;
+  animation: fade-in .5s;
+}
+
+@keyframes fade-in {
+  from { opacity: 0%; }
+  to { opacity: 100%; }
+}
+
+.close-notification-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity .3s;
+  -webkit-transition: opacity .3s;
+  color: inherit;
+}
+
+.close-notification-btn i {
+  font-size: 1rem;
+  color: inherit;
+}
+
+.close-notification-btn:hover {
+  opacity: 75%;
+  transition: opacity .3s;
+  -webkit-transition: opacity .3s;
+}
+
+.success-notification {
+  background-color: hsl(124, 62%, 25%);
+}
+
+.warning-notification {
+  color: #000;
+  background-color: hsl(44, 100%, 50%);
+}
+
+.error-notification {
+  background-color: hsl(0, 62%, 42%);
+}
+
+.info-notification {
+  background-color: var(--top-blue);
+}

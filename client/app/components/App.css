@@ -98,3 +98,7 @@ a:visited {
 .link-style:visited {
   color: var(--orange-hl);
 }
+
+.invisible {
+  display: none;
+}

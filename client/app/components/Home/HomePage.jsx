@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import NavBar from './NavBar/NavBar.jsx'
 import HeroCarousel from './HeroCarousel/HeroCarousel.jsx';
-import Footer from './Footer/Footer.jsx'
-import './HomePage.css';
 import NewsletterCTA from './NewsLetterCTA/NewsletterCTA.jsx';
+import Notification from '../Notification/Notification.jsx';
+import Footer from './Footer/Footer.jsx';
+import './HomePage.css';
 
 const HomePage = () => {
   const [scrollHeight, setScrollHeight] = useState(window.pageYOffset);
@@ -152,6 +153,7 @@ const HomePage = () => {
             Back To Top
           </button>
         }
+
       </div>
       <Footer />
     </div>
