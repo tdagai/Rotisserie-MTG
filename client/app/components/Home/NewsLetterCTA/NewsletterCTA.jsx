@@ -3,12 +3,9 @@ import { useMediaPredicate } from 'react-media-hook';
 import axios from 'axios';
 import './NewsletterCTA.css';
 
-const NewsletterCTA = () => {
+const NewsletterCTA = ({ toggleNotif, setNotificationSettings }) => {
   const [inputData, setInputData] = useState('');
   const [inputFocused, toggleFocus] = useState(false);
-  const [displayEmailAdded, toggleEmailAdded] = useState(false);
-
-
 
   const biggerThan450 = useMediaPredicate("(min-width: 450px)");
   const emailMessages = {
@@ -37,14 +34,13 @@ const NewsletterCTA = () => {
     axios.post('/add-newsletter-sub', { email: inputData })
       .then(({data}) => {
         console.log(data);
-        toggleEmailAdded(true);
+        setNotificationSettings({ role: 'success', text: emailMessages.emailAdded });
+        toggleNotif(true);
       })
       .catch((err) => {
         console.error(err);
       })
   }
-
-  const emailAddedMsg = (<p>Your email has been successully added to the mailing list!</p>);
 
   return (
     <div id='newsletter-cta' >
@@ -67,7 +63,6 @@ const NewsletterCTA = () => {
           submit
         </button>
       </label>
-      { displayEmailAdded && emailAddedMsg }
     </div>
   )
 };

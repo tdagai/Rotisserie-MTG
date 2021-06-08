@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Notification.css';
 
 // Roles:
@@ -7,19 +7,17 @@ import './Notification.css';
 //  error
 //  info
 
-const Notification = ({ text, role }) => {
-  const [display, toggleNotification] = useState(true);
-
-  const closeNotification = (e) => {
+const Notification = ({ text, role, cb }) => {
+  const dismissNotification = (e) => {
     e.preventDefault();
-    toggleNotification(false);
+    cb();
   }
 
   return (
-    <div className={`notification-container ${role}-notification${display ? '' : ' invisible'}`} >
+    <div className={`notification-container ${role}-notification`} >
       <button
         className='close-notification-btn'
-        onClick={closeNotification} >
+        onClick={dismissNotification} >
         <i className="fas fa-times"></i>
       </button>
       <p>{text}</p>

@@ -9,6 +9,8 @@ import './HomePage.css';
 
 const HomePage = () => {
   const [scrollHeight, setScrollHeight] = useState(window.pageYOffset);
+  const [displayNotif, toggleNotif] = useState(false);
+  const [notificationSettings, setNotificationSettings] = useState({ role: '', text: '' });
 
   // Add a listener to the scroll event on mount so the scroll to top button can dynamically render
   useEffect(() => {
@@ -21,6 +23,10 @@ const HomePage = () => {
 
   const handleScrollTop = (e) => {
     window.scrollTo(0, 0);
+  }
+
+  const handleDismissNotif = () => {
+    toggleNotif(false);
   }
 
   return (
@@ -96,7 +102,7 @@ const HomePage = () => {
             )
           }
         <section >
-          <NewsletterCTA />
+          <NewsletterCTA toggleNotif={toggleNotif} setNotificationSettings={setNotificationSettings} />
         </section>
 
         <section className='perks' >
@@ -152,6 +158,10 @@ const HomePage = () => {
             <i className="fas fa-arrow-circle-up"></i>
             Back To Top
           </button>
+        }
+
+        { displayNotif &&
+          <Notification text={notificationSettings.text} role={notificationSettings.role} cb={handleDismissNotif} />
         }
 
       </div>
