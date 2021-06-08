@@ -31,7 +31,7 @@
   -webkit-transition: background-color .75s, height .375s, width .375s;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   #position-indicator-container {
     transform: translate(50%, 0);
     right: 50%;

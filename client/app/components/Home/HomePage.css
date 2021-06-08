@@ -182,6 +182,35 @@
   -webkit-transition: box-shadow .3s, background-color .3s, border .3s;
 }
 
+#scroll-top-btn {
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  width: -moz-fit-content;
+  min-width: 135px;
+  height: fit-content;
+  height: -moz-fit-content;
+  max-height: 40px;
+  font-size: 1rem;
+  padding: .5rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+  animation: button-appear .5s;
+}
+
+@keyframes button-appear {
+  from { opacity: 0%; }
+  to { opacity: 100%; }
+}
+
+#scroll-top-btn i {
+  margin-right: .25rem;
+  font-size: 1.25rem;
+}
+
 /* ******** */
 /*  Mobile  */
 /* ******** */

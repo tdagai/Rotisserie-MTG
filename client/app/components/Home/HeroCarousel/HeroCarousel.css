@@ -1,6 +1,6 @@
 .hero-container {
   width: 100%;
-  height: max(225px, 25vw);
+  height: max(250px, 25vw);
   margin-bottom: 10rem;
   position: relative;
 }
@@ -46,6 +46,7 @@
 }
 
 .hero-text {
+  /* color: var(--bg-color); */
   position: absolute;
   font-family: 'Cinzel';
   margin: 0;
@@ -95,7 +96,7 @@
   left: max(10px, 2vw);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .hero-img {
     position: absolute;
     width: min(100vw, 450px);

@@ -60,12 +60,6 @@
   }
 }
 
-@media (max-width: 580px) {
-  #popup {
-    font-size: .625rem;
-  }
-}
-
 @media (max-width: 360px) {
   #popup {
     height: calc(10%);

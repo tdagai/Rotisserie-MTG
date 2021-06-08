@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import NavBar from './NavBar/NavBar.jsx'
 import HeroCarousel from './HeroCarousel/HeroCarousel.jsx';
@@ -7,6 +7,14 @@ import './HomePage.css';
 
 const HomePage = () => {
   const [inputFocused, toggleFocus] = useState(false);
+  const [scrollHeight, setScrollHeight] = useState(window.pageYOffset);
+
+  // Add a listener to the scroll event on mount so the scroll to top button can dynamically render
+  useEffect(() => {
+    window.onscroll = () => setScrollHeight(window.pageYOffset);
+  }, []);
+
+
   const biggerThan850 = useMediaPredicate("(min-width: 850px)");
   const biggerThan450 = useMediaPredicate("(min-width: 450px)");
 
@@ -19,6 +27,10 @@ const HomePage = () => {
     e.preventDefault();
     toggleFocus(false);
   };
+
+  const handleScrollTop = (e) => {
+    window.scrollTo(0, 0);
+  }
 
   return (
     <div id='homepage-container' >
@@ -160,6 +172,17 @@ const HomePage = () => {
           <h2>Draft powerful cards from throughout Magic’s history</h2>
         </section>
 
+        {
+          scrollHeight > 300 &&
+          <button
+            className='button-style'
+            id='scroll-top-btn'
+            aria-label='scroll to top button'
+            onClick={handleScrollTop} >
+            <i className="fas fa-arrow-circle-up"></i>
+            Back To Top
+          </button>
+        }
       </div>
       <Footer />
     </div>

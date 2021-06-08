@@ -21,7 +21,12 @@ const HeroCarousel = () => {
 
   const maxItems = 4;
   const heroItemData = [{
-    heroImage: 'https://images3.alphacoders.com/558/558540.jpg',
+  //   heroImage: 'https://cdn.inprnt.com/thumbs/3d/ae/3dae9439f043283ec2300c2c7abf198a.jpg?response-cache-control=max-age=2628000',
+  //   artistCredit: 'Lion\'s Eye Diamond by Lindsey Look',
+  //   text: 'Draft Cards From Throughout Magic\'s History'
+  // },
+    // heroImage: 'https://images3.alphacoders.com/558/558540.jpg',
+    heroImage: 'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/7/0/70901356-3266-4bd9-aacc-f06c27271de5.jpg?1614638832',
     artistCredit: 'Time Walk by Chris Rahn',
     text: 'Draft Cards From Throughout Magic\'s History'
   },
