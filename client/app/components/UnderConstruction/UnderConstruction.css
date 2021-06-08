@@ -36,8 +36,7 @@
 
 #under-constructions-content p {
   max-width: max(250px, 60vw);
-  font-size: clamp(.825rem, 3vw, 1rem);
-  /* font-size: clamp(.75rem, 3vw, 1rem); */
+  font-size: 1rem;
 }
 
 #under-constructions-content h1 {

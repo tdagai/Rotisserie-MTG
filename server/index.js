@@ -62,6 +62,8 @@ io.on('connection', (socket) => {
 
 app.get('/search', (req, res) => controllers.fetchCardsByName(req, res));
 
+app.post('/add-newsletter-sub', (req, res) => controllers.handleNewEmail(req, res));
+
 // React router base
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'), function(err) {

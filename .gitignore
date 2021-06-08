@@ -2,3 +2,4 @@ node_modules
 client/dist/bundle.js
 client/dist/bundle.js.map
 package-lock.json
+newsletter_email_list.txt

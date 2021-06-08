@@ -4,9 +4,9 @@ import NavBar from './NavBar/NavBar.jsx'
 import HeroCarousel from './HeroCarousel/HeroCarousel.jsx';
 import Footer from './Footer/Footer.jsx'
 import './HomePage.css';
+import NewsletterCTA from './NewsLetterCTA/NewsletterCTA.jsx';
 
 const HomePage = () => {
-  const [inputFocused, toggleFocus] = useState(false);
   const [scrollHeight, setScrollHeight] = useState(window.pageYOffset);
 
   // Add a listener to the scroll event on mount so the scroll to top button can dynamically render
@@ -16,17 +16,7 @@ const HomePage = () => {
 
 
   const biggerThan850 = useMediaPredicate("(min-width: 850px)");
-  const biggerThan450 = useMediaPredicate("(min-width: 450px)");
 
-  const handleInputFocus = (e) => {
-    e.preventDefault();
-    toggleFocus(true);
-  };
-
-  const handleInputBlur = (e) => {
-    e.preventDefault();
-    toggleFocus(false);
-  };
 
   const handleScrollTop = (e) => {
     window.scrollTo(0, 0);
@@ -104,29 +94,8 @@ const HomePage = () => {
               </section>
             )
           }
-        <section id='newsletter-cta' >
-          <h2>
-            Wanna be the first to hear about improvements coming to the website?
-          </h2>
-          <h2>
-            Enter your email below to join our newsletter!
-          </h2>
-
-          <label>
-            <p>Email</p>
-            <input
-              type='email'
-              className={`${inputFocused ? 'newsletter-input-focused' : ''}`}
-              onFocus={handleInputFocus}
-              onBlur={handleInputBlur} >
-            </input>
-            <button
-              type='submit'
-              className={`button-style${inputFocused && biggerThan450 ? ' newsletter-input-focused' : ''}`}
-              onClick={(e) => e.preventDefault()} >
-              submit
-            </button>
-          </label>
+        <section >
+          <NewsletterCTA />
         </section>
 
         <section className='perks' >

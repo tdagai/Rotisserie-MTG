@@ -1,12 +1,14 @@
 const axios = require('axios');
-const URL = 'https://api.scryfall.com';
+const path = require('path');
+const { appendFile } = require('fs');
+const SCYFALL_URL = 'https://api.scryfall.com';
 
 //FF = First Face
 //SF = Second Face
 const fetchCardsByName = async (req, res) => {
   const { term } = req.query;
   try {
-    const searchResults = await axios.get(`${URL}/cards/search?q=legal%3Avintage+name%3D"${term}"`);
+    const searchResults = await axios.get(`${SCYFALL_URL}/cards/search?q=legal%3Avintage+name%3D"${term}"`);
     const formattedCards = searchResults.data.data.reduce((acc, card) => {
       const { layout } = card;
       const { name, mana_cost, oracle_text, type_line, artist, flavor_text, power, toughness, loyalty, image_uris } = card;
@@ -122,7 +124,7 @@ const validateSymbols = (str) => {
 
 const fetchSymbols = async () => {
   try {
-    const symbols = await axios.get(`${URL}/symbology`);
+    const symbols = await axios.get(`${SCYFALL_URL}/symbology`);
     const formattedSymbols = symbols.data.data.reduce((acc, symbol) => {
       if (!validateSymbols(symbol.symbol)) {
         acc[symbol.symbol] = symbol['svg_uri'];
@@ -135,7 +137,46 @@ const fetchSymbols = async () => {
   }
 };
 
+const _varifyEmail = (email) => {
+  const validEmailTest = /\S+@\S+\.\S+/;
+  return validEmailTest.test(email);
+}
+
+// TODO: Write a function that will write the given email to a file
+const _addEmailToList = (email) => {
+  appendFile('newsletter_email_list.txt', email, 'utf8', (err) => {
+    if (err) {
+      throw err;
+    }
+    console.log('email written to file successfuly');
+  });
+}
+
+
+const handleNewEmail = (req, res) => {
+  const { email } = req.body;
+  let resMsg = '';
+  let resStat = 0;
+  if (_varifyEmail(email)) {
+    console.log('THIS IS A VALID EMAIL');
+    try {
+      _addEmailToList(email + '\n');
+      resMsg = 'Your email was successully added to the mailing list!'
+      resStat = 201;
+    } catch {
+      resMsg = 'There was an issue adding your email to our system.'
+      resStat = 500;
+    }
+  } else {
+    console.log('THIS DOES NOT PASS THE EMAIL VALIDATION TEST');
+    resMsg = 'This is not a valid email format. Please try again';
+    resStat = 400;
+  }
+  res.status(resStat).send(resMsg);
+}
+
 module.exports = {
   fetchCardsByName,
   fetchSymbols,
+  handleNewEmail,
 };
