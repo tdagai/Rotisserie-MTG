@@ -132,7 +132,8 @@
   max-height: 40px;
   font-size: 1rem;
   padding: .5rem;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1rem .125rem rgba(0, 0, 0, .5);
+  text-shadow: -1px 1px .125rem rgba(0, 0, 0, .5);
   animation: button-appear .5s;
 }
 

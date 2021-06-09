@@ -3,6 +3,9 @@
   height: max(250px, 25vw);
   margin-bottom: 10rem;
   position: relative;
+  overflow: hidden;
+  box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .5);
+  border-bottom: 2px solid var(--orange-hl);
 }
 
 #carousel-item-container {
@@ -16,7 +19,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-bottom: 2px solid var(--orange-hl);
   display: flex;
   flex-direction: row;
 }
@@ -46,9 +48,7 @@
 }
 
 .hero-text {
-  /* color: var(--bg-color); */
   position: absolute;
-  font-family: 'Cinzel';
   margin: 0;
   z-index: 2;
   font-size: clamp(1.25rem, 3.25vw, 2.75rem);
@@ -139,11 +139,12 @@
     padding: 0 10px;
     width: 100%;
     height: 120%;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, .65);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .85);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .35);
   }
 }
 

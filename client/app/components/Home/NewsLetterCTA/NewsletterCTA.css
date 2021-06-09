@@ -4,10 +4,11 @@
   justify-content: space-evenly;
   align-items: center;
   min-height: calc(25rem - 10px);
-  border-top: 5px solid var(--orange-hl);
-  border-bottom: 5px solid var(--orange-hl);
+  border-top: .125rem solid var(--orange-hl);
+  border-bottom: .125rem solid var(--orange-hl);
   margin-bottom: 10rem;
   background-color: rgba(38, 82, 126, .1);
+  box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, .25);
 }
 
 #newsletter-cta h2 {
@@ -18,12 +19,15 @@
   font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
+#newsletter-cta form {
+  width: 75%;
+}
+
 #newsletter-cta label {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 75%;
 }
 
 #newsletter-cta label p {
@@ -71,9 +75,12 @@
     max-width: 75%;
   }
 
+  #newsletter-cta form {
+    width: 90%;
+  }
+
   #newsletter-cta label {
     flex-direction: column;
-    width: 90%;
   }
 
   #newsletter-cta input,

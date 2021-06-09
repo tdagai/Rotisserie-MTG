@@ -5,21 +5,21 @@ import './HeroCarousel.css';
 
 const HeroCarousel = () => {
   const [positionIndex, setPositionIndex] = useState(0);
-  // const [timeoutHandle, setTimeoutHandle] = useState('');
+  const [timeoutHandle, setTimeoutHandle] = useState('');
+  const [maxItems] = useState(4);
 
-  // useEffect(() => {
-  //   let tempHandle = setTimeout(() => {
-  //     if (positionIndex < 2) {
-  //       setPositionIndex(positionIndex + 1);
-  //     } else {
-  //       setPositionIndex(0);
-  //     }
-  //   }, 5000);
-  //   setTimeoutHandle(tempHandle);
-  // }, [positionIndex]);
+  useEffect(() => {
+    let tempHandle = setTimeout(() => {
+      if (positionIndex < maxItems - 1) {
+        setPositionIndex(positionIndex + 1);
+      } else {
+        setPositionIndex(0);
+      }
+    }, 5000);
+    setTimeoutHandle(tempHandle);
+  }, [positionIndex]);
 
 
-  const maxItems = 4;
   const heroItemData = [{
   //   heroImage: 'https://cdn.inprnt.com/thumbs/3d/ae/3dae9439f043283ec2300c2c7abf198a.jpg?response-cache-control=max-age=2628000',
   //   artistCredit: 'Lion\'s Eye Diamond by Lindsey Look',
@@ -60,7 +60,7 @@ const HeroCarousel = () => {
     } else {
       setPositionIndex(0);
     }
-    // window.clearTimeout(timeoutHandle);
+    window.clearTimeout(timeoutHandle);
   }
 
   const handleBack = (e) => {
@@ -70,7 +70,7 @@ const HeroCarousel = () => {
     } else {
       setPositionIndex(maxItems - 1);
     }
-    // window.clearTimeout(timeoutHandle);
+    window.clearTimeout(timeoutHandle);
   }
 
   return (

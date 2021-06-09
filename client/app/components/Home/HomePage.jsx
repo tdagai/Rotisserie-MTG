@@ -145,7 +145,7 @@ const HomePage = () => {
               </linearGradient>
             </defs>
           </svg>
-          <h2>Draft powerful cards from throughout Magic’s history</h2>
+          <h2>Build your deck, shuffle up, and play along with your friends</h2>
         </section>
 
         {

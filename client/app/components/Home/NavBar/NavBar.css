@@ -1,5 +1,4 @@
 #homepage-navbar {
-  /* font-family: 'Cinzel'; */
   position: fixed;
   width: 100%;
   max-width: 100vw;
@@ -7,6 +6,7 @@
   z-index: 50;
   background-color: var(--top-blue);
   border-bottom: 2px solid var(--orange-hl);
+  box-shadow: 0 .25rem 1rem rgba(0, 0, 0, .5);
 }
 
 .top-bar-list,

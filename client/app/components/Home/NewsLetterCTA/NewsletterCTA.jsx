@@ -32,7 +32,7 @@ const NewsletterCTA = ({ toggleNotif, setNotificationSettings }) => {
     e.preventDefault();
     console.log(inputData);
     axios.post('/add-newsletter-sub', { email: inputData })
-      .then(({data}) => {
+      .then(({ data }) => {
         console.log(data);
         setNotificationSettings({ role: 'success', text: emailMessages.emailAdded });
         toggleNotif(true);
@@ -47,22 +47,25 @@ const NewsletterCTA = ({ toggleNotif, setNotificationSettings }) => {
       <h2>Wanna be the first to hear about improvements coming to the website?</h2>
       <h2>Enter your email below to join our newsletter!</h2>
 
-      <label>
-        <p>Email</p>
-        <input
-          type='email'
-          className={`${inputFocused ? 'newsletter-input-focused' : ''}`}
-          onChange={updateInputData}
-          onFocus={handleInputFocus}
-          onBlur={handleInputBlur} >
-        </input>
-        <button
-          type='submit'
-          className={`button-style${inputFocused && biggerThan450 ? ' newsletter-input-focused' : ''}`}
-          onClick={handleSubmitInputData} >
-          submit
+      <form>
+        <label>
+          <p>Email</p>
+          <input
+            type='email'
+            className={`${inputFocused ? 'newsletter-input-focused' : ''}`}
+            placeholder='Enter Your Email'
+            onChange={updateInputData}
+            onFocus={handleInputFocus}
+            onBlur={handleInputBlur} >
+          </input>
+          <button
+            type='submit'
+            className={`button-style${inputFocused && biggerThan450 ? ' newsletter-input-focused' : ''}`}
+            onClick={handleSubmitInputData} >
+            submit
         </button>
-      </label>
+        </label>
+      </form>
     </div>
   )
 };
