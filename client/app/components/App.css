@@ -64,8 +64,7 @@ a:visited {
 }
 
 .button-style:hover {
-  /* background-color: var(--bg-color); */
-  background-color: hsl(20, 100%, 68%);
+  background-color: hsl(20, 100%, 63%);
   transition: background-color .2s;
   -webkit-transition: background-color .2s;
 }

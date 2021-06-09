@@ -14,7 +14,7 @@ const NavBar = () => {
 
   if (smallerThan1075) {
     return (
-      <div id='homepage-navbar' >
+      <nav id='homepage-navbar' >
         <ul className='top-bar-list' >
           <li id='homepage-title-container'>
             <h1 id='homepage-title' className='app-title-style' >
@@ -65,51 +65,51 @@ const NavBar = () => {
             </li>
           </Link>
         </ul>
-      </div>
+      </nav>
 
     );
   }
 
   return (
     <nav id='homepage-navbar' >
-      <ul className='top-bar-list' >
-        <li id='homepage-title-container' >
-          <h1 id='homepage-title' className='app-title-style' >
-            <Link to='/' >
-              Rotisserie MTG
+      <li id='homepage-title-container' >
+        <h1 id='homepage-title' className='app-title-style' >
+          <Link to='/' >
+            Rotisserie MTG
             </Link>
-          </h1>
-        </li>
-        <li className='homepage-nav-item' >
-          <Link to='/contact' className='homepage-link-style' >
+        </h1>
+      </li>
+      <ul className='top-bar-list' >
+        <Link to='/contact' className='homepage-link-style' >
+          <li className='homepage-nav-item' >
             Contact
-          </Link>
-        </li>
-        <li className='homepage-nav-item' >
-          <Link to='/about' className='homepage-link-style' >
+          </li>
+        </Link>
+        <Link to='/about' className='homepage-link-style' >
+          <li className='homepage-nav-item' >
             About
-          </Link>
-        </li>
-        <li className='homepage-nav-item' >
-          <Link to='/draft-page' className='homepage-link-style' >
+          </li>
+        </Link>
+        <Link to='/draft-page' className='homepage-link-style' >
+          <li className='homepage-nav-item' >
             Sandbox
-          </Link>
-        </li>
-        <li className='homepage-nav-item' >
-          <Link to='/join-room' className='homepage-link-style' >
+          </li>
+        </Link>
+        <Link to='/join-room' className='homepage-link-style' >
+          <li className='homepage-nav-item' >
             Join Room
-          </Link>
-        </li>
-        <li className='homepage-nav-item' >
-          <Link to='/create-new-room' className='homepage-link-style' >
+          </li>
+        </Link>
+        <Link to='/create-new-room' className='homepage-link-style' >
+          <li className='homepage-nav-item' >
             Create New Room
-          </Link>
-        </li>
-        <li className='homepage-nav-item' >
-          <Link to='/signin' className='homepage-link-style' >
+          </li>
+        </Link>
+        <Link to='/signin' className='homepage-link-style' >
+          <li className='homepage-nav-item' >
             Sign In
-          </Link>
-        </li>
+          </li>
+        </Link>
       </ul>
     </nav>
   );
