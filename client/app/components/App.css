@@ -57,7 +57,7 @@ a:visited {
 .button-style {
   color: #fff;
   background-color: var(--orange-hl);
-  border: 2px solid var(--orange-hl);
+  /* border: 2px solid var(--orange-hl); */
   border-radius: 5px;
   cursor: pointer;
   transition: background-color .3s;
@@ -81,7 +81,8 @@ a:visited {
 .disabled-button-style {
   border-radius: 5px;
   outline: none;
-  padding: 0;
+  border: none;
+  padding: 2px;
   transition: background-color .2s, border .2s;
   -webkit-transition: background-color .2s, border .2s;
 }

@@ -12,7 +12,6 @@ const clearInputValue = (inputToClear, setInputData) => {
   setInputData('');
 }
 
-
 const NewsletterCTA = ({ toggleNotif, setNotificationSettings }) => {
   const [inputData, setInputData] = useState('');
   const [inputFocused, toggleFocus] = useState(false);
@@ -20,23 +19,32 @@ const NewsletterCTA = ({ toggleNotif, setNotificationSettings }) => {
   const biggerThan450 = useMediaPredicate("(min-width: 450px)");
   const emailMessages = {
     emailAdded: 'Your email has been successully added to the mailing list!',
-    invalidEmailFormat: 'This is not a valid email format. Please try again.',
+    invalidFormat: 'This is not a valid email format. Please try again.',
     fileSysErr: 'There was an issue adding your email to our system.'
   }
 
   const handleSubmitInputData = (e) => {
     e.preventDefault();
-    console.log(inputData);
     const dataToSend = inputData;
-    clearInputValue(document.querySelector('#newsletter-input'), setInputData);
     axios.post('/add-newsletter-sub', { email: dataToSend })
-      .then(({ data }) => {
-        console.log(data);
+    .then(({ data }) => {
+        clearInputValue(document.querySelector('#newsletter-input'), setInputData);
         setNotificationSettings({ role: 'success', text: emailMessages.emailAdded });
         toggleNotif(true);
       })
       .catch((err) => {
-        console.error(err);
+        switch (err.response.status) {
+          case 400: {
+            setNotificationSettings({ role: 'error', text: emailMessages.invalidFormat });
+            toggleNotif(true);
+            break;
+          }
+          case 500: {
+            setNotificationSettings({ role: 'error', text: emailMessages.fileSysErr });
+            toggleNotif(true);
+            break;
+          }
+        }
       })
   }
 
