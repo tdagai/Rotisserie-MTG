@@ -8,7 +8,6 @@
 
 html {
   color: #fff;
-  /* font-family: 'Cinzel'; */
   font-family: 'Roboto', sans-serif;
   overflow: hidden auto;
 }
@@ -61,12 +60,14 @@ a:visited {
   border: 2px solid var(--orange-hl);
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color .3s;
+  -webkit-transition: background-color .3s;
 }
 
 .button-style:hover {
   background-color: hsl(20, 100%, 63%);
-  transition: background-color .2s;
-  -webkit-transition: background-color .2s;
+  transition: background-color .3s;
+  -webkit-transition: background-color .3s;
 }
 
 .disabled-button-style {

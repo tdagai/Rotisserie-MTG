@@ -134,6 +134,8 @@
   padding: .5rem;
   box-shadow: 0 0 1rem .125rem rgba(0, 0, 0, .5);
   text-shadow: -1px 1px .125rem rgba(0, 0, 0, .5);
+  transition: text-shadow .3s;
+  -webkit-transition: text-shadow .3s;
   animation: button-appear .5s;
 }
 
@@ -145,6 +147,12 @@
 #scroll-top-btn i {
   margin-right: .25rem;
   font-size: 1.25rem;
+}
+
+#scroll-top-btn:hover {
+  text-shadow: -.125rem .125rem .125rem rgba(0, 0, 0, .5);
+  transition: text-shadow .3s;
+  -webkit-transition: text-shadow .3s;
 }
 
 /* ******** */

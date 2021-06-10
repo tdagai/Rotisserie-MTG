@@ -19,6 +19,15 @@
   to { opacity: 100%; }
 }
 
+.fade-out {
+  animation: fade-out .5s forwards;
+}
+
+@keyframes fade-out {
+  from { opacity: 100%; }
+  to { opacity: 0%; }
+}
+
 .notification-container p {
   margin: 0;
   grid-column-start: 2;

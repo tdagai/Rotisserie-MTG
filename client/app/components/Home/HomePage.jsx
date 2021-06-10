@@ -8,22 +8,17 @@ import Footer from './Footer/Footer.jsx';
 import './HomePage.css';
 
 const HomePage = () => {
-  const [scrollHeight, setScrollHeight] = useState(window.pageYOffset);
+  const [scrollHeight, setScrollHeight] = useState(0);
   const [displayNotif, toggleNotif] = useState(false);
   const [notificationSettings, setNotificationSettings] = useState({ role: '', text: '' });
 
   // Add a listener to the scroll event on mount so the scroll to top button can dynamically render
   useEffect(() => {
+    setScrollHeight(window.pageYOffset);
     window.onscroll = () => setScrollHeight(window.pageYOffset);
   }, []);
 
-
   const biggerThan850 = useMediaPredicate("(min-width: 850px)");
-
-
-  const handleScrollTop = (e) => {
-    window.scrollTo(0, 0);
-  }
 
   const handleDismissNotif = () => {
     toggleNotif(false);
@@ -53,7 +48,7 @@ const HomePage = () => {
           <a href='https://github.com/tdagai/Rotisserie-MTG' target='_blank' rel='noopener' aria-label='project github' >
             <div id='github-cta' >
               <i className="fab fa-github cta-icon"></i>
-              <p>Follow the website’s developement on our Github by clicking here!</p>
+              <p>Follow the website’s development on our Github by clicking here!</p>
             </div>
           </a>
           <a href='https://discord.gg/XXpR8a43Ts' target='_blank' rel='noopener' aria-label='discord server invite' >
@@ -154,11 +149,13 @@ const HomePage = () => {
             className='button-style'
             id='scroll-top-btn'
             aria-label='scroll to top button'
-            onClick={handleScrollTop} >
+            onClick={() => window.scrollTo(0, 0)} >
             <i className="fas fa-arrow-circle-up"></i>
             Back To Top
           </button>
         }
+
+        {/* <Notification text='This is some text for testing purposes' role='success' cb={handleDismissNotif} /> */}
 
         { displayNotif &&
           <Notification text={notificationSettings.text} role={notificationSettings.role} cb={handleDismissNotif} />

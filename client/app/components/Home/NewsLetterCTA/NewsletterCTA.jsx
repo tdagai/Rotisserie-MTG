@@ -3,6 +3,16 @@ import { useMediaPredicate } from 'react-media-hook';
 import axios from 'axios';
 import './NewsletterCTA.css';
 
+const updateInputData = (e, setInputData) => {
+  setInputData(e.target.value);
+}
+
+const clearInputValue = (inputToClear, setInputData) => {
+  inputToClear.value = '';
+  setInputData('');
+}
+
+
 const NewsletterCTA = ({ toggleNotif, setNotificationSettings }) => {
   const [inputData, setInputData] = useState('');
   const [inputFocused, toggleFocus] = useState(false);
@@ -14,24 +24,12 @@ const NewsletterCTA = ({ toggleNotif, setNotificationSettings }) => {
     fileSysErr: 'There was an issue adding your email to our system.'
   }
 
-  const handleInputFocus = (e) => {
-    e.preventDefault();
-    toggleFocus(true);
-  };
-
-  const handleInputBlur = (e) => {
-    e.preventDefault();
-    toggleFocus(false);
-  };
-
-  const updateInputData = (e) => {
-    setInputData(e.target.value);
-  }
-
   const handleSubmitInputData = (e) => {
     e.preventDefault();
     console.log(inputData);
-    axios.post('/add-newsletter-sub', { email: inputData })
+    const dataToSend = inputData;
+    clearInputValue(document.querySelector('#newsletter-input'), setInputData);
+    axios.post('/add-newsletter-sub', { email: dataToSend })
       .then(({ data }) => {
         console.log(data);
         setNotificationSettings({ role: 'success', text: emailMessages.emailAdded });
@@ -52,11 +50,12 @@ const NewsletterCTA = ({ toggleNotif, setNotificationSettings }) => {
           <p>Email</p>
           <input
             type='email'
+            id='newsletter-input'
             className={`${inputFocused ? 'newsletter-input-focused' : ''}`}
             placeholder='Enter Your Email'
-            onChange={updateInputData}
-            onFocus={handleInputFocus}
-            onBlur={handleInputBlur} >
+            onChange={(e) => updateInputData(e, setInputData)}
+            onFocus={() => toggleFocus(true)}
+            onBlur={() => toggleFocus(false)} >
           </input>
           <button
             type='submit'
