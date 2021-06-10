@@ -1,6 +1,6 @@
 #signin-page-container {
   display: grid;
-  grid-template-columns: 560px calc(100% - 560px);
+  grid-template-columns: 35rem calc(100% - 35rem);
   height: 100vh;
   overflow: auto;
 }
@@ -15,34 +15,24 @@
 
 #signin-page-left {
   background-color: var(--top-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #signin-page-right {
   background-color: transparent;
 }
 
-#signin-page-left h1 {
+#signin-app-title {
+  position: relative;
+  background: linear-gradient(to bottom, var(--orange-hl), var(--orange-hl) 50%, #fff 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 5rem;
   margin: 0;
-  margin-left: 60px;
-}
-
-.signin-app-title {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.signin-app-title:visited {
-  color: white;
-}
-
-
-#signin-app-title-orange {
-  color: var(--orange-hl);
-}
-
-#signin-app-title-orange:visited {
-  color: var(--orange-hl);
+  width: 80%;
 }
 
 .signin-input-style {
@@ -67,20 +57,24 @@
 @media (max-width: 1000px) {
   #signin-page-container {
     grid-template-columns: 100%;
-    grid-template-rows: 58px calc(100% - 58px);
+    grid-template-rows: 3.75rem calc(100% - 3.75rem);
   }
 
   #signin-page-left {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding: 10px;
+    padding: .625rem;
   }
 
-  #signin-page-left h1 {
-    font-size: clamp(1.5rem, 3vw, 2rem);;
-    margin: 0;
-    margin-right: 5px;
+  #signin-app-title {
+    font-size: clamp(1.75rem, 3vw, 2rem);
+    background: linear-gradient(to right, var(--orange-hl), var(--orange-hl) 70%, #fff 70%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+    width: -moz-fit-content;
   }
 
 }
