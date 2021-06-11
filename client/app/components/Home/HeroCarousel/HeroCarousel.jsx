@@ -6,14 +6,21 @@ import './HeroCarousel.css';
 const HeroCarousel = () => {
   const [positionIndex, setPositionIndex] = useState(0);
   const [timeoutHandle, setTimeoutHandle] = useState('');
+  const [isSubscribed, setSubMode] = useState(true);
   const [maxItems] = useState(4);
 
   useEffect(() => {
+    return () => setSubMode(false);
+  }, [])
+
+  useEffect(() => {
     let tempHandle = setTimeout(() => {
-      if (positionIndex < maxItems - 1) {
-        setPositionIndex(positionIndex + 1);
-      } else {
-        setPositionIndex(0);
+      if (isSubscribed) {
+        if (positionIndex < maxItems - 1) {
+          setPositionIndex(positionIndex + 1);
+        } else {
+          setPositionIndex(0);
+        }
       }
     }, 5000);
     setTimeoutHandle(tempHandle);
@@ -21,11 +28,6 @@ const HeroCarousel = () => {
 
 
   const heroItemData = [{
-  //   heroImage: 'https://cdn.inprnt.com/thumbs/3d/ae/3dae9439f043283ec2300c2c7abf198a.jpg?response-cache-control=max-age=2628000',
-  //   artistCredit: 'Lion\'s Eye Diamond by Lindsey Look',
-  //   text: 'Draft Cards From Throughout Magic\'s History'
-  // },
-    // heroImage: 'https://images3.alphacoders.com/558/558540.jpg',
     heroImage: 'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/7/0/70901356-3266-4bd9-aacc-f06c27271de5.jpg?1614638832',
     artistCredit: 'Time Walk by Chris Rahn',
     text: 'Draft Cards From Throughout Magic\'s History'
