@@ -19,6 +19,7 @@ const DraftPage = () => {
   const [latestCardAdded, setLatestCardAdded] = useState({});
   const [allSymbols, setAllSymbols] = useState(null);
   const [currentlyDisplayedCard, setCurrentlyDisplayedCard] = useState({});
+  const [isSubscribed, setSubMode] = useState(true);
 
   /* This useEffect takes care of all of the socket events */
   useEffect(() => {
@@ -44,25 +45,29 @@ const DraftPage = () => {
       delete allUsers[disconnectedID];
     });
 
-    return () => socket.disconnect();  //TODO: Fix The Bug That This Line Is Causing
+    return () => {
+      setSubMode(false);
+      socket.disconnect();
+    };
   }, []);
 
   /* This useEffect takes care of data being emitted from the server */
   useEffect(() => {
-    socket.on('symbols', (symbols) => {
-      if (allSymbols === null) {
-        setAllSymbols(symbols);
-      }
-    });
+    if (isSubscribed) {
+      socket.on('symbols', (symbols) => {
+        if (allSymbols === null) {
+          setAllSymbols(symbols);
+        }
+      });
 
-    socket.on('new card drafted', ({ users, allDrafted, newCard, senderID }) => {
-      if (newCard.searchName !== latestCardAdded.searchName) {
-        setAllUsers(users);
-        setAllCardsDrafted(allDrafted);
-        removeFromStash(newCard.ff.name);
-      }
-    });
-
+      socket.on('new card drafted', ({ users, allDrafted, newCard, senderID }) => {
+        if (newCard.searchName !== latestCardAdded.searchName) {
+          setAllUsers(users);
+          setAllCardsDrafted(allDrafted);
+          removeFromStash(newCard.ff.name);
+        }
+      });
+    }
   }, [allCardsDrafted]);
 
   /* This useEffect takes care of emitting data to the server */
