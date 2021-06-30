@@ -1,5 +1,5 @@
 const axios = require('axios');
-const path = require('path');
+const nodemailer = require('nodemailer');
 const { appendFile } = require('fs');
 const SCYFALL_URL = 'https://api.scryfall.com';
 
@@ -138,11 +138,10 @@ const fetchSymbols = async () => {
 };
 
 const _varifyEmail = (email) => {
-  const validEmailTest = /\S+@\S+\.\S+/;
+  const validEmailTest = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return validEmailTest.test(email);
 }
 
-// TODO: Write a function that will write the given email to a file
 const _addEmailToList = (email) => {
   appendFile('newsletter_email_list.txt', email, 'utf8', (err) => {
     if (err) {
@@ -152,6 +151,31 @@ const _addEmailToList = (email) => {
   });
 }
 
+let transport = nodemailer.createTransport({
+  host: 'smtp.mailtrap.io',
+  port: 2525,
+  auth: {
+    user: 'ec7c573e6e5e93',
+    pass: 'ba22d1ee643064'
+  }
+});
+
+const _sendThankYouEmail = (email) => {
+  const message = {
+    from: 'support@rotisserie-mtg.com', // Sender address
+    to: 'to@email.com',         // List of recipients
+    subject: 'Thank You For Signing Up For Our Mailing List!', // Subject line
+    text: 'Thank you for subscribing to the mailing list of Rotisserie MTG!\nWhenever new updates come to the website, you will be the first to know about them!\n\nIf you\'d like to find more people to draft with, you can do so by joining our moderated Discord community here: https://discord.gg/ZE6pgh65r4' // Plain text body
+  };
+
+  transport.sendMail(message, function(err, info) {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(info);
+    }
+});
+}
 
 const handleNewEmail = (req, res) => {
   const { email } = req.body;
@@ -161,6 +185,7 @@ const handleNewEmail = (req, res) => {
     console.log('THIS IS A VALID EMAIL');
     try {
       _addEmailToList(email + '\n');
+      _sendThankYouEmail();
       resMsg = 'Your email was successully added to the mailing list!'
       resStat = 201;
     } catch {

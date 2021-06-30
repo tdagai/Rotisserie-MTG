@@ -133,9 +133,8 @@
   font-size: 1rem;
   padding: .5rem;
   box-shadow: 0 .0625rem .25rem .125rem rgba(0, 0, 0, .25);
-  /* text-shadow: -.0625rem .0625rem rgb(50, 50, 50); */
-  transition: background-color .3s, text-shadow .3s, box-shadow .3s;
-  -webkit-transition: background-color .3s, text-shadow .3s, box-shadow .3s;
+  transition: background-color .3s, text-shadow .5s, box-shadow .3s;
+  -webkit-transition: background-color .3s, text-shadow .5s, box-shadow .3s;
   animation: button-appear .5s;
 }
 
@@ -152,8 +151,8 @@
 #scroll-top-btn:hover {
   box-shadow: 0 .25rem .75rem .5rem rgba(0, 0, 0, .25);
   text-shadow: -.0625rem .0625rem .0625rem rgba(100, 100, 100, 1);
-  transition: background-color .3s, text-shadow .3s, box-shadow .3s;
-  -webkit-transition: background-color .3s, text-shadow .3s, box-shadow .3s;
+  transition: background-color .3s, text-shadow .5s, box-shadow .3s;
+  -webkit-transition: background-color .3s, text-shadow .5s, box-shadow .3s;
 }
 
 /* ******** */
