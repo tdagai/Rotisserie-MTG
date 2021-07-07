@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import axios from 'axios';
 import './NewsletterCTA.css';

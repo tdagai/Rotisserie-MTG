@@ -137,7 +137,7 @@ const fetchSymbols = async () => {
   }
 };
 
-const _varifyEmail = (email) => {
+const _verifyEmail = (email) => {
   const validEmailTest = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return validEmailTest.test(email);
 }
@@ -164,7 +164,7 @@ const _sendThankYouEmail = (email) => {
   const message = {
     from: 'support@rotisserie-mtg.com', // Sender address
     to: 'to@email.com',         // List of recipients
-    subject: 'Thank You For Signing Up For Our Mailing List!', // Subject line
+    subject: 'Thank You For Signing Up For The Rotisserie MTG Mailing List!', // Subject line
     text: 'Thank you for subscribing to the mailing list of Rotisserie MTG!\nWhenever new updates come to the website, you will be the first to know about them!\n\nIf you\'d like to find more people to draft with, you can do so by joining our moderated Discord community here: https://discord.gg/ZE6pgh65r4' // Plain text body
   };
 
@@ -181,7 +181,7 @@ const handleNewEmail = (req, res) => {
   const { email } = req.body;
   let resMsg = '';
   let resStat = 0;
-  if (_varifyEmail(email)) {
+  if (_verifyEmail(email)) {
     console.log('THIS IS A VALID EMAIL');
     try {
       _addEmailToList(email + '\n');
