@@ -8,8 +8,6 @@ import PageUnavailable from './PageUnavailable/PageUnavailable.jsx';
 import UnderConstructions from './UnderConstruction/UnderConstruction.jsx';
 import './App.css';
 
-const socket = io('http://ec2-54-193-123-166.us-west-1.compute.amazonaws.com', { autoConnect: false });
-
 const App = () => {
   return (
     <Router>

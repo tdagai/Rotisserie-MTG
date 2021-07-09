@@ -4,11 +4,8 @@ const http = require('http').createServer(app);
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const compression = require('compression');
-<<<<<<< HEAD
 const cors = require('cors');
-=======
 const path = require('path');
->>>>>>> 584c1a86ba5760cebdbdfb4126395c7b49f8e3c5
 const controllers = require('./controllers/controllers.js');
 const io = require('socket.io')(http);
 
