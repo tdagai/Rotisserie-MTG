@@ -8,10 +8,7 @@ import PageUnavailable from './PageUnavailable/PageUnavailable.jsx';
 import UnderConstructions from './UnderConstruction/UnderConstruction.jsx';
 import './App.css';
 
-<<<<<<< HEAD
 const socket = io('http://ec2-54-193-123-166.us-west-1.compute.amazonaws.com', { autoConnect: false });
-=======
->>>>>>> 584c1a86ba5760cebdbdfb4126395c7b49f8e3c5
 
 const App = () => {
   return (

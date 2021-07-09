@@ -124,11 +124,7 @@ const validateSymbols = (str) => {
 
 const fetchSymbols = async () => {
   try {
-<<<<<<< HEAD
-    const symbols = await axios.get(`${URL}/symbology`, { headers: {'Access-Control-Allow-Origin' : '*'} });
-=======
     const symbols = await axios.get(`${SCYFALL_URL}/symbology`);
->>>>>>> 584c1a86ba5760cebdbdfb4126395c7b49f8e3c5
     const formattedSymbols = symbols.data.data.reduce((acc, symbol) => {
       if (!validateSymbols(symbol.symbol)) {
         acc[symbol.symbol] = symbol['svg_uri'];
