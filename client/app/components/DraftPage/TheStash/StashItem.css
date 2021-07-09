@@ -1,0 +1,59 @@
+.stash-image-container {
+  z-index: 1;
+  position: relative;
+  margin: 0 5px;
+  min-width: 146px;
+  height: 209px;
+}
+
+.stash-image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #000;
+}
+
+.stash-image-container img:hover {
+  border-color: var(--orange-hl);
+  opacity: .8;
+}
+
+.stash-add-to-draft,
+.stash-remove-from-stash {
+  z-index: 2;
+  position: absolute;
+  top: -5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 0;
+}
+
+
+
+.stash-add-to-draft {
+  left: -3px;
+  background-color: hsl(124, 62%, 35%);
+  box-shadow: 1px 2px 0 hsl(124, 62%, 25%);
+}
+
+.stash-add-to-draft:hover {
+  background-color: hsl(124, 62%, 30%);
+  box-shadow: 1px 2px 0 hsl(124, 62%, 20%);
+}
+
+.stash-remove-from-stash {
+  right: -3px;
+  background-color: hsl(0, 62%, 52%);
+  box-shadow: 1px 2px 0 hsl(0, 62%, 32%);
+}
+
+.stash-remove-from-stash:hover {
+  background-color: hsl(0, 62%, 42%);
+  box-shadow: 1px 2px 0 hsl(0, 62%, 22%);
+}

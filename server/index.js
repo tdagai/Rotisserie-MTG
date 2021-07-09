@@ -4,7 +4,11 @@ const http = require('http').createServer(app);
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const compression = require('compression');
+<<<<<<< HEAD
 const cors = require('cors');
+=======
+const path = require('path');
+>>>>>>> 584c1a86ba5760cebdbdfb4126395c7b49f8e3c5
 const controllers = require('./controllers/controllers.js');
 const io = require('socket.io')(http);
 
@@ -62,5 +66,16 @@ io.on('connection', (socket) => {
 });
 
 app.get('/search', (req, res) => controllers.fetchCardsByName(req, res));
+
+app.post('/add-newsletter-sub', (req, res) => controllers.handleNewEmail(req, res));
+
+// React router base
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+});
 
 http.listen(PORT, () => console.log(`Go to http://localhost:${PORT}`));

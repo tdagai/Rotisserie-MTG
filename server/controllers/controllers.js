@@ -1,14 +1,14 @@
 const axios = require('axios');
-const URL = 'https://api.scryfall.com';
+const nodemailer = require('nodemailer');
+const { appendFile } = require('fs');
+const SCYFALL_URL = 'https://api.scryfall.com';
 
 //FF = First Face
 //SF = Second Face
 const fetchCardsByName = async (req, res) => {
   const { term } = req.query;
   try {
-    const searchResults = await axios.get(
-      `${URL}/cards/search?q=legal%3Avintage+name%3D"${term}"`,
-      { headers: {'Access-Control-Allow-Origin' : '*'} });
+    const searchResults = await axios.get(`${SCYFALL_URL}/cards/search?q=legal%3Avintage+name%3D"${term}"`);
     const formattedCards = searchResults.data.data.reduce((acc, card) => {
       const { layout } = card;
       const { name, mana_cost, oracle_text, type_line, artist, flavor_text, power, toughness, loyalty, image_uris } = card;
@@ -124,7 +124,11 @@ const validateSymbols = (str) => {
 
 const fetchSymbols = async () => {
   try {
+<<<<<<< HEAD
     const symbols = await axios.get(`${URL}/symbology`, { headers: {'Access-Control-Allow-Origin' : '*'} });
+=======
+    const symbols = await axios.get(`${SCYFALL_URL}/symbology`);
+>>>>>>> 584c1a86ba5760cebdbdfb4126395c7b49f8e3c5
     const formattedSymbols = symbols.data.data.reduce((acc, symbol) => {
       if (!validateSymbols(symbol.symbol)) {
         acc[symbol.symbol] = symbol['svg_uri'];
@@ -137,7 +141,71 @@ const fetchSymbols = async () => {
   }
 };
 
+const _verifyEmail = (email) => {
+  const validEmailTest = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return validEmailTest.test(email);
+}
+
+const _addEmailToList = (email) => {
+  appendFile('newsletter_email_list.txt', email, 'utf8', (err) => {
+    if (err) {
+      throw err;
+    }
+    console.log('email written to file successfuly');
+  });
+}
+
+let transport = nodemailer.createTransport({
+  host: 'smtp.mailtrap.io',
+  port: 2525,
+  auth: {
+    user: 'ec7c573e6e5e93',
+    pass: 'ba22d1ee643064'
+  }
+});
+
+const _sendThankYouEmail = (email) => {
+  const message = {
+    from: 'support@rotisserie-mtg.com', // Sender address
+    to: 'to@email.com',         // List of recipients
+    subject: 'Thank You For Signing Up For The Rotisserie MTG Mailing List!', // Subject line
+    text: 'Thank you for subscribing to the mailing list of Rotisserie MTG!\nWhenever new updates come to the website, you will be the first to know about them!\n\nIf you\'d like to find more people to draft with, you can do so by joining our moderated Discord community here: https://discord.gg/ZE6pgh65r4' // Plain text body
+  };
+
+  transport.sendMail(message, function(err, info) {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(info);
+    }
+});
+}
+
+const handleNewEmail = (req, res) => {
+  const { email } = req.body;
+  let resMsg = '';
+  let resStat = 0;
+  if (_verifyEmail(email)) {
+    console.log('THIS IS A VALID EMAIL');
+    try {
+      _addEmailToList(email + '\n');
+      _sendThankYouEmail();
+      resMsg = 'Your email was successully added to the mailing list!'
+      resStat = 201;
+    } catch {
+      resMsg = 'There was an issue adding your email to our system.'
+      resStat = 500;
+    }
+  } else {
+    console.log('THIS DOES NOT PASS THE EMAIL VALIDATION TEST');
+    resMsg = 'This is not a valid email format. Please try again';
+    resStat = 400;
+  }
+  res.status(resStat).send(resMsg);
+}
+
 module.exports = {
   fetchCardsByName,
   fetchSymbols,
+  handleNewEmail,
 };

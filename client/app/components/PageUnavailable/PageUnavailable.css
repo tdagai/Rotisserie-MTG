@@ -1,0 +1,11 @@
+#page-unavailable-top-bar {
+  width: 100%;
+  min-height: 58px;
+  background-color: var(--top-blue);
+}
+
+#page-unavailable p,
+#page-unavailable h1 {
+  text-align: center;
+}
+
