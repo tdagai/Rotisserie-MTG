@@ -1,0 +1,60 @@
+.app-grid-top-row-left-col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border-right: 2px solid var(--orange-hl);
+  overflow: hidden;
+}
+
+#draft-page-preload {
+  margin: auto;
+}
+
+#player-name {
+  position: absolute;
+  top: 63px;
+  left: .5rem;
+}
+
+.draft-list {
+  position: relative;
+  min-height: 580px;
+  min-width: 500px;
+  margin-left: calc(25vw - 250px);
+  border: 3px solid var(--orange-hl);
+  background-color: hsl(60, 4%, 27%);
+  padding-top: 5px;
+}
+
+.drafted-card {
+  position: absolute;
+  margin: 5px 0 0 5px;
+  width: 146px;
+  height: 204px;
+}
+
+.drafted-card img {
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.drafted-card img:hover {
+  border-color: var(--orange-hl);
+}
+
+.draft-carousel-button {
+  font-size: 1.25rem;
+  width: 25px;
+  height: 50px;
+  position: absolute;
+  z-index: 5;
+}
+
+#draft-carousel-next {
+  right: 55vw;
+}
+
+#draft-carousel-back {
+  left: 5vw;
+}

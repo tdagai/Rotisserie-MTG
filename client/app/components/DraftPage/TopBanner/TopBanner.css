@@ -1,0 +1,42 @@
+#banner-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60px;
+  background-color: var(--top-blue);
+  border-bottom: 2px solid var(--orange-hl);
+}
+
+#draft-page-app-title {
+  margin: 0;
+  margin-left: 10px;
+  font-size: 2rem;
+}
+
+#draftpage-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#draftpage-link:visited {
+  color: white;
+}
+
+#turn-changer {
+  margin: auto 50px;
+}
+
+#floating-card-container {
+  position: absolute;
+  right: 500px;
+  top: 40px;
+  z-index: 4;
+}
+
+#floating-card-container img {
+  border: 1px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 4px 2px hsl(20, 100%, 88%);
+}

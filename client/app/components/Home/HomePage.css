@@ -1,0 +1,212 @@
+#homepage-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#homepage-content {
+  max-width: 100%;
+  min-height: calc(100% - 7.5rem - 62px);
+  padding-top: 62px;
+  flex: 1 0 auto;
+}
+
+.perks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 10rem;
+}
+
+.perks h2 {
+  margin: 0;
+  max-width: 25rem;
+  text-align: center;
+  font-size: clamp(1rem, 3vw, 1.75rem);
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgb(230, 230, 230);
+}
+
+.perks svg {
+  min-width: 25rem;
+}
+
+#gh-dis-cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 10rem;
+}
+
+#gh-dis-cta a {
+  text-decoration: none !important;
+}
+
+#github-cta,
+#discord-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 17rem;
+  height: 25rem;
+  padding: 0 4rem;
+  background-color: var(--top-blue);
+  border-radius: 5px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: -2px 4px 0 1px black;
+  transition: background-color .5s, box-shadow .5s;
+  -webkit-transition: background-color .5s, box-shadow .5s;
+}
+
+#github-cta:hover,
+#discord-cta:hover {
+  background-color: #2d5e90;
+  box-shadow: -4px 6px 6px 1px rgba(0, 0, 0, .5);
+  transition: background-color .5s, box-shadow .5s;
+  -webkit-transition: background-color .5s, box-shadow .5s;
+}
+
+#github-cta p,
+#discord-cta p {
+  margin: 0;
+  text-align: center;
+  text-shadow: none;
+  line-height: 1.5;
+  transition: text-shadow .5s;
+  -webkit-transition: text-shadow .5s;
+}
+
+#github-cta i {
+  color: black;
+  text-shadow: -2px 4px 4px rgba(0, 0, 0, .5);
+  transition: text-shadow .5s;
+  -webkit-transition: text-shadow .5s;
+}
+
+#github-cta:hover i,
+#github-cta:hover p,
+#discord-cta:hover p {
+  text-shadow: -4px 6px 6px rgba(0, 0, 0, .5);
+  transition: text-shadow .5s;
+  -webkit-transition: text-shadow .5s;
+}
+
+#discord-cta i {
+  color: var(--discord-blue);
+  text-shadow: -2px 2px 0 rgba(0, 0, 0, .25),
+    -2px 4px 4px rgba(0, 0, 0, .5);
+  transition: text-shadow .5s;
+  -webkit-transition: text-shadow .5s;
+}
+
+#discord-cta:hover i {
+  text-shadow: -4px 3px 1px rgba(0, 0, 0, .25),
+    -4px 4px 6px rgba(0, 0, 0, .5);
+  transition: text-shadow .5s;
+  -webkit-transition: text-shadow .5s;
+}
+
+.cta-icon {
+  font-size: 8rem;
+}
+
+#scroll-top-btn {
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  width: -moz-fit-content;
+  min-width: 135px;
+  height: fit-content;
+  height: -moz-fit-content;
+  max-height: 40px;
+  font-size: 1rem;
+  padding: .5rem;
+  box-shadow: 0 .0625rem .25rem .125rem rgba(0, 0, 0, .25);
+  transition: background-color .3s, text-shadow .5s, box-shadow .3s;
+  -webkit-transition: background-color .3s, text-shadow .5s, box-shadow .3s;
+  animation: button-appear .5s;
+}
+
+@keyframes button-appear {
+  from { opacity: 0%; }
+  to { opacity: 100%; }
+}
+
+#scroll-top-btn i {
+  margin-right: .25rem;
+  font-size: 1.25rem;
+}
+
+#scroll-top-btn:hover {
+  box-shadow: 0 .25rem .75rem .5rem rgba(0, 0, 0, .25);
+  text-shadow: -.0625rem .0625rem .0625rem rgba(100, 100, 100, 1);
+  transition: background-color .3s, text-shadow .5s, box-shadow .3s;
+  -webkit-transition: background-color .3s, text-shadow .5s, box-shadow .3s;
+}
+
+/* ******** */
+/*  Mobile  */
+/* ******** */
+
+@media (max-width: 850px) {
+  .perks {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .perks svg {
+    margin-bottom: 2rem;
+  }
+
+  #gh-dis-cta {
+    flex-direction: column;
+  }
+
+  #github-cta {
+    margin-bottom: 2rem;
+  }
+
+}
+
+@media (max-width: 500px) {
+  #github-cta,
+  #discord-cta {
+    width: 11.5rem;
+    height: 15.5rem;
+    padding: 0 2rem;
+    font-size: .825rem;
+    line-height: 1.75;
+  }
+
+  .cta-icon {
+    font-size: 6rem;
+  }
+
+  .perks,
+  #gh-dis-cta {
+    margin-bottom: 7rem;
+  }
+
+  .perks h2 {
+    max-width: 70vw;
+    font-size: 1.25rem;
+  }
+
+  .perks svg {
+    min-width: 0;
+    max-width: 14rem;
+    height: fit-content;
+    max-height: 9rem;
+  }
+}
