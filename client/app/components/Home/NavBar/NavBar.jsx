@@ -3,7 +3,7 @@ import { useMediaPredicate } from 'react-media-hook';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({ whereAmI }) => {
   const [mobileNavHidden, toggleMobileNav] = useState(true);
   const smallerThan1075 = useMediaPredicate("(max-width: 1075px)");
 
@@ -20,7 +20,7 @@ const NavBar = () => {
             <h1 id='homepage-title' className='app-title-style' >
               <Link to='/' >
                 Rotisserie MTG
-            </Link>
+              </Link>
             </h1>
           </li>
           <li id='menu-btn-container' >
@@ -76,17 +76,17 @@ const NavBar = () => {
         <h1 id='homepage-title' className='app-title-style' >
           <Link to='/' >
             Rotisserie MTG
-            </Link>
+          </Link>
         </h1>
       </li>
       <ul className='top-bar-list' >
         <Link to='/contact' className='homepage-link-style' >
-          <li className='homepage-nav-item' >
+          <li className={`${whereAmI === 'contact' ? 'selected-nav-item' : 'homepage-nav-item'}`} >
             Contact
           </li>
         </Link>
         <Link to='/about' className='homepage-link-style' >
-          <li className='homepage-nav-item' >
+          <li className={`${whereAmI === 'about' ? 'selected-nav-item' : 'homepage-nav-item'}`} >
             About
           </li>
         </Link>
@@ -96,12 +96,12 @@ const NavBar = () => {
           </li>
         </Link>
         <Link to='/join-room' className='homepage-link-style' >
-          <li className='homepage-nav-item' >
+          <li className={`${whereAmI === 'joinRoom' ? 'selected-nav-item' : 'homepage-nav-item'}`} >
             Join Room
           </li>
         </Link>
         <Link to='/create-new-room' className='homepage-link-style' >
-          <li className='homepage-nav-item' >
+          <li className={`${whereAmI === 'createRoom' ? 'selected-nav-item' : 'homepage-nav-item'}`} >
             Create New Room
           </li>
         </Link>

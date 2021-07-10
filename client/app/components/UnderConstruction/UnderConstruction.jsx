@@ -1,19 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../Home/NavBar/NavBar.jsx';
 import './UnderConstruction.css';
 
-const UnderConstructions = () => {
+const UnderConstructions = ({ whereAmI }) => {
   return (
     <div id='under-constructions' >
-      <header>
-        <div id='under-constructions-top-bar' >
-          <h1 id='under-constructions-title' className='app-title-style' >
-            <Link to='/' >
-              Rotisserie MTG
-            </Link>
-          </h1>
-        </div>
-      </header>
+      <NavBar whereAmI={whereAmI} />
       <section id='under-constructions-content' >
         <i className="fas fa-hard-hat"></i>
         <h1>This Page Is Currently Under Constructions</h1>
