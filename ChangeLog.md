@@ -1,6 +1,4 @@
 # Rotisserie MTG ChangeLog
-
-# Rotisserie-MTG
 A companion web app for the Rotisserie MTG format
 
 ## What Is Rotisserie MTG?
@@ -19,6 +17,48 @@ Rotisserie MTG is a fan made turn-based Magic: The Gathering draft format.
 ### This file will keep a changelog of the app as it goes along and improves over time
 
 # Latest Update:
+
+## _July 10th:_ Front Page and Early Alpha!
+This update focused on adding a front page to the website, adding several other pages, setting up for the future, and launching the website in early access!
+This update took a little while to come out because I needed a bit of a mental health break - those are important!
+
+### Update Highlights:
+
+- _**NEW**_ Front Page
+  - The Landing Page of the website. allows the user to navigate the website, track the website's development on github, join the community discord, and sign up to the website's newsletter.
+- _**NEW**_ Sign In Page
+  - Will let the user sign into their account. Currently has no back-end support.
+- _**NEW**_ Sign Up Page
+  - Will let the user sign up to the website. Currently has no back-end support.
+- _**NEW**_ Sandbox
+  - What used to be the whole website before this update.
+  - Can be accessed by non-registered users to check out the website or practice.
+- _**NEW**_ Under Constructions Page
+  - A temporary placeholder page for pages that I have yet to add to the website. Those pages include
+  - _**NEW**_ Create/Join Room: Will only be available to registered users and will allow them to draft with their friends.
+  - _**NEW**_ Contact: Will be a page that will allow users to approach the engineering team (AKA me) with inqueries/requests/bug reports.
+  - _**NEW**_ About: Will be a page that will include information about the rules of the game and some information about myself.
+- _**NEW**_ Page Unavailable Page
+  - A default page for any path that doesn't exist
+
+## In Conclusion
+
+A few general thoughts:
+
+I am very happy with the website's front page, with only very few changes I might make to it in the near future in mind. I've hit all the major marks I've wanted to have by the next update and so I believe that it is overall mostly done.
+
+
+### My Next Move
+
+I think the next move is gonna be as follows:
+
+- Create the About and Contact pages.
+- Add mobile design to the Sandbox page
+
+##### ![pixilart-drawing](https://user-images.githubusercontent.com/7985557/117416092-e0eba380-aecd-11eb-8783-bac3c9c5e094.png) That's All For Now - More Updates To Come Soon! ![pixilart-drawing](https://user-images.githubusercontent.com/7985557/117416092-e0eba380-aecd-11eb-8783-bac3c9c5e094.png)
+
+
+##### Teva
 
 ## _May 17th:_ New Design For the Website!
 This update focused on adding new flavor and styling to the website and let me tell ya - the new design looks FANTASTIC! I am loving it so much and hopefully you will too!
