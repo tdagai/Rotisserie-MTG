@@ -119,7 +119,7 @@
 
 #scroll-top-btn {
   position: fixed;
-  bottom: 5%;
+  bottom: 10%;
   left: 5%;
   display: flex;
   justify-content: center;
