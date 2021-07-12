@@ -55,7 +55,7 @@ I think the next move is gonna be as follows:
 - Create the About and Contact pages.
 - Add mobile design to the Sandbox page
 
-##### That's All For Now - More Updates To Come Soon! ![pixilart-drawing](https://user-images.githubusercontent.com/7985557/117416092-e0eba380-aecd-11eb-8783-bac3c9c5e094.png)
+##### ![pixilart-drawing](https://user-images.githubusercontent.com/7985557/117416092-e0eba380-aecd-11eb-8783-bac3c9c5e094.png) That's All For Now - More Updates To Come Soon! ![pixilart-drawing](https://user-images.githubusercontent.com/7985557/117416092-e0eba380-aecd-11eb-8783-bac3c9c5e094.png)
 
 
 ##### Teva
