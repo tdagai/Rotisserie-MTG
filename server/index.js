@@ -53,7 +53,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnecting', () => {
-    if (users[socket.id].length) {
+    if (users[socket.id] && users[socket.id].length) {
       users[socket.id].forEach((card) => {
         allDrafted = allDrafted.filter((cardName) => cardName !== card.ff.name);
       });
