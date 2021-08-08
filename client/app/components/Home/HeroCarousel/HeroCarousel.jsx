@@ -84,7 +84,7 @@ const HeroCarousel = () => {
         aria-label='hero banner back button' >
         <i className="fas fa-caret-left"></i>
       </button>
-      <PositionIndicator positionIndex={positionIndex} maxItems={maxItems} />
+      <PositionIndicator positionIndex={positionIndex} maxItems={maxItems} clr='var(--bg-color)' />
       <div id='carousel-item-container' style={styleObj} >
         {
           heroItemData.map(({ heroImage, artistCredit = '', text }) => (

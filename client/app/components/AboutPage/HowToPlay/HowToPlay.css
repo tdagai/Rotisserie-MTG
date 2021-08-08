@@ -1,0 +1,11 @@
+#htp-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#htp-title {
+  font-size: 3.5rem;
+  align-self: center;
+  padding-top: 2rem;
+}
