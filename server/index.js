@@ -53,13 +53,13 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnecting', () => {
-    console.log(`user ${socket.id} disconnected`);
     if (users[socket.id].length) {
       users[socket.id].forEach((card) => {
         allDrafted = allDrafted.filter((cardName) => cardName !== card.ff.name);
       });
       delete users[socket.id];
       io.emit('user-disconnected', { allDrafted, disconnectedID: socket.id });
+      console.log(`user ${socket.id} disconnected`);
     }
   });
 });
