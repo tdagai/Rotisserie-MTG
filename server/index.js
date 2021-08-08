@@ -17,11 +17,11 @@ let symbols = null;
 const receiveSymbols = (req, res, next) => {
   if (symbols === null) {
     controllers.fetchSymbols()
-    .then(s => {
-      symbols = s;
-      io.emit('symbols', symbols);
-      next();
-    });
+      .then(s => {
+        symbols = s;
+        io.emit('symbols', symbols);
+        next();
+      });
   } else {
     next();
   }
@@ -54,11 +54,13 @@ io.on('connection', (socket) => {
 
   socket.on('disconnecting', () => {
     console.log(`user ${socket.id} disconnected`);
-    users[socket.id].forEach((card) => {
-      allDrafted = allDrafted.filter((cardName) => cardName !== card.ff.name);
-    });
-    delete users[socket.id];
-    io.emit('user-disconnected', { allDrafted, disconnectedID: socket.id });
+    if (users.length) {
+      users[socket.id].forEach((card) => {
+        allDrafted = allDrafted.filter((cardName) => cardName !== card.ff.name);
+      });
+      delete users[socket.id];
+      io.emit('user-disconnected', { allDrafted, disconnectedID: socket.id });
+    }
   });
 });
 
@@ -68,7 +70,7 @@ app.post('/add-newsletter-sub', (req, res) => controllers.handleNewEmail(req, re
 
 // React router base
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'), function(err) {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'), function (err) {
     if (err) {
       res.status(500).send(err)
     }
